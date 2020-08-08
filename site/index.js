@@ -10,8 +10,6 @@ import './index.css';
 
 const theme = createTheme();
 
-console.log(theme);
-
 render(
     <MuiThemeProvider theme={theme}>
         <App />
