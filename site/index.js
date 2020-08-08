@@ -1,23 +1,21 @@
 import React from 'react';
 import { render } from 'react-dom';
-// import { Provider } from 'react-redux';
-// import { compose, createStore } from 'redux';
 
 import App from './components/App';
-// import allMiddleware from './middleware';
-// import rootReducer from './reducers';
+import {MuiThemeProvider} from '@material-ui/core';
+
+import createTheme from './theme';
 
 import './index.css';
 
-const composedEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose; // eslint-disable-line no-undef
+const theme = createTheme();
 
-// const store = createStore(
-//     rootReducer,
-//     composedEnhancer(allMiddleware)
-// );
+console.log(theme);
 
 render(
-    <App />,
+    <MuiThemeProvider theme={theme}>
+        <App />
+    </MuiThemeProvider>,
     document.getElementById('root') // eslint-disable-line no-undef
 );
 
