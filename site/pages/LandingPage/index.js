@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// https://www.extra-life.org/api/teams/51804
-
 import {
     Container,
     Typography
@@ -20,25 +18,44 @@ const parseTimeLeft = timeleft => {
     return `${days}:${hours}:${minutes}:${seconds}`;
 };
 
+const goalComponent = team => {
+    if (!team) {
+        return 'Fetching team data...'
+    }
+
+    return `Goal: $${team.sumDonations}/$${team.fundraisingGoal}`;
+};
+
 const LandingPage = props => {
     const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
     const [now, setNow] = useState(new Date().getTime());
     const [team, setTeam] = useState(null);
+    const [fetchingTeam, setFetching] = useState(false);
 
-    // let timer = setInterval(() => {
-    //     setNow(new Date().getTime());
-    // }, 1000);
+    useEffect(() => {
+        if (!dayOfPlay || new Date().getTime() >= dayOfPlay) {
+            return;
+        }
 
-    // useEffect(() => {
-    //     axios.get("https://www.extra-life.org/api/teams/51804")
-    //         .then(response => { setTeam(response.data); })
-    //         .catch(err => console.log(err));
-    // }, [team]);
+        if (!team && !fetchingTeam) {
+            setFetching(true);
+            axios.get("https://www.extra-life.org/api/teams/51804")
+                .then(response => setTeam(response.data))
+                .catch(err => console.log(err))
+                .finally(() => setFetching(false));
+        }
+
+        const timerInterval = setInterval(() => {
+            setNow(new Date().getTime());
+        }, 1000);
+
+        return () => clearInterval(timerInterval);
+    }, [fetchingTeam]);
 
     return (
         <Container>
             <Typography variant="h1">Extra Life Slalom Atlanta</Typography>
-            <Typography variant="h2">Goal: $101/$5000</Typography>
+            <Typography variant="h2">{goalComponent(team)}</Typography>
             <Typography variant="h2">Day of Play: November 7th 11:00 AM ET</Typography>
             <Typography variant="h3">Countdown: {parseTimeLeft(dayOfPlay - now)}</Typography>
         </Container>
