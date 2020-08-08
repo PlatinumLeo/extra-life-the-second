@@ -16,18 +16,6 @@ const LandingPage = props => {
 
     useEffect(() => {
         initialize();
-
-        if (!dayOfPlay || new Date().getTime() >= dayOfPlay) {
-            return;
-        }
-
-        if (!team && !fetchingTeam) {
-            setFetching(true);
-            axios.get("https://www.extra-life.org/api/teams/51804")
-                .then(response => setTeam(response.data))
-                .catch(err => console.log(err))
-                .finally(() => setFetching(false));
-        }
     }, []);
 
     const initialize = () => {
@@ -37,7 +25,6 @@ const LandingPage = props => {
     };
 
     const goalComponent = () => {
-
         if (!team) {
             return (<Skeleton variant="text" />);
         }
