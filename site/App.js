@@ -2,8 +2,8 @@ import React from 'react';
 
 import { BrowserRouter } from 'react-router-dom';
 
-import Header from '../Header';
-import Router from '../Router';
+import Header from './components/Header';
+import Router from './components/Router';
 
 const App = props => {
     return (
