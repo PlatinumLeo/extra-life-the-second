@@ -6,6 +6,8 @@ import {
     Typography
 } from '@material-ui/core';
 
+import useStyles from './styles';
+
 const parseTimeLeft = timeleft => {
     var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
     var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -24,7 +26,7 @@ const goalComponent = team => {
     return `Goal: $${team.sumDonations}/$${team.fundraisingGoal}`;
 };
 
-const App = props => {
+const LandingPage = props => {
     const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
     const [now, setNow] = useState(new Date().getTime());
     const [team, setTeam] = useState(null);
@@ -60,4 +62,4 @@ const App = props => {
     );
 };
 
-export default App;
+export default LandingPage;

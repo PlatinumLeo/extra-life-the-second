@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import App from './components/App';
+import App from './App';
 import {MuiThemeProvider} from '@material-ui/core';
 
 import createTheme from './theme';
@@ -9,8 +9,6 @@ import createTheme from './theme';
 import './index.css';
 
 const theme = createTheme();
-
-console.log(theme);
 
 render(
     <MuiThemeProvider theme={theme}>
