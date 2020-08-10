@@ -1,0 +1,22 @@
+FontName (AGBookBQ-Italic)
+FullName (AG Book BQ Italic)
+FamilyName (AG Book BQ)
+version (001.000)
+isFixedPitch false
+CharacterSet (isoadobe)
+Encoding (FontSpecific)
+ItalicAngle -11
+CapHeight 706
+UnderlinePosition -100
+UnderlineThickness 50
+Serif false
+Pi false
+MSMenuName (AGBookBQ)
+VPMenuName (AGBookBQ)
+WORDMenuName (AGBookBQ)
+VPTypefaceID 4903106
+VPStyle (I)
+PCFileNamePrefix (AGBoo)
+PCLTypefaceID 4903106
+PCLStrokeWeight 0
+PCLStyle 0
