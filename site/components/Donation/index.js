@@ -1,8 +1,12 @@
 import React, { useEffect, useState } from 'react';
 
 import {
+    Avatar,
+    GridList,
+    GridListTile,
     List,
     ListItem,
+    ListItemAvatar,
     ListItemText,
     Typography
 } from '@material-ui/core';
@@ -13,6 +17,7 @@ import ExtraLifeService from '../../services/ExtraLifeService';
 const Donation = props => {
     const [team, setTeam] = useState(null);
     const [donations, setDonations] = useState(null);
+    const [donors, setDonors] = useState(null);
 
     useEffect(() => {
         initialize();
@@ -25,6 +30,10 @@ const Donation = props => {
 
         ExtraLifeService.getTeamDonations()
             .then(response => setDonations(response.data))
+            .catch(err => console.log(err));
+
+        ExtraLifeService.getTeamDonors()
+            .then(response => setDonors(response.data))
             .catch(err => console.log(err));
     };
 
@@ -40,7 +49,7 @@ const Donation = props => {
         );
     };
 
-    const listComponent = () => {
+    const donationsComponent = () => {
         if (!donations) {
             return (<Skeleton variant="text" />);
         }
@@ -48,20 +57,53 @@ const Donation = props => {
         return (
             <List>
                 {donations.map((item) => (
-                    <ListItem key={`item-${item.donationID}`}>
-                        <ListItemText>{`${item.displayName}: $${item.amount}`}</ListItemText>
+                    <ListItem alignItems="flex-start" key={`item-${item.donationID}`}>
+                        <ListItemAvatar>
+                            <Avatar alt={item.displayName ? item.displayName : "Anonymous Donor"} src={item.avatarImageURL}/>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={item.displayName ? item.displayName : "Anonymous Donor"}
+                            secondary={`$${item.amount}`} />
                     </ListItem>
                 ))}
             </List>
         )
     };
 
+    const donorComponent = () => {
+        if (!donors) {
+            return (<Skeleton variant="text" />);
+        }
+
+        return (
+            <List>
+                {donors.map((item) => (
+                    <ListItem alignItems="flex-start" key={`item-${item.donorId}`}>
+                        <ListItemAvatar>
+                            <Avatar alt={item.displayName ? item.displayName : "Anonymous Donor"} src={item.avatarImageURL}/>
+                        </ListItemAvatar>
+                        <ListItemText
+                            primary={item.displayName ? item.displayName : "Anonymous Donor"}
+                            secondary={`$${item.sumDonations}`} />
+                    </ListItem>
+                ))}
+            </List>
+        );
+    };
+
     return (
-        <div>
-            <Typography variant="h1">Extra Life Slalom Atlanta</Typography>
-            {goalComponent()}
-            {listComponent()}
-        </div>
+        <React.Fragment>
+            <GridList cols={1}>
+                <GridListTile>
+                    <Typography variant="h1">Extra Life Slalom Atlanta</Typography>
+                </GridListTile>
+                <GridListTile>{goalComponent()}</GridListTile>
+            </GridList>
+            <GridList cols={2}>
+                <GridListTile>{donationsComponent()}</GridListTile>
+                <GridListTile>{donorComponent()}</GridListTile>
+            </GridList>
+        </React.Fragment>
     );
 };
 

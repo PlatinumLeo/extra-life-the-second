@@ -6,6 +6,23 @@ let lastPull = 0;
 let refreshPeriod = process.env.REFRESH_PERIOD || 300000; // 5 minutes or 5 * 60 * 1000;
 let teams = new Map();
 let teamDonations = new Map();
+let teamDonors = new Map();
+
+router.get('/:teamId/donors', (req, res) => {
+    let { teamId } = req.params;
+    let currentTime = new Date().getTime();
+    let timeDiff = currentTime - lastPull;
+    if (timeDiff >= refreshPeriod || !teamDonors.has(teamId)) {
+        axios.get(`https://www.extra-life.org/api/teams/${teamId}/donors`)
+            .then(response => {
+                teamDonors[teamId] = response.data;
+                lastPull = currentTime;
+                res.send(teamDonors[teamId]);
+            }).catch(err => res.status(500).send(err));
+    } else {
+        res.send(teamDonors[teamId]);
+    }
+});
 
 router.get('/:teamId/donations', (req, res) => {
     let { teamId } = req.params;
