@@ -19,15 +19,34 @@ const getPalette = (type) => {
     }
 
     return type === 'light' ? lightTheme : {};
-}
+};
+
+const getTypography = (type) => {
+    const typography = {
+        fontFamily: 'Monserrat, Arial'
+    }
+
+    return typography;
+};
+
+const getOverrides = (type) => {
+    const overrides = {};
+
+    return overrides;
+};
 
 const createTheme = (type = 'light') => {
     const palette = getPalette(type);
+    const typography = getTypography(type);
+    const overrides = getOverrides(type);
+
     return createMuiTheme({
         palette: {
             ...palette,
             type
         },
+        typography,
+        overrides
     });
 }
 
