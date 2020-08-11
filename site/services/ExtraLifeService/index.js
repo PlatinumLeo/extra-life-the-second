@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = 'https://www.extra-life.org/api/';
+const url = '/api/';
 
 const ExtraLifeService = {
     getTeam: () => axios.get(`${url}teams/51804`),

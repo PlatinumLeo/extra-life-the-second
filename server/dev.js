@@ -4,6 +4,7 @@ import webpack from 'webpack';
 import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
+import api from './api';
 import config from '../webpack.dev.config';
 
 const PORT = process.env.PORT || 8090; // eslint-disable-line no-undef
@@ -19,6 +20,7 @@ app.use(webpackDevMiddleware(compiler, {
 app.use(webpackHotMiddleware(compiler));
 app.use(express.static(DIST_DIR));
 app.use(express.json());
+app.use('/api', api);
 
 // app.get('*', (req, res, next) => {
 //     compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
