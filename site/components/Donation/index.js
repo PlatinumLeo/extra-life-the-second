@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './Donation.css'
 
 import {
     Avatar,
@@ -42,11 +43,21 @@ const Donation = props => {
             return (<Skeleton variant="text" />);
         }
 
+        // return (
+        //     <Typography variant="h2">
+        //         Goal: ${team.sumDonations}/${team.fundraisingGoal}
+        //     </Typography>
+        // );
+
+        const spanStyle = {
+            width: `25%`
+        };
+
         return (
-            <Typography variant="h2">
-                Goal: ${team.sumDonations}/${team.fundraisingGoal}
-            </Typography>
-        );
+            <div className="meter">
+                <span style={spanStyle}><span></span></span>
+            </div>
+        )
     };
 
     const donationsComponent = () => {
