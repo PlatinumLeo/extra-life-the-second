@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
+import './Donation.css'
 
 import {
     Avatar,
@@ -29,10 +30,25 @@ const Donation = ({ donations, donors, fundraisingGoal, sumDonations }) => {
             return (<Skeleton variant="text" />);
         }
 
+        // return (
+        //     <Typography variant="h2">
+        //         Goal: ${team.sumDonations}/${team.fundraisingGoal}
+        //     </Typography>
+        // );
+
+        const spanStyle = {
+            width: `25%`
+        };
+
+        // return (
+        //     <Typography variant="h2">
+        //         Goal: ${sumDonations}/${fundraisingGoal}
+        //     </Typography>
+        // );
         return (
-            <Typography variant="h2">
-                Goal: ${sumDonations}/${fundraisingGoal}
-            </Typography>
+            <div className="meter">
+                <span style={spanStyle}><span></span></span>
+            </div>
         );
     };
 
