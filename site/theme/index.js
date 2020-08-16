@@ -6,7 +6,7 @@ const getPalette = (type) => {
             main: '#18527a',
         },
         secondary: {
-            main: '#80d835',
+            main: '#97c93c',
         },
         background: {
             default: '#fff',
@@ -23,7 +23,7 @@ const getPalette = (type) => {
 
 const getTypography = (type) => {
     const typography = {
-        fontFamily: 'Monserrat, Arial'
+        fontFamily: 'Monserrat, Arial, Russo One'
     }
 
     return typography;

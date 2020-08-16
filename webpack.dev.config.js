@@ -37,7 +37,7 @@ const config = {
                 use: ['babel-loader']
             },
             {
-                test: /\.(ico|svg|jpg)$/,
+                test: /\.(ico|svg|jpg|png)$/,
                 loader: 'file-loader'
             }
         ]
