@@ -1,9 +1,18 @@
 import React, {useEffect, useState} from 'react';
-
+import { connect } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import { TeamActions } from './actions';
 import Header from './components/Header';
 import Router from './components/Router';
+
+const teamId = '51804';
+
+const mapDispatchToProps = dispatch => ({
+    getTeam: id => {
+        dispatch(TeamActions.getTeam(id));
+    }
+});
 
 const App = props => {
     // TODO: should move saving this to redux store 
@@ -14,6 +23,8 @@ const App = props => {
 
         return () => window.removeEventListener('resize', updateWindowDimensions);
     });
+
+    useEffect(() => props.getTeam(teamId), []);
 
     const updateWindowDimensions = () => {
         setDimensions({width: window.innerWidth, height: window.innerHeight});
@@ -29,4 +40,4 @@ const App = props => {
     );
 };
 
-export default App;
+export default connect(null, mapDispatchToProps)(App);
