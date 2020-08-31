@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 
 import {
     Avatar,
@@ -12,39 +13,25 @@ import {
 } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton'
 
+import { TeamActions } from '../../actions';
 import ExtraLifeService from '../../services/ExtraLifeService';
 
-const Donation = props => {
-    const [team, setTeam] = useState(null);
-    const [donations, setDonations] = useState(null);
-    const [donors, setDonors] = useState(null);
+const mapStateToProps = state => ({
+    donations: state.donations,
+    donors: state.donors,
+    fundraisingGoal: state.team.fundraisingGoal,
+    sumDonations: state.team.sumDonations
+});
 
-    useEffect(() => {
-        initialize();
-    }, []);
-
-    const initialize = () => {
-        ExtraLifeService.getTeam()
-            .then(response => setTeam(response.data))
-            .catch(err => console.log(err));
-
-        ExtraLifeService.getTeamDonations()
-            .then(response => setDonations(response.data))
-            .catch(err => console.log(err));
-
-        ExtraLifeService.getTeamDonors()
-            .then(response => setDonors(response.data))
-            .catch(err => console.log(err));
-    };
-
+const Donation = ({ donations, donors, fundraisingGoal, sumDonations }) => {
     const goalComponent = () => {
-        if (!team) {
+        if (!fundraisingGoal || !sumDonations) {
             return (<Skeleton variant="text" />);
         }
 
         return (
             <Typography variant="h2">
-                Goal: ${team.sumDonations}/${team.fundraisingGoal}
+                Goal: ${sumDonations}/${fundraisingGoal}
             </Typography>
         );
     };
@@ -107,4 +94,4 @@ const Donation = props => {
     );
 };
 
-export default Donation;
+export default connect(mapStateToProps)(Donation);

@@ -12,7 +12,7 @@ const teamMiddleware = (store) => (next) => (action) => {
 
     if (!actionAllowList.includes(action.type)) return;
     const request = {
-        endpoint: `${window.location}api/${action.id}`,
+        endpoint: `${window.location}api/teams/${action.id}`,
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
         types: [

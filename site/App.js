@@ -2,13 +2,19 @@ import React, {useEffect, useState} from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import { TeamActions } from './actions';
+import { DonationActions, DonorActions, TeamActions } from './actions';
 import Header from './components/Header';
 import Router from './components/Router';
 
 const teamId = '51804';
 
 const mapDispatchToProps = dispatch => ({
+    getDonations: id => {
+        dispatch(DonationActions.getDonations(id));
+    },
+    getDonors: id => {
+        dispatch(DonorActions.getDonors(id));
+    },
     getTeam: id => {
         dispatch(TeamActions.getTeam(id));
     }
@@ -24,7 +30,11 @@ const App = props => {
         return () => window.removeEventListener('resize', updateWindowDimensions);
     });
 
-    useEffect(() => props.getTeam(teamId), []);
+    useEffect(() => {
+        props.getDonations(teamId);
+        props.getDonors(teamId);
+        props.getTeam(teamId);
+    }, []);
 
     const updateWindowDimensions = () => {
         setDimensions({width: window.innerWidth, height: window.innerHeight});
