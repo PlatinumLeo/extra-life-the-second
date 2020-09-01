@@ -31,9 +31,13 @@ const App = props => {
     });
 
     useEffect(() => {
-        props.getDonations(teamId);
-        props.getDonors(teamId);
-        props.getTeam(teamId);
+        const fetchInterval = setInterval(() => {
+            props.getDonations(teamId);
+            props.getDonors(teamId);
+            props.getTeam(teamId);
+        }, 60000);
+        
+        return () => clearInterval(fetchInterval);
     }, []);
 
     const updateWindowDimensions = () => {
