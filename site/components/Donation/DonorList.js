@@ -24,7 +24,7 @@ const DonorList = ({ donors }) => {
                 </Typography>
                 <List>
                     {[1, 2, 3].map((item) => (
-                        <ListItem alignItems="flex-start" key={`donor-empty-${item.donorId}`}>
+                        <ListItem alignItems="flex-start" key={`donor-empty-${item}`}>
                             <ListItemAvatar><Skeleton variant="circle" /></ListItemAvatar>
                             <ListItemText><Skeleton /><Skeleton /></ListItemText>
                         </ListItem>
