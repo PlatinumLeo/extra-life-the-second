@@ -40,11 +40,6 @@ const Donation = ({ donations, donors, fundraisingGoal, sumDonations }) => {
             width: `25%`
         };
 
-        // return (
-        //     <Typography variant="h2">
-        //         Goal: ${sumDonations}/${fundraisingGoal}
-        //     </Typography>
-        // );
         return (
             <div className="meter">
                 <span style={spanStyle}><span></span></span>
