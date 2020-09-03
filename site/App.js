@@ -31,14 +31,20 @@ const App = props => {
     });
 
     useEffect(() => {
-        const fetchInterval = setInterval(() => {
-            props.getDonations(teamId);
-            props.getDonors(teamId);
-            props.getTeam(teamId);
-        }, 60000);
-        
-        return () => clearInterval(fetchInterval);
+        props.getDonations(teamId);
+        props.getDonors(teamId);
+        props.getTeam(teamId);
     }, []);
+
+    // useEffect(() => {
+    //     const fetchInterval = setInterval(() => {
+    //         props.getDonations(teamId);
+    //         props.getDonors(teamId);
+    //         props.getTeam(teamId);
+    //     }, 60000);
+        
+    //     return () => clearInterval(fetchInterval);
+    // }, []);
 
     const updateWindowDimensions = () => {
         setDimensions({width: window.innerWidth, height: window.innerHeight});
@@ -46,8 +52,8 @@ const App = props => {
 
     return (
         <>
-            <Header dimensions={dimensions}/>
             <BrowserRouter>
+                <Header dimensions={dimensions}/>
                 <Router/>
             </BrowserRouter>
         </>

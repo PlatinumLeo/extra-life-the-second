@@ -7,7 +7,6 @@ import {
 
 import Countdown from '../../components/Countdown';
 import Donation from '../../components/Donation';
-import Schedule from '../../components/Schedule';
 
 const LandingPage = props => {
     const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
@@ -18,9 +17,8 @@ const LandingPage = props => {
                 <Donation />
             </Grid>
             <Grid item xs={12} lg={6}>
-                {/* <Typography variant="h2">Day of Play: November 7th 11:00 AM ET</Typography>
-                <Countdown dayOfPlay={dayOfPlay} /> */}
-                <Schedule />
+                <Typography variant="h2">Day of Play: November 7th 11:00 AM ET</Typography>
+                <Countdown dayOfPlay={dayOfPlay} />
             </Grid>
         </Grid>
     );

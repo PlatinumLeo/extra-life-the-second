@@ -1,9 +1,13 @@
-import React from 'react';
-
-import AppBar from '@material-ui/core/AppBar';
-import Button from '@material-ui/core/Button';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
+import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
+import {
+    AppBar,
+    Button,
+    Menu,
+    MenuItem,
+    Toolbar,
+    Typography
+} from '@material-ui/core';
 import {useTheme} from '@material-ui/styles';
 
 import ControllerImage from '../../assets/images/Icons/controller_white.png';
@@ -15,16 +19,27 @@ import useStyles from './styles';
 const Header = props => {
     const classes = useStyles();
     const theme = useTheme();
+    const [anchorEl, setAnchorEl] = useState(null);
 
     const isMobile = theme.breakpoints.values.sm >= props.dimensions.width
 
     const imageSrc = isMobile ? ControllerImage : ExtraLifeLogo;
 
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setAnchorEl(null);
+    };
+
     return (
         <div className={classes.root}>
             <AppBar position="sticky" className={classes.toolbar}>
                 <Toolbar>
-                    <img src={imageSrc} className={classes.image} />
+                    <RouterLink to="/">
+                        <img src={imageSrc} className={classes.image} />
+                    </RouterLink>
                     <Typography variant="h4" className={classes.title} align="center">
                         Slalom { isMobile ? '' : ' - Atlanta'}
                     </Typography>
@@ -36,6 +51,37 @@ const Header = props => {
                         }
                         <img src={ElDiceImage} className={classes.buttonImage}/>
                     </Button>
+                </Toolbar>
+                <Toolbar>
+                        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+                            Event Info
+                        </Button>
+                        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+                            <MenuItem
+                                component={RouterLink}
+                                to="/schedule"
+                                onClick={handleClose}
+                                >Schedule</MenuItem>
+                            <MenuItem
+                                component={RouterLink}
+                                to="/participate"
+                                onClick={handleClose}
+                                >Participation FAQ</MenuItem>
+                            <MenuItem
+                                component={RouterLink}
+                                to="/games"
+                                onClick={handleClose}
+                                >Games List</MenuItem>
+                        </Menu>
+                        <Button component={RouterLink} to="/community">
+                            Community
+                        </Button>
+                        <Button component={RouterLink} to="/aboutus">
+                            About Us
+                        </Button>
+                        <Button>
+                            Discord
+                        </Button>
                 </Toolbar>
             </AppBar>
         </div>
