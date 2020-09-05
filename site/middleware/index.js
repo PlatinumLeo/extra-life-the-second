@@ -5,13 +5,15 @@ import thunk from 'redux-thunk';
 import donationMiddleware from './donations';
 import donorMiddleware from './donors';
 import teamMiddleware from './team';
+import twitchMiddleware from './twitch';
 
 const allMiddleware = applyMiddleware(
     apiMiddleware,
     donationMiddleware,
     donorMiddleware,
     teamMiddleware,
-    thunk
+    thunk,
+    twitchMiddleware
 );
 
 export default allMiddleware;

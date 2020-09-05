@@ -1,0 +1,16 @@
+export const FETCH_TWITCH_STREAM_REQUEST = 'FETCH_TWITCH_STREAM_REQUEST';
+export const FETCH_TWITCH_STREAM_SUCCESS = 'FETCH_TWITCH_STREAM_SUCCESS';
+export const FETCH_TWITCH_STREAM_FAILURE = 'FETCH_TWITCH_STREAM_FAILURE';
+export const FETCH_TWITCH_USERS_REQUEST = 'FETCH_TWITCH_USERS_REQUEST';
+export const FETCH_TWITCH_USERS_SUCCESS = 'FETCH_TWITCH_USERS_SUCCESS';
+export const FETCH_TWITCH_USERS_FAILURE = 'FETCH_TWITCH_USERS_FAILURE';
+export const GET_TWITCH_STREAMS = 'GET_TWITCH_STREAMS';
+export const GET_TWITCH_USERS = 'GET_TWITCH_USERS';
+
+export function getTwitchStreams(channelIds) {
+  return { type: GET_TWITCH_STREAMS, channelIds };
+}
+
+export function getTwitchUsers(usernames) {
+  return { type: GET_TWITCH_USERS, usernames };
+}
