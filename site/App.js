@@ -26,9 +26,6 @@ const mapDispatchToProps = dispatch => ({
   },
   getTwitchUsers: usernames => {
     dispatch(TwitchActions.getTwitchUsers(usernames));
-  },
-  getTwitchStreams: channelIds => {
-    dispatch(TwitchActions.getTwitchStreams(channelIds));
   }
 });
 
@@ -46,7 +43,6 @@ const App = props => {
     props.getDonors(teamId);
     props.getTeam(teamId);
     props.getTwitchUsers(twitchUsernames);
-    // props.getTwitchStreams(twitchChannelIds);
   }, []);
 
   // useEffect(() => {
@@ -54,6 +50,7 @@ const App = props => {
   //         props.getDonations(teamId);
   //         props.getDonors(teamId);
   //         props.getTeam(teamId);
+  //         props.getTwitchUsers(twitchUsernames);
   //     }, 60000);
       
   //     return () => clearInterval(fetchInterval);
