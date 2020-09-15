@@ -22,7 +22,98 @@ const gameList = [
     links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
     ageRating: 'E',
     equipment: 'Computer (Controller Recommended)'
-  }
+  },
+  {
+    name: 'Among Us',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Fall Guys',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Rocket League',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'JackBox Games',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Mario Kart 8 Deluxe (Swtich)',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Puyo Puyo Tetris',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Skribblio',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://skribbl.io/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Valorant',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://playvalorant.com/en-us/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Spellbreak',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://playspellbreak.com/en'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'One-Night Werewolf',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://netgames.io/games/onu-werewolf/', 'https://werewolv.es/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Mafia',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://mafia.gg', 'https://epicmafia.com/lobby/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Secret Hitler',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['https://private.secrethitler.io/', 'https://netgames.io/games/secret-hitler/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
+  {
+    name: 'Uno',
+    description: 'Free to play Mario Kart clone on PC',
+    links: ['http://play-uno.com/newgame.php', 'https://play.unofreak.com/'],
+    ageRating: 'E',
+    equipment: 'Computer (Controller Recommended)'
+  },
 ];
 
 const GamesPage = props => {
