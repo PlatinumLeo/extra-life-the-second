@@ -39,7 +39,7 @@ const Header = props => {
   const renderLeftButton = () => {
     if (!isMobile) {
       return (
-        <RouterLink to="/">
+        <RouterLink to="/" className={classes.left}>
           <img src={imageSrc} className={classes.image} />
         </RouterLink>
       );
@@ -47,7 +47,7 @@ const Header = props => {
   
     return (
       <>
-        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+        <Button className={classes.left} aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
           <img src={imageSrc} className={classes.image} />
         </Button>
         <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
@@ -98,54 +98,45 @@ const Header = props => {
     }
     
     return (
-      <Grid container>
-        <Grid item xs={12}>
-          <Typography variant="h4" className={classes.title} align="center">
-            Slalom { isMobile ? '' : ' - Atlanta'}
-          </Typography>
-        </Grid>
-        <Grid item xs={12}>
-          <Toolbar align="center">
-            <Button component={RouterLink} to="/">
-              Home
-            </Button>
-            <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              Event Info
-            </Button>
-            <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-              <MenuItem
-                component={RouterLink}
-                to="/schedule"
-                onClick={handleClose}
-                >Schedule</MenuItem>
-              <MenuItem
-                component={RouterLink}
-                to="/participate"
-                onClick={handleClose}
-                >Participation FAQ</MenuItem>
-              <MenuItem
-                component={RouterLink}
-                to="/games"
-                onClick={handleClose}
-                >Games List</MenuItem>
-            </Menu>
-            <Button component={RouterLink} to="/community">
-              Community
-            </Button>
-            <Button component={RouterLink} to="/aboutus">
-              About Us
-            </Button>
-            <Button>
-              Discord
-            </Button>
-          </Toolbar>
-        </Grid>
-      </Grid>
+      <Toolbar align="center" className={classes.center}>
+        <Button component={RouterLink} to="/" className={classes.centerButton}>
+          Home
+        </Button>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.centerButton}>
+          Event Info
+        </Button>
+        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} className={classes.centerButton}>
+          <MenuItem
+            component={RouterLink}
+            to="/schedule"
+            onClick={handleClose}
+            >Schedule</MenuItem>
+          <MenuItem
+            component={RouterLink}
+            to="/participate"
+            onClick={handleClose}
+            >Participation FAQ</MenuItem>
+          <MenuItem
+            component={RouterLink}
+            to="/games"
+            onClick={handleClose}
+            >Games List</MenuItem>
+        </Menu>
+        <Button component={RouterLink} to="/community" className={classes.centerButton}>
+          Community
+        </Button>
+        <Button component={RouterLink} to="/aboutus" className={classes.centerButton}>
+          About Us
+        </Button>
+        <Button className={classes.centerButton}>
+          Discord
+        </Button>
+      </Toolbar>
     );
   };
 
   const renderRightButton = () => (
-    <Button color="secondary" variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">
+    <Button className={classes.right} color="secondary" variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">
       {!isMobile && 
       <Typography className={classes.buttonText}>
         Donate
@@ -158,7 +149,7 @@ const Header = props => {
   return (
     <div className={classes.root}>
       <AppBar position="sticky" className={classes.toolbar}>
-        <Toolbar>
+        <Toolbar className={classes.centerBar}>
           {renderLeftButton()}
           {renderCenterArea()}
           {renderRightButton()}
