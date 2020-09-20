@@ -25,94 +25,94 @@ const gameList = [
   },
   {
     name: 'Among Us',
-    description: 'Free to play Mario Kart clone on PC',
-    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    description: 'Game of Deception and Murder',
+    links: ['http://www.innersloth.com/gameAmongUs.php'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer, Mobile Device'
   },
   {
     name: 'Fall Guys',
-    description: 'Free to play Mario Kart clone on PC',
-    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    description: 'MMXC/Wipeout multiplayer game',
+    links: ['https://fallguys.com/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'PS4, Computer (Controller Recommended)'
   },
   {
     name: 'Rocket League',
-    description: 'Free to play Mario Kart clone on PC',
-    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    description: 'Car based Soccer',
+    links: ['https://www.rocketleague.com/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'PS4, XBox One, Switch, Computer (Controller Recommended)'
   },
   {
     name: 'JackBox Games',
-    description: 'Free to play Mario Kart clone on PC',
-    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    description: 'Fun Party Games',
+    links: ['https://www.jackboxgames.com/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer, Mobile Device'
   },
   {
     name: 'Mario Kart 8 Deluxe (Swtich)',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'Mario Kart',
     links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Switch'
   },
   {
     name: 'Puyo Puyo Tetris',
-    description: 'Free to play Mario Kart clone on PC',
-    links: ['https://mb.srb2.org/showthread.php?t=43708&page=3'],
+    description: 'Play either Puyo Puyo, Tetris, or Both at once!',
+    links: ['https://puyo.sega.com/tetris/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'PS4, Switch, Computer'
   },
   {
     name: 'Skribblio',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'Pictonary on the Web',
     links: ['https://skribbl.io/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
   {
     name: 'Valorant',
-    description: 'Free to play Mario Kart clone on PC',
+    description: '5v5 Tactical Shooter',
     links: ['https://playvalorant.com/en-us/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
   {
     name: 'Spellbreak',
     description: 'Free to play Mario Kart clone on PC',
     links: ['https://playspellbreak.com/en'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'PS4, XBox One, Switch, Computer (Epic)'
   },
   {
     name: 'One-Night Werewolf',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'One Night Werewolf',
     links: ['https://netgames.io/games/onu-werewolf/', 'https://werewolv.es/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
   {
     name: 'Mafia',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'Mafia',
     links: ['https://mafia.gg', 'https://epicmafia.com/lobby/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
   {
     name: 'Secret Hitler',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'Politics and Intrigue Game',
     links: ['https://private.secrethitler.io/', 'https://netgames.io/games/secret-hitler/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
   {
     name: 'Uno',
-    description: 'Free to play Mario Kart clone on PC',
+    description: 'Uno',
     links: ['http://play-uno.com/newgame.php', 'https://play.unofreak.com/'],
     ageRating: 'E',
-    equipment: 'Computer (Controller Recommended)'
+    equipment: 'Computer'
   },
 ];
 
