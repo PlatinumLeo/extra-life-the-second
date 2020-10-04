@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 
-const useStyles = makeStyles((theme => ({
+const useDefaultStyles = makeStyles((theme => ({
   main: {
     margin: '0 auto',
     [theme.breakpoints.down('sm')]: {
@@ -12,4 +12,6 @@ const useStyles = makeStyles((theme => ({
   }
 })));
 
-export default useStyles;
+export {
+  useDefaultStyles
+};

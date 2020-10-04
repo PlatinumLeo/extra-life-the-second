@@ -4,21 +4,17 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
 
 import Countdown from '../../components/Countdown';
 import Donation from '../../components/Donation';
 import Events from '../../components/Events';
 import Explaination from '../../components/Explaination';
 
-import useStyles from './styles';
+import { useDefaultStyles } from '../../styles';
 
 const LandingPage = props => {
-  const classes = useStyles();
-  const theme = useTheme();
+  const classes = useDefaultStyles();
   const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
-
-  // const isMobile = theme.breakpoints.values.sm >= props.dimensions.width;
 
   return (
     <Grid container className={classes.main}>
