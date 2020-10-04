@@ -2,8 +2,13 @@ import { makeStyles } from '@material-ui/core/styles';
 
 const useStyles = makeStyles((theme => ({
   main: {
-    width: '80%',
-    margin: '0 auto'
+    margin: '0 auto',
+    [theme.breakpoints.down('sm')]: {
+      width: '90%'
+    },
+    [theme.breakpoints.up('md')]: {
+      width: '80%'
+    }
   }
 })));
 

@@ -22,8 +22,13 @@ const useStyles = makeStyles((theme) => ({
     height: 25
   },
   centerBar: {
-    width: 1188,
-    alignSelf: 'center'
+    [theme.breakpoints.down('md')]: {
+      flexGrow: 1
+    },
+    [theme.breakpoints.up('lg')]: {
+      alignSelf: 'center',
+      width: 1188
+    }
   },
   left: {
     float: 'left'
