@@ -10,10 +10,10 @@ import Donation from '../../components/Donation';
 import Events from '../../components/Events';
 import Explaination from '../../components/Explaination';
 
-import useStyles from './styles';
+import { useDefaultStyles } from '../../styles';
 
 const LandingPage = props => {
-  const classes = useStyles();
+  const classes = useDefaultStyles();
   const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
 
   return (
