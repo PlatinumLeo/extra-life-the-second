@@ -4,7 +4,6 @@ import {
   Grid,
   Typography
 } from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
 
 import Countdown from '../../components/Countdown';
 import Donation from '../../components/Donation';
@@ -15,10 +14,7 @@ import useStyles from './styles';
 
 const LandingPage = props => {
   const classes = useStyles();
-  const theme = useTheme();
   const dayOfPlay = new Date("Nov 11, 2020 11:00:00").getTime();
-
-  // const isMobile = theme.breakpoints.values.sm >= props.dimensions.width;
 
   return (
     <Grid container className={classes.main}>
