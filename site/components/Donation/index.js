@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import './Donation.css'
 
 import {
-    GridList,
-    GridListTile,
-    Typography
+  Grid,
+  GridList,
+  GridListTile,
+  Typography
 } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';
 
@@ -13,8 +14,8 @@ import DonationList from './DonationList';
 import DonorList from './DonorList';
 
 const mapStateToProps = state => ({
-    fundraisingGoal: state.team.fundraisingGoal,
-    sumDonations: state.team.sumDonations
+  fundraisingGoal: state.team.fundraisingGoal,
+  sumDonations: state.team.sumDonations
 });
 
 const Donation = ({ fundraisingGoal, sumDonations }) => {
@@ -42,18 +43,17 @@ const Donation = ({ fundraisingGoal, sumDonations }) => {
     };
 
     return (
-        <React.Fragment>
-            <GridList cols={1}>
-                <GridListTile>
-                    <Typography variant="h1">Extra Life Slalom Atlanta</Typography>
-                </GridListTile>
-                <GridListTile>{goalComponent()}</GridListTile>
-            </GridList>
-            <GridList cols={2}>
-                <GridListTile><DonationList /></GridListTile>
-                <GridListTile><DonorList /></GridListTile>
-            </GridList>
-        </React.Fragment>
+      <React.Fragment>
+        <Grid item xs={12}>
+          {goalComponent()}
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <DonationList />
+        </Grid>
+        <Grid item xs={12} lg={6}>
+          <DonorList />
+        </Grid>
+      </React.Fragment>
     );
 };
 

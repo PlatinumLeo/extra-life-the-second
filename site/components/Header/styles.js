@@ -20,6 +20,27 @@ const useStyles = makeStyles((theme) => ({
   buttonImage: {
     width: 25, 
     height: 25
+  },
+  centerBar: {
+    [theme.breakpoints.down('md')]: {
+      flexGrow: 1
+    },
+    [theme.breakpoints.up('lg')]: {
+      alignSelf: 'center',
+      width: 1188
+    }
+  },
+  left: {
+    float: 'left'
+  },
+  right: {
+    float: 'right'
+  },
+  center: {
+    flexGrow: 1
+  },
+  centerButton: {
+    color: 'white'
   }
 }));
 
