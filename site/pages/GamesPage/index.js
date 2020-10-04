@@ -1,12 +1,15 @@
 import React from 'react';
 
 import {
+  Grid,
   Link,
   Typography,
   List,
   ListItem,
   ListItemText
 } from '@material-ui/core';
+
+import { useDefaultStyles } from '../../styles';
 
 const gameList = [
   {
@@ -117,8 +120,10 @@ const gameList = [
 ];
 
 const GamesPage = props => {
+  const classes = useDefaultStyles();
+
   return (
-    <React.Fragment>
+    <Grid className={classes.main}>
       <Typography variant="h2">Games List</Typography>
       <List>
         {gameList.map((game, i) => (
@@ -143,7 +148,7 @@ const GamesPage = props => {
         </ListItem>
         ))}
       </List>
-    </React.Fragment>
+    </Grid>
   );
 };
 

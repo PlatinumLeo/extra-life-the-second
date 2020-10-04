@@ -12,9 +12,13 @@ import {
 import Stream from '../../components/Stream';
 import Twitch from '../../components/Twitch';
 
+import { useDefaultStyles } from '../../styles';
+
 const CommunityPage = props => {
+  const classes = useDefaultStyles();
+
   return (
-    <Grid container>
+    <Grid container className={classes.main}>
       <Grid item xs={12}>
         <Stream />
       </Grid>
