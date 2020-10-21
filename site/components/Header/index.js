@@ -4,7 +4,7 @@ import {
   AppBar,
   Button,
   Divider,
-  Grid,
+  Link,
   Menu,
   MenuItem,
   Toolbar,
@@ -128,9 +128,10 @@ const Header = props => {
         <Button component={RouterLink} to="/aboutus" className={classes.centerButton}>
           About Us
         </Button>
-        <Button className={classes.centerButton}>
-          Discord
-        </Button>
+        <Button
+          className={classes.centerButton}
+          href="https://discord.gg/NvshADM"
+          target="_blank">Discord</Button>
       </Toolbar>
     );
   };
