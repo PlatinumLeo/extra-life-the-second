@@ -21,6 +21,8 @@ const ParticipatePage = props => {
         <Typography>Click the button in the top right or follow the link <Link href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">here to donate</Link>. Your money goes to <Link href="https://choa.childrensmiraclenetworkhospitals.org/" target="_blank">Children's Healthcare of Atlanta</Link>.</Typography>
         <Typography variant="h4">Spread the word</Typography>
         <Typography>Let your friends and family know about this Game-a-thon rasing money for the Children's Miracle Network! We make the most impact by working together to raise money.</Typography>
+        <Typography variant="h4">Raffle</Typography>
+        <Typography>We are going to have two raffle pools! At </Typography>
       </Grid>
     </Grid>
   );
