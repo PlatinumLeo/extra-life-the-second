@@ -15,6 +15,8 @@ const mapStateToProps = state => ({
 });
 
 const DonationList = ({ donations }) => {
+  donations.sort((a, b) => b.amount - a.amount);
+
     return (
         <React.Fragment>
             <Typography variant="h3">
