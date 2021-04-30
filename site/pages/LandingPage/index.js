@@ -14,7 +14,7 @@ import { useDefaultStyles } from '../../styles';
 
 const LandingPage = props => {
   const classes = useDefaultStyles();
-  const dayOfPlay = new Date("Nov 7, 2020 11:00:00").getTime();
+  const dayOfPlay = new Date("Nov 6, 2021 11:00:00").getTime();
 
   return (
     <Grid container className={classes.main}>
