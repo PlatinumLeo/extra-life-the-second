@@ -8,12 +8,8 @@ const initialState = [{
   title: "Smash Bros. Casuals"
 }, {
   startDate: '2020-11-07T13:30',
-  endDate: '2020-11-07T15:00',
-  title: "Rocket League"
-}, {
-  startDate: '2020-11-07T15:30',
   endDate: '2020-11-07T16:30',
-  title: "FallGuys FunTimes"
+  title: "Rocket League"
 }, {
   startDate: '2020-11-07T17:00',
   endDate: '2020-11-07T19:00',
