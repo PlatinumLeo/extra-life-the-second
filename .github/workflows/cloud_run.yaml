@@ -1,0 +1,28 @@
+name: Cloud Run Deploy Pipeline
+
+on:
+  push:
+    branches:
+      - primary
+    tags:
+      - '*'
+
+jobs:
+  build-and-push-to-gcr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Build/Push Container to GCR
+        uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+        with:
+          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          registry: gcr.io
+          project_id: extra-life-slalom
+          image_name: el-web-app
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@main
+        with:
+          service: el-web-app
+          image: gcr.io/extra-life-slalom/el-web-app
+          credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
