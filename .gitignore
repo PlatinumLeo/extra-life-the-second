@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Firebase Hosting Cache Files
+.firebase/
+
+# WebStorm-specific Files
+.idea/
