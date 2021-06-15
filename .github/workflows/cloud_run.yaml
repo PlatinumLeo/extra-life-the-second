@@ -26,3 +26,10 @@ jobs:
           service: el-web-app
           image: gcr.io/extra-life-slalom/el-web-app
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EXTRA_LIFE_SLALOM }}
+          projectId: extra-life-slalom
+          channelId: live
