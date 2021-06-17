@@ -10,6 +10,10 @@ jobs:
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
+      - name: Extract Branch Name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: Build/Push Container to GCR
         uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
         with:
@@ -17,15 +21,15 @@ jobs:
           registry: gcr.io
           project_id: extra-life-slalom
           image_name: el-web-app
-          image_tag: preview
+          image_tag: ${{ steps.extract_branch.outputs.branch }}
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@main
         with:
-          service: el-web-app-preview
-          image: gcr.io/extra-life-slalom/el-web-app:preview
+          service: el-web-app-${{ steps.extract_branch.outputs.branch }}
+          image: gcr.io/extra-life-slalom/el-web-app:${{ steps.extract_branch.outputs.branch }}
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
       - name: Update firebase.json Service ID
-        run: echo "`jq '.hosting.rewrites[0].run.serviceId="el-web-app-preview"' firebase.json`" > firebase.json
+        run: echo "`jq '.hosting.rewrites[0].run.serviceId="el-web-app-${{ steps.extract_branch.outputs.branch }}"' firebase.json`" > firebase.json
       - name: Read firebase.json
         run: cat firebase.json
       - name: Deploy to Preview Channel
