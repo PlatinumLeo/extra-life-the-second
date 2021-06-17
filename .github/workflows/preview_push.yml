@@ -27,7 +27,7 @@ jobs:
       - name: Update firebase.json Service ID
         run: echo "`jq '.hosting.rewrites[0].run.serviceId="preview"' firebase.json`" > firebase.json
       - name: Read firebase.json
-        run: cat config.json
+        run: cat firebase.json
       - name: Deploy to Preview Channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
