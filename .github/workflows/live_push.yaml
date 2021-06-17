@@ -1,4 +1,4 @@
-name: Cloud Run Deploy Pipeline
+name: Live Channel Deploy
 
 on:
   push:
