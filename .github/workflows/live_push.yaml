@@ -20,13 +20,14 @@ jobs:
           registry: gcr.io
           project_id: extra-life-slalom
           image_name: el-web-app
+          image_tag: live
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@main
         with:
-          service: el-web-app
-          image: gcr.io/extra-life-slalom/el-web-app
+          service: el-web-app-live
+          image: gcr.io/extra-life-slalom/el-web-app:live
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
-      - name: Deploy to Firebase Hosting
+      - name: Deploy to Live Channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
