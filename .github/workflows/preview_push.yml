@@ -25,11 +25,9 @@ jobs:
           image: gcr.io/extra-life-slalom/el-web-app:preview
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
       - name: Update firebase.json Service ID
-        uses: jossef/action-set-json-field@v1
-        with:
-          file: firebase.json
-          field: hosting.rewrites[0].run.serviceId
-          value: extra-life-slalom-preview
+        run: echo "`jq '.hosting.rewrites[0].run.serviceId="preview"' firebase.json`" > firebase.json
+      - name: Read firebase.json
+        run: cat config.json
       - name: Deploy to Preview Channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
