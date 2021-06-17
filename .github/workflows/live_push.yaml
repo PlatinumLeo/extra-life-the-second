@@ -27,6 +27,10 @@ jobs:
           service: el-web-app-live
           image: gcr.io/extra-life-slalom/el-web-app:live
           credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      - name: Update firebase.json Service ID
+        run: echo "`jq '.hosting.rewrites[0].run.serviceId="el-web-app-live"' firebase.json`" > firebase.json
+      - name: read firebase.json
+        run: cat firebase.json
       - name: Deploy to Live Channel
         uses: FirebaseExtended/action-hosting-deploy@v0
         with:
