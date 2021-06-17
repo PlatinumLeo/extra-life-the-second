@@ -1,0 +1,36 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  pull_request:
+    branches:
+      - primary
+jobs:
+  build_and_preview:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Build/Push Container to GCR
+        uses: RafikFarhad/push-to-gcr-github-action@v3.0.2
+        with:
+          gcloud_service_key: ${{ secrets.GCLOUD_SERVICE_KEY }}
+          registry: gcr.io
+          project_id: extra-life-slalom
+          image_name: el-web-app
+          image_tag: preview
+      - name: Deploy to Cloud Run
+        uses: google-github-actions/deploy-cloudrun@main
+        with:
+          service: el-web-app-preview
+          image: gcr.io/extra-life-slalom/el-web-app:preview
+          credentials: ${{ secrets.GCLOUD_SERVICE_KEY }}
+      - name: Deploy to Preview Channel
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_EXTRA_LIFE_SLALOM }}
+          expires: 24h
+          projectId: extra-life-slalom
