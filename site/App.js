@@ -6,7 +6,7 @@ import { DonationActions, DonorActions, TeamActions, TwitchActions } from './act
 import Header from './components/Header';
 import Router from './components/Router';
 
-const teamId = '51804';
+const teamId = '57288';
 const twitchUsernames = [
   'pyroticblaziken'
 ];
