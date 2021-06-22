@@ -1,26 +1,39 @@
 // Source: https://techinscribed.com/building-react-app-using-material-ui-with-support-for-multiple-switchable-themes/
+// Source: https://dev.to/nas5w/toggling-light-dark-theme-in-react-with-usecontext-39hn
 
-import React, { useState } from 'react';
+import React, { createContext, useState } from 'react';
 import { MuiThemeProvider } from '@material-ui/core';
 import { getThemeByName } from './theme';
 
-export const ThemeContext = React.createContext((themeName) => {});
+export const ThemeContext = createContext({
+  themeName: 'default',
+  updateThemeName: (themeName) => {},
+  themeType: 'light',
+  toggleThemeType: () => {}
+});
 
-const ThemeProvider = props => {
+const ThemeProvider = ({ children }) => {
   const currentThemeName = localStorage.getItem('appTheme') || 'default';
-  const [themeName, _setThemeName] = useState(currentThemeName);
-  const theme = getThemeByName(themeName);
+  const currentThemeType = localStorage.getItem('appType') || 'light';
 
-  const setThemeName = (themeName) => {
+  const [themeName, setThemeName] = useState(currentThemeName);
+  const [themeType, setThemeType] = useState(currentThemeType);
+  const toggleThemeType = () => {
+    setThemeType(themeType === 'light' ? 'dark' : 'light');
+    localStorage.setItem('appType', themeType === 'light' ? 'dark' : 'light');
+  };
+  const updateThemeName = (themeName) => {
+    setThemeName(themeName);
     localStorage.setItem('appTheme', themeName);
-    _setThemeName(themeName);
-  }
+  };
+
+  const theme = getThemeByName(themeName, themeType);
 
   return (
-    <ThemeContext.Provider value={setThemeName}>
-      <MuiThemeProvider theme={theme}>{props.children}</MuiThemeProvider>
+    <ThemeContext.Provider value={{ themeName, updateThemeName, themeType, toggleThemeType }}>
+      <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
-}
+};
 
 export default ThemeProvider;

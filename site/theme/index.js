@@ -1,10 +1,10 @@
 import { defaultTheme } from './default';
 import { monochromeTheme } from './monochrome';
 
-export function getThemeByName(theme) {
+export function getThemeByName(theme, type = 'light') {
   switch(theme) {
-    case 'monochrome': return monochromeTheme;
-    default: return defaultTheme;
+    case 'monochrome': return monochromeTheme(type);
+    default: return defaultTheme(type);
   }
 }
 
