@@ -1,12 +1,13 @@
 import React, {useEffect, useState} from 'react';
 import { connect } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
+import { Paper } from '@material-ui/core';
 
 import { DonationActions, DonorActions, TeamActions, TwitchActions } from './actions';
 import Header from './components/Header';
 import Router from './components/Router';
 
-const teamId = '51804';
+const teamId = '57288';
 const twitchUsernames = [
   'pyroticblaziken'
 ];
@@ -63,8 +64,10 @@ const App = props => {
   return (
     <>
       <BrowserRouter>
-        <Header dimensions={dimensions}/>
-        <Router/>
+        <Paper style={{  height: "100vh" }}>
+            <Header dimensions={dimensions}/>
+            <Router/>
+          </Paper>
       </BrowserRouter>
     </>
   );

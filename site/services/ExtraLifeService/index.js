@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const url = '/api/';
-const teamId = '51804';
+const teamId = '57288';
 
 const ExtraLifeService = {
     getTeam: () => axios.get(`${url}teams/${teamId}`),
