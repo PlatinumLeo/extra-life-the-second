@@ -18,7 +18,6 @@ import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.pn
 
 import useStyles from './styles';
 
-
 const Header = props => {
   const classes = useStyles();
   const theme = useTheme();

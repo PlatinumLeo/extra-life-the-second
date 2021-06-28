@@ -26,12 +26,21 @@ export const monochromeTheme = (type = 'light') => {
     typography: {
       fontFamily: 'Quantico, Arial, Roboto'
     },
-    // overrides: {
-    //   MuiCssBaseline: {
-    //     '@global': {
-    //       '@font-face': [quantico]
-    //     }
-    //   }
-    // }
+    overrides: {
+      MuiButton: {
+        root: {
+          borderRadius: 0,
+          'clip-path': `polygon(
+            0 0,
+            0 0,
+            90% 0,
+            100% 20%,
+            100% 100%,
+            90% 100%,
+            10% 100%,
+            0% 80%)`
+        }
+      }
+    }
   })
 };
