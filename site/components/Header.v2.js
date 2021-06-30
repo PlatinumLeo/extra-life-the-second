@@ -4,6 +4,7 @@ import React from 'react';
 import {
   AppBar,
   Button,
+  ButtonBase,
   Divider,
   Link,
   Menu,
@@ -13,6 +14,8 @@ import {
 } from '@material-ui/core';
 import { makeStyles, useTheme } from '@material-ui/styles';
 import { borders } from '@material-ui/system';
+
+import NotchedButton from './NotchedButton';
 
 import ControllerImage from '../assets/images/Icons/controller_white.png';
 import ExtraLifeLogo from '../assets/images/Logos/Generic/Extra Life_white.png';
@@ -71,10 +74,46 @@ import { useDefaultStyles } from '../styles';
 //   }
 // }));
 
+const clipRadius = 5;
+
+const divStyle = {
+  backgroundColor: 'black', display: 'inline-flex',
+  clipPath: `polygon(
+    0 0,
+    0 0,
+    calc(100% - ${clipRadius}px) 0,
+    100% ${clipRadius}px,
+    100% 100%,
+    calc(100% - ${clipRadius}px) 100%,
+    ${clipRadius}px 100%,
+    0% calc(100% - ${clipRadius}px))`
+  // 'clip-path': 'polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%)'
+};
+
 const defaultProps = {
   // color: 'secondary', 
   variant: 'contained', 
   // variant: 'outlined'
+};
+
+const MonochromeBorderButton = props => {
+  const { 
+    notchRadius,
+    borderWidth,
+    ...otherProps
+  } = props;
+
+  return (
+    <ButtonBase {...otherProps}>
+      <span style={{ backgroundColor: 'red' }}></span>
+      <span>Button</span>
+    </ButtonBase>
+  );
+};
+
+MonochromeBorderButton.defaultProps = {
+  notchRadius: 5,
+  borderWidth: 5
 };
 
 const Header = props => {
@@ -88,7 +127,11 @@ const Header = props => {
   return (
     <div className={classes.main}>
       <Typography>Header</Typography>
-      <Button {...defaultProps}>Donate</Button>
+      <Button {...defaultProps}>Contained Button</Button>
+      <div style={divStyle}>
+        <Button className={classes.button} {...defaultProps}>Outlined Button</Button>
+      </div>
+      <NotchedButton />
     </div>
   );
 };

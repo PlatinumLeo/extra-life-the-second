@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import { blueGrey, grey, red } from '@material-ui/core/colors';
 
 const useDefaultStyles = makeStyles((theme => ({
   main: {
@@ -9,6 +10,10 @@ const useDefaultStyles = makeStyles((theme => ({
     [theme.breakpoints.up('md')]: {
       width: '80%'
     }
+  },
+  button: {
+    margin: '5px',
+    // outline: 'solid 8px black'
   }
 })));
 
