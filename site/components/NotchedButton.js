@@ -1,3 +1,5 @@
+// Seems promising, and adds cool things: https://www.smashingmagazine.com/2015/05/creating-responsive-shapes-with-clip-path/
+
 import React from 'react';
 import {
   ButtonBase,
