@@ -90,6 +90,57 @@ const divStyle = {
   // 'clip-path': 'polygon(0% 0%, 0% 100%, 25% 100%, 25% 25%, 75% 25%, 75% 75%, 25% 75%, 25% 100%, 100% 100%, 100% 0%)'
 };
 
+const a = 12, b = 4;
+
+const BASIC_PATH = `polygon(
+  0 0,
+  0 calc(100% - ${a}px),
+  ${a}px 100%,
+  100% 100%,
+  100% ${a}px,
+  calc(100% - ${a}px) 0
+)`;
+
+const POLYGON_PATH = `polygon(
+  0 0,
+  0 calc(100% - ${a}px),
+  ${a}px 100%,
+  ${a}px calc(100% - ${b}px),
+  ${b}px calc(100% - ${a}px),
+  ${b}px ${b}px,
+  calc(100% - ${a}px) ${b}px,
+  calc(100% - ${b}px) ${a}px,
+  calc(100% - ${b}px) calc(100% - ${b}px),
+  ${a}px calc(100% - ${b}px),
+  ${a}px 100%,
+  100% 100%,
+  100% ${a}px,
+  calc(100% - ${a}px) 0
+)`;
+
+const simplyStylish = makeStyles({
+  cssButton: props => ({
+    background: 'rgba(0,0,0,0)',
+    minWidth: '64px',
+    position: 'relative',
+    textTransform: 'uppercase',
+    clipPath: BASIC_PATH,
+    WebkitClipPath: BASIC_PATH,
+    padding: '6px 16px',
+    '&::after': {
+      content: '"Bad Order"',
+      position: 'absolute',
+      background: props.theme.palette.text.primary, 
+      clipPath: POLYGON_PATH,
+      WebkitClipPath: POLYGON_PATH,
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
+    }
+  })
+});
+
 const defaultProps = {
   // color: 'secondary', 
   variant: 'contained', 
@@ -119,19 +170,21 @@ MonochromeBorderButton.defaultProps = {
 const Header = props => {
   const theme = useTheme();
   const classes = useDefaultStyles();
+  const secondSet = simplyStylish({ theme });
 
   // const isMobile = theme.breakpoints.values.sm >= props.dimensions.width
 
   // const imageSrc = isMobile ? ControllerImage : ExtraLifeLogo;
 
   return (
-    <div className={classes.main}>
+    <div>
       <Typography>Header</Typography>
       <Button {...defaultProps}>Contained Button</Button>
-      <div style={divStyle}>
+      {/* <div style={divStyle}>
         <Button className={classes.button} {...defaultProps}>Outlined Button</Button>
-      </div>
+      </div> */}
       <NotchedButton />
+      <Button className={secondSet.cssButton}>Simply CSS</Button>
     </div>
   );
 };

@@ -8,20 +8,49 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
+const a = 12, b = 4;
+
+const BASIC_PATH = `polygon(
+  0 0,
+  0 calc(100% - ${a}px),
+  ${a}px 100%,
+  100% 100%,
+  100% ${a}px,
+  calc(100% - ${a}px) 0
+)`;
+
 const POLYGON_PATH = `polygon(
   0 0,
-  0 0,
-  calc(100% - 5px) 0,
-  100% 5px,
+  0 calc(100% - ${a}px),
+  ${a}px 100%,
+  ${a}px calc(100% - ${b}px),
+  ${b}px calc(100% - ${a}px),
+  ${b}px ${b}px,
+  calc(100% - ${a}px) ${b}px,
+  calc(100% - ${b}px) ${a}px,
+  calc(100% - ${b}px) calc(100% - ${b}px),
+  ${a}px calc(100% - ${b}px),
+  ${a}px 100%,
   100% 100%,
-  calc(100% - 5px) 100%,
-  5px 100%,
-  0% calc(100% - 5px)
+  100% ${a}px,
+  calc(100% - ${a}px) 0
 )`;
+
+// const POLYGON_PATH = `polygon(
+//   0 0,
+//   0 0,
+//   calc(100% - 10px) 0,
+//   100% 10px,
+//   100% 100%,
+//   calc(100% - 10px) 100%,
+//   10px 100%,
+//   0% calc(100% - 10px)
+// )`;
 
 const useStyles = makeStyles({
   base: props => ({
-    backgroundColor: 'green',
+    background: 'rgba(0,0,0,0)',
+    // backgroundColor: 'green',
     fontFamily: props.theme.typography.fontFamily,
     fontSize: props.theme.typography.fontSize,
     fontWeight: props.theme.typography.fontWeightRegular,
@@ -29,19 +58,19 @@ const useStyles = makeStyles({
     minWidth: '64px',
     position: 'relative',
     textTransform: 'uppercase',
-    clipPath: POLYGON_PATH,
-    WebkitClipPath: POLYGON_PATH,
+    clipPath: BASIC_PATH,
+    WebkitClipPath: BASIC_PATH,
     '&::after': {
-      content: '""',
+      content: '"Bad Order"',
       position: 'absolute',
-      background: 'rgba(0,0,0,0)',
-      // background: '#f00', 
+      // background: 'rgba(0,0,0,0)',
+      background: props.theme.palette.text.primary, 
       clipPath: POLYGON_PATH,
       WebkitClipPath: POLYGON_PATH,
-      top: '5px',
-      left: '5px',
-      right: '5px',
-      bottom: '5px'
+      top: '0px',
+      left: '0px',
+      right: '0px',
+      bottom: '0px'
     }
   }),
   notchBorder: {
