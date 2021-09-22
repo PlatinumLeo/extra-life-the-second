@@ -28,7 +28,7 @@ const LandingPage = props => {
         <Donation />
       </Grid>
       <Grid item xs={12} lg={6}>
-        <Typography variant="h2">Day of Play: November 7th 11:00 AM ET</Typography>
+        <Typography variant="h2">Day of Play: November 6th 11:00 AM ET</Typography>
         <Countdown dayOfPlay={dayOfPlay} />
       </Grid>
     </Grid>
