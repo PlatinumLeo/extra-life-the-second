@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Paper, Typography } from '@material-ui/core';
 
 import Header from './components/Header.v2';
@@ -10,7 +10,27 @@ import Impact from './components/Impact';
 import Team from './components/Team';
 import Footer from './components/Footer';
 
+import { DonationsContext } from './DonationsProvider';
+
+const teamId = '57288';
 const App = props => {
+
+  const { updateDonations } = useContext(DonationsContext);
+  
+  const fetchDonationData = async() => {
+    try {
+      const response = await fetch('/api/teams/57288/donations');
+      const json = await response.json();
+      console.log(json);
+      updateDonations(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  useEffect(() => {
+    fetchDonationData();
+  }, []);
 
   let callOutProps0 = {
     title: 'Why Extra Life?',
