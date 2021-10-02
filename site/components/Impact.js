@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Button, Typography } from '@material-ui/core';
 
+import { DonationsContext } from '../DonationsProvider';
+
 const Impact = props => {
+
+  const { donations } = useContext(DonationsContext);
+
+  const reducer = (total, donation) => total + donation.amount;
+  const donationSum = donations.reduce(reducer, 0);
+  console.log(`Donation Sum: ${donationSum}`);
+
   return (
     <>
       <Typography>Our Impact</Typography>
-      <Typography>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Typography>
+      <Typography>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
       <Typography>3 Months</Typography>
       <Typography>5 Live Streams</Typography>
       <Typography>48 Donations</Typography>
