@@ -19,7 +19,7 @@ const App = props => {
   
   const fetchDonationData = async() => {
     try {
-      const response = await fetch('/api/teams/57288/donations');
+      const response = await fetch(`/api/teams/${teamId}/donations`);
       const json = await response.json();
       console.log(json);
       updateDonations(json);
