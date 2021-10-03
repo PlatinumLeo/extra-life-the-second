@@ -12,7 +12,7 @@ export function getThemeByName(theme, type = 'light') {
 
 export const themeNames = [
   'default',
-  'alph',
+  'alpha',
   'monochrome'
 ];
 
