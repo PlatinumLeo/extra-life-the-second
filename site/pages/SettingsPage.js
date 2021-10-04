@@ -34,6 +34,7 @@ const SettingsPage = props => {
         <FormLabel component="legend">Theme</FormLabel>
         <RadioGroup aria-label="theme" name="theme1" value={themeName} onChange={handleChange}>
           <FormControlLabel value="default" control={<Radio />} label="Default" />
+          <FormControlLabel value="alpha" control={<Radio />} label="Aplha" />
           <FormControlLabel value="monochrome" control={<Radio />} label="Monochrome" />
         </RadioGroup>
         <FormControlLabel control={<Switch checked={themeType === 'dark'} onChange={toggleThemeType}/>} label="Dark Mode" />
