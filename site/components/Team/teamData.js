@@ -3,6 +3,7 @@ import anthonyLuadersImage from '../../assets/images/Profiles/anthonyLuaders.jpg
 import shahZafraniImage from '../../assets/images/Profiles/shahZafrani.jpg';
 import zachGuthrieImage from '../../assets/images/Profiles/zachGuthrie.png';
 import joshuaDavisImage from '../../assets/images/Profiles/joshuaDavis.jpg'
+import lilyLiImage from '../../assets/images/Profiles/lilyLi.png'
 
 export default [{
   name: 'Alex Lyons',
@@ -34,4 +35,9 @@ export default [{
   game: 'Carnival Games (Wii)',
   description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
   image: joshuaDavisImage
+}, {
+  name: 'Lily Li',
+  discordTag: 'Anonymous#1337',
+  description: "Games were pretty much banned when I was a kid, but my parents finally caved when I was 10 and stuck in a hospital for 2 weeks with nothing to do. They gave me the tiniest handheld Tetris game and I am still an addict to this day. When I'm not zoning out and imagining tetrominoes falling into place, you can find me on my Animal Crossing island.",
+  image: lilyLiImage
 }];
