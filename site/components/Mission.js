@@ -3,15 +3,12 @@ import { Button, Typography } from '@material-ui/core';
 
 const Mission = props => {
   return (
-    <>
-      <Typography>OUR MISSION</Typography>
-      <Typography>
-        Extra Life is a game-a-thon, where people get together to play games for charity.
-        Extra Life partnerts with local hospitals across the United States and Canada.
-        Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.
-      </Typography>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <Typography variant="h4" align="center">Our Mission</Typography>
+      <hr style={{ width: '100px', border: '3px solid' }} />
+      <Typography align="center" style={{ maxWidth: '700px' }}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
       <Button>Meet the Team</Button>
-    </>
+    </div>
   );
 };
 
