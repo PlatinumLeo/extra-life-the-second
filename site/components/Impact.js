@@ -3,6 +3,8 @@ import { Button, Divider, Typography } from '@material-ui/core';
 
 import { DonationsContext } from '../DonationsProvider';
 
+import backgroundImage from '../assets/images/BackgroundImages/impact.png';
+
 const priorDonations = 3237;
 const priorDonationCount = 52;
 
@@ -15,18 +17,39 @@ const Impact = props => {
   console.log(`Donation Sum: ${donationSum}`);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Typography variant="h4" align="center">Our Impact</Typography>
-      <hr style={{ width: '100px', border: '3px solid' }} />
-      <Typography align="center" style={{ maxWidth: '700px' }}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
-      <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '1440px' }}>
-        <Typography>3 Months</Typography>
-        <Typography>5 Live Streams</Typography>
-        <Typography>{donations.length + priorDonationCount} Donations</Typography>
-        <Typography>${Math.floor((donationSum + priorDonations)/1000)}K+ Raised</Typography>
-        <Typography>Children's Hospital of Atlanta</Typography>
+    <div style={{ position: 'relative' }}>
+      <img src={backgroundImage} style={{ filter: 'grayscale(100%)', objectFit: 'cover' }} />
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.8, background: '#0150E9' }} />
+      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 1 }}>
+          <Typography variant="h3" align="center" style={{ textTransform: 'uppercase' }}>Our Impact</Typography>
+          <hr style={{ width: '100px', border: '3px solid' }} />
+          <Typography align="center" style={{ maxWidth: '700px' }}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
+          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '1440px' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Typography variant="h5">83.1</Typography>
+              <Typography variant="caption">Hours Streamed</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Typography variant="h5">41</Typography>
+              <Typography variant="caption">Live Streams</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Typography variant="h5">{donations.length + priorDonationCount}</Typography>
+              <Typography variant="caption">Donations</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Typography variant="h5">${Math.floor((donationSum + priorDonations)/1000)}K+</Typography>
+              <Typography variant="caption">Raised</Typography>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <Typography variant="h5">Children's Hospital of Atlanta</Typography>
+              <Typography variant="caption">Funded</Typography>
+            </div>
+          </div>
+          <Button>Donate Now</Button>
+        </div>
       </div>
-      <Button>Donate Now</Button>
     </div>
   );
 };

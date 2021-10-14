@@ -5,7 +5,7 @@ const calcFontSize = (size) => {
   const maxSize = size;
 
   return {
-    fontSize: `calc(${minSize}px + (${maxSize} + ${minSize}) * ((100vw - ${minWidth}px) / (${maxWidth} - ${minWidth})))`,
+    fontSize: `calc(${minSize}px + (${maxSize} - ${minSize}) * ((100vw - ${minWidth}px) / (${maxWidth} - ${minWidth})))`,
     minHeight: '0vw',
   };
 }
