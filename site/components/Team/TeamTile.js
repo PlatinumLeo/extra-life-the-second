@@ -18,9 +18,11 @@ const TeamTile = ({ data }) => {
         <div className="content">
           <div className="front">
             <img src={image} />
+            <GridListTileBar title={name} subtitle={discordTag} />
           </div>
           <div className="back">
             <img src={gameImage} />
+            <GridListTileBar title={game} subtitle={name} />
           </div>
         </div>
       </div>
