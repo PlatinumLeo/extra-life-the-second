@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Typography } from '@material-ui/core';
+
+import { TeamContext } from '../TeamProvider';
+import HeartProgressBar from './HeartProgressBar';
 
 import backgroundImage from '../assets/images/BackgroundImages/mmx4_still.jpg';
 
 const Hero = props => {
-  return (
 
+  const { team } = useContext(TeamContext);
+
+  return (
     <div style={{ position: 'relative' }}>
       <img src={backgroundImage} style={{ filter: 'blur(2px) '}} />
       <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.8, background: 'linear-gradient(76deg, #9EEEE1, #462DEA)' }} />
@@ -27,10 +32,10 @@ const Hero = props => {
               <Typography variant="caption" style={{ textTransform: 'uppercase' }}>Minutes</Typography>
             </div>
           </div>
-          <div>Progress bar goes here...</div>
+          <HeartProgressBar sumDonations={team.sumDonations} fundraisingGoal={team.fundraisingGoal} />
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <Typography variant="h3">$2,890</Typography>
-            <Typography>Raised of $25,000 goal</Typography>
+            <Typography variant="h3">${team.sumDonations}</Typography>
+            <Typography>Raised of ${team.fundraisingGoal} goal</Typography>
           </div>
         </div>
       </div>

@@ -14,7 +14,6 @@ const Impact = props => {
 
   const reducer = (total, donation) => total + donation.amount;
   const donationSum = donations.reduce(reducer, 0);
-  console.log(`Donation Sum: ${donationSum}`);
 
   return (
     <div style={{ position: 'relative' }}>
@@ -47,7 +46,11 @@ const Impact = props => {
               <Typography variant="caption">Funded</Typography>
             </div>
           </div>
-          <Button>Donate Now</Button>
+          <Button
+            href="https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=456320"
+            target="_blank">
+            Donate Now
+          </Button>
         </div>
       </div>
     </div>

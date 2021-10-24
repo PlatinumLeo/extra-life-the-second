@@ -7,6 +7,7 @@ import { compose, createStore } from 'redux';
 import './index.css';
 import App from './App';
 import ThemeProvider from './ThemeProvider';
+import TeamProvider from './TeamProvider';
 import DonationsProvider from './DonationsProvider';
 import allMiddleware from './middleware';
 import rootReducer from './reducers';
@@ -24,9 +25,11 @@ const store = createStore(
 render(
     <Provider store={store}>
         <ThemeProvider>
+          <TeamProvider>
             <DonationsProvider>
               <App />
             </DonationsProvider>
+          </TeamProvider>
         </ThemeProvider>
     </Provider>,
     document.getElementById('root') // eslint-disable-line no-undef
