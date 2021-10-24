@@ -65,7 +65,7 @@ const ProgressBar = ({ fillPercent }) => {
 
         return (
           <Grid item xs={3}>
-            <ProgressBarSegment fillPercent={segmentFill} />
+            <ProgressBarSegment key={`segment-${item}`} fillPercent={segmentFill} />
           </Grid>
         )
       })}
