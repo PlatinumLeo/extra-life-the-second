@@ -131,9 +131,9 @@ const Header = props => {
           className={classes.centerButton}
           href="https://discord.gg/NvshADM"
           target="_blank">Discord</Button>
-          <Button component={RouterLink} to="/settings" className={classes.centerButton}>
-            Settings
-          </Button>
+        <Button component={RouterLink} to="/settings" className={classes.centerButton}>
+          Settings
+        </Button>
       </Toolbar>
     );
   };

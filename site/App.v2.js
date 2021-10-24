@@ -11,6 +11,7 @@ import Team from './components/Team';
 import Footer from './components/Footer';
 
 import { DonationsContext } from './DonationsProvider';
+import { TeamContext } from './TeamProvider';
 
 import content0Image from './assets/images/BackgroundImages/samantha-sophia-fqyEoItOUGE-unsplash 1.png';
 import content1Image from './assets/images/BackgroundImages/erik-mclean-qgInQSplXBU-unsplash 1.png';
@@ -19,13 +20,23 @@ const teamId = '57288';
 const App = props => {
 
   const { updateDonations } = useContext(DonationsContext);
+  const { updateTeam } = useContext(TeamContext);
   
   const fetchDonationData = async() => {
     try {
       const response = await fetch(`/api/teams/${teamId}/donations`);
       const json = await response.json();
-      console.log(json);
       updateDonations(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchTeamData = async() => {
+    try {
+      const response = await fetch(`/api/teams/${teamId}`);
+      let json = await response.json();
+      updateTeam(json);
     } catch (error) {
       console.error(error);
     }
@@ -33,6 +44,7 @@ const App = props => {
 
   useEffect(() => {
     fetchDonationData();
+    fetchTeamData();
   }, []);
 
   let callOutProps0 = {
