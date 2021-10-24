@@ -53,7 +53,7 @@ const config = {
                 use: ['babel-loader']
             },
             {
-                test: /\.(ico|svg|jpg|png)$/,
+                test: /\.(ico|svg|jpg|jpeg|png)$/,
                 loader: 'file-loader'
             },
             {
