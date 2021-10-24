@@ -4,6 +4,7 @@ import shahZafraniImage from '../../assets/images/Profiles/shahZafrani.jpg';
 import zachGuthrieImage from '../../assets/images/Profiles/zachGuthrie.png';
 import joshuaDavisImage from '../../assets/images/Profiles/joshuaDavis.jpg'
 import lilyLiImage from '../../assets/images/Profiles/lilyLi.png';
+import jordanLeahey from '../../assets/images/Profiles/jordanLeahey.jpeg';
 
 import sonic3Image from '../../assets/images/Games/sonic3andknuckles.png';
 
@@ -38,14 +39,22 @@ export default [{
 }, {
   name: 'Joshua Davis',
   discordTag: 'Anonymous#1337',
-  game: 'Carnival Games (Wii)',
-  description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  game: 'Pokemon Silver',
+  description: "My first memories of playing video games were with the Atari, a single joystick, console, and bulky TV that generated way too much heat. But, I didn’t get into gaming until I stole my older sister’s Gameboy Color and copy of Pokémon Silver. The cartridge was finicky and if you moved too hard or jostled it the wrong way, all saved data would be lost. Surprisingly, that didn’t stop me from going back again and again, starting over and testing how far I could get until the game was corrupted.",
   image: joshuaDavisImage,
   gameImage: sonic3Image
 }, {
   name: 'Lily Li',
   discordTag: 'Anonymous#1337',
+  game: 'Tetris',
   description: "Games were pretty much banned when I was a kid, but my parents finally caved when I was 10 and stuck in a hospital for 2 weeks with nothing to do. They gave me the tiniest handheld Tetris game and I am still an addict to this day. When I'm not zoning out and imagining tetrominoes falling into place, you can find me on my Animal Crossing island.",
   image: lilyLiImage,
+  gameImage: sonic3Image
+}, {
+  name: 'Jordan Leahey',
+  discordTag: 'Anonymous#1337',
+  game: 'The Legend of Zelda: Minish Cap',
+  description: "My earliest memory of videogames were when I got a Gameboy Color and  Pokemon Gold for Christmas when I was in pre-school or kindergarten. Thats really what started it all, and I went on to struggle trying to play many games on non-lit backlit gameboy screens. One that really sticks out to me is the Legend of Zelda: Minish Cap. The gimmick to this game is that Link could shrink so it added an extra layer to all of the areas of the game. It’s not a very well-known Zelda game, but I played through it so many times trying to find all of the secrets I could.",
+  image: jordanLeahey,
   gameImage: sonic3Image
 }];

@@ -19,7 +19,7 @@ const Team = props => {
       Our Extra Life team is comprised of Slalom employees who all feel passionate about gaming and helping out those who need it most; children and their families who are in need of medical assistance.
       </Typography>
       <GridList cellHeight={360} cols={4} padding={20} style={{ maxWidth: '1440px' }}>
-        {teamData.map((data) => (<TeamTile data={data}/>))}
+        {teamData.map((data, i) => (<TeamTile key={`team-tile-${i}`} data={data}/>))}
       </GridList>
     </div>
   )
