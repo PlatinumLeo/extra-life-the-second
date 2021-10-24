@@ -22,9 +22,9 @@ const Hero = ({ dayOfPlay }) => {
           <Countdown dayOfPlay={dayOfPlay} />
           <HeartProgressBar sumDonations={team.sumDonations} fundraisingGoal={team.fundraisingGoal} />
           <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <Typography variant="h3">${team.sumDonations.toLocaleString()}</Typography>
-            <Typography>Raised of ${team.fundraisingGoal.toLocaleString()} goal</Typography>
-          </div>
+            <Typography variant="h3">${(!!team.sumDonations ? team.sumDonations : 0).toLocaleString()}</Typography>
+            <Typography>Raised of ${(!!team.fundraisingGoal ? team.fundraisingGoal : 0).toLocaleString()} goal</Typography>
+          </div> 
         </div>
       </div>
     </div>
