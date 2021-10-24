@@ -17,6 +17,8 @@ import content0Image from './assets/images/BackgroundImages/samantha-sophia-fqyE
 import content1Image from './assets/images/BackgroundImages/erik-mclean-qgInQSplXBU-unsplash 1.png';
 
 const teamId = '57288';
+const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
+
 const App = props => {
 
   const { updateDonations } = useContext(DonationsContext);
@@ -68,7 +70,7 @@ const App = props => {
   return (
     <Paper>
       <Header />
-      <Hero />
+      <Hero dayOfPlay={dayOfPlay} />
       <Sponsor />
       <Mission />
       <CallOut {...callOutProps0}/>
