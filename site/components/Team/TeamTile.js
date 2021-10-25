@@ -50,13 +50,13 @@ const TeamTile = ({ data }) => {
           </div>
         </div>
       </div>
-      <Modal
+      {/* <Modal
         open={open}
         onClose={handleClose}>
           <Box style={modalStyle}>
             <Typography>{description}</Typography>
           </Box>
-      </Modal>
+      </Modal> */}
     </GridListTile>
   );
 };
