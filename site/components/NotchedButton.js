@@ -8,7 +8,7 @@ import {
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core';
 
-const a = 12, b = 4;
+const a = 8, b = 3;
 
 const BASIC_PATH = `polygon(
   0 0,

@@ -20,6 +20,16 @@ const teamId = '57288';
 const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
 
 const App = props => {
+  const [dimensions, setDimensions] = useState({width: window.innerWidth, height: window.innerHeight});
+
+  const updateWindowDimensions = () => {
+    setDimensions({width: window.innerWidth, height: window.innerHeight});
+  }
+
+  useEffect(() => {
+    window.addEventListener('resize', updateWindowDimensions);
+    return () => window.removeEventListener('resize', updateWindowDimensions);
+  });
 
   const { updateDonations } = useContext(DonationsContext);
   const { updateTeam } = useContext(TeamContext);
@@ -69,7 +79,7 @@ const App = props => {
 
   return (
     <Paper>
-      <Header />
+      <Header dimensions={dimensions} />
       <Hero dayOfPlay={dayOfPlay} />
       <Sponsor />
       <Mission />
