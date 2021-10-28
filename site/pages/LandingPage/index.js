@@ -1,37 +1,48 @@
-import React from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { Paper, Typography } from '@material-ui/core';
 
-import {
-  Grid,
-  Typography
-} from '@material-ui/core';
+import Hero from '../../components/Hero'
+import Sponsor from '../../components/Sponsor';
+import Mission from '../../components/Mission';
+import CallOut from '../../components/CallOut';
+import Impact from '../../components/Impact';
+import Team from '../../components/Team';
 
-import Countdown from '../../components/Countdown';
-import Donation from '../../components/Donation';
-import Events from '../../components/Events';
-import Explaination from '../../components/Explaination';
+import content0Image from '../../assets/images/BackgroundImages/samantha-sophia-fqyEoItOUGE-unsplash 1.png';
+import content1Image from '../../assets/images/BackgroundImages/erik-mclean-qgInQSplXBU-unsplash 1.png';
 
-import { useDefaultStyles } from '../../styles';
+const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
 
 const LandingPage = props => {
-  const classes = useDefaultStyles();
-  const dayOfPlay = new Date("Nov 6, 2021 11:00:00").getTime();
+
+  let callOutProps0 = {
+    title: 'Why Extra Life?',
+    content: "When I was a kid, I had really bad asthma and when I was very little, I would have to go to a hospital for it. Eventually, I was able to go home with a nebulizer and Albuterol, but whenever I had an asthma attack, I would have to sit inside and not run around, so I spent a lot of time while I was sick playing games. That inspired me to find a way to give back to the medical community and incorporate video  games. While participating in something like Games Done Quick would be super cool, it didn't quite fit what I wanted to do, where I found Extra Life, which is a great way to get others involved.",
+    buttonText: 'Elementum Auctor',
+    buttonLink: '',
+    image: content0Image,
+    layout: 'textLeft'
+  };
+
+  let callOutProps1 = {
+    title: 'How can I join?',
+    content: "On November 6th, we are hosting a Day of Play, where we will stream games for 24 hours. Join us in Discord and in whatever games we set out to play! \nIf you would like to help spread the word and help us raise money and awareness, please reach out to Alex Lyons or Shah Zafrani.",
+    buttonText: 'Consequat Massa',
+    buttonLink: '',
+    image: content1Image,
+    layout: 'textRight'
+  };
 
   return (
-    <Grid container className={classes.main}>
-      <Grid item xs={12} lg={6}>
-        <Events />
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <Explaination />
-      </Grid>
-      <Grid container item xs={12} lg={6}>
-        <Donation />
-      </Grid>
-      <Grid item xs={12} lg={6}>
-        <Typography variant="h2">Day of Play: November 6th 11:00 AM ET</Typography>
-        <Countdown dayOfPlay={dayOfPlay} />
-      </Grid>
-    </Grid>
+    <Paper>
+      <Hero dayOfPlay={dayOfPlay} />
+      <Sponsor />
+      <Mission />
+      <CallOut {...callOutProps0}/>
+      <CallOut {...callOutProps1}/>
+      <Impact />
+      <Team />
+    </Paper>
   );
 };
 

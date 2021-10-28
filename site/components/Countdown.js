@@ -18,16 +18,16 @@ const Countdown = ({ dayOfPlay }) => {
   return (
     <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '700px' }}>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toLocaleString()}</Typography>
-        <Typography variant="caption" style={{ textTransform: 'uppercase' }}>Days</Typography>
+        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toLocaleString()}</Typography>
+        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Days</Typography>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60)).toLocaleString()}</Typography>
-        <Typography variant="caption" style={{ textTransform: 'uppercase' }}>Hours</Typography>
+        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60)).toLocaleString()}</Typography>
+        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Hours</Typography>
       </div>
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography variant="h5">{Math.floor(timeLeft / (1000 * 60)).toLocaleString()}</Typography>
-        <Typography variant="caption" style={{ textTransform: 'uppercase' }}>Minutes</Typography>
+        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60)).toLocaleString()}</Typography>
+        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Minutes</Typography>
       </div>
     </div>
   );
