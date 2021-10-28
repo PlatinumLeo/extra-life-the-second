@@ -6,7 +6,6 @@ import {
   FormControl,
   FormControlLabel,
   FormLabel,
-  Paper,
   Radio,
   RadioGroup,
   Switch
@@ -33,9 +32,9 @@ const SettingsPage = props => {
       <FormControl component="fieldset">
         <FormLabel component="legend">Theme</FormLabel>
         <RadioGroup aria-label="theme" name="theme1" value={themeName} onChange={handleChange}>
-          <FormControlLabel value="default" control={<Radio />} label="Default" />
-          <FormControlLabel value="alpha" control={<Radio />} label="Aplha" />
-          <FormControlLabel value="monochrome" control={<Radio />} label="Monochrome" />
+          {themeNames.map((name) => (
+            <FormControlLabel key={`theme-radio-${name}`} value={name} control={<Radio />} label={capitalizeFirstLetter(name)}/>
+          ))}
         </RadioGroup>
         <FormControlLabel control={<Switch checked={themeType === 'dark'} onChange={toggleThemeType}/>} label="Dark Mode" />
       </FormControl>
