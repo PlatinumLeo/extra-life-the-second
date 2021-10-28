@@ -6,14 +6,14 @@ import { MuiThemeProvider } from '@material-ui/core';
 import { getThemeByName } from './theme';
 
 export const ThemeContext = createContext({
-  themeName: 'default',
+  themeName: 'alpha',
   updateThemeName: (themeName) => {},
   themeType: 'light',
   toggleThemeType: () => {}
 });
 
 const ThemeProvider = ({ children }) => {
-  const currentThemeName = localStorage.getItem('appTheme') || 'default';
+  const currentThemeName = localStorage.getItem('appTheme') || 'alpha';
   const currentThemeType = localStorage.getItem('appType') || 'light';
 
   const [themeName, setThemeName] = useState(currentThemeName);
@@ -28,6 +28,7 @@ const ThemeProvider = ({ children }) => {
   };
 
   const theme = getThemeByName(themeName, themeType);
+  console.log(theme);
 
   return (
     <ThemeContext.Provider value={{ themeName, updateThemeName, themeType, toggleThemeType }}>
