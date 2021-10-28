@@ -14,6 +14,7 @@ const calcFontSize = (size) => {
 const h1 = {
   ...calcFontSize(54),
   fontWeight: 700,
+  lineHeight: '120%'
 };
 
 const h2 = {
@@ -39,6 +40,7 @@ const h5 = {
 const body1 = {
   ...calcFontSize(18),
   fontWeight: 400,
+  lineHeight: '32px'
 };
 
 const button = {
