@@ -48,7 +48,9 @@ const Impact = props => {
           </div>
           <Button
             href="https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=456320"
-            target="_blank">
+            target="_blank"
+            variant='contained'
+            style={{ height: '57px', width: '330px' }}>
             Donate Now
           </Button>
         </div>
