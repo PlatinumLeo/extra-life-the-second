@@ -1,5 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
 
 import {
   Typography
@@ -7,10 +7,10 @@ import {
 
 import TwitchItem from './TwitchItem';
 
-const mapStateToProps = state => ({
-  streams: state.twitch.streams,
-  users: state.twitch.users
-});
+// const mapStateToProps = state => ({
+//   streams: state.twitch.streams,
+//   users: state.twitch.users
+// });
 
 const Twitch = ({ streams, users }) => {
   let componentToRender;
@@ -29,4 +29,4 @@ const Twitch = ({ streams, users }) => {
   return (<>{componentToRender}</>);
 };
 
-export default connect(mapStateToProps)(Twitch);
+export default Twitch;

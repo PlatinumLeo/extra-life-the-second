@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/alyons/extra-life-the-second#readme",
   "dependencies": {
+    "@babel/runtime": "^7.15.4",
     "axios": "^0.24.0",
+    "core-js": "^3.19.0",
     "express": "^4.17.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@babel/core": "^7.15.8",
     "@babel/eslint-parser": "^7.15.8",
+    "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@devexpress/dx-react-core": "^2.7.6",
@@ -44,7 +47,7 @@
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.1.0",
     "caniuse-lite": "^1.0.30001272",
-    "clean-webpack-plugin": "^4.0.0",
+    "clean-webpack-plugin": "^2.0.2",
     "css-loader": "^2.1.1",
     "dotenv": "^10.0.0",
     "enzyme": "^3.11.0",
