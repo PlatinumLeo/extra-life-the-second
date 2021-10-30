@@ -1,71 +1,63 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Grid } from '@material-ui/core';
 
-const Heart = props => {
+import { BreakpointContext } from '../AdaptivityProvider';
+
+const Heart = ({ breakpoint }) => {
+  const height = (breakpoint === 'xs') ? 20 : 24;
+  const width = (breakpoint === 'xs') ? 22 : 26;
+  const pathCommands = (breakpoint === 'xs') ? 
+    'M 0 3.25 V 8.25 L 11 20 L 22 8.25 V 3.25 L 18.75 0 H 14.25 L 11 3.25 L 7.75 0 H3.25 Z' :
+    'M 0 4 V 11 L 13 24 L 26 11 V 4 L 22 0 H 17 L 13 4 L 9 0 H 4 Z';
+
   return (
-    <svg version="1.1" id="heart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 28 28" width="28" height="28" style={{ padding: '0 1em 0 0' }}>
+    <svg version="1.1" id="heart" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox={`0 0 ${width} ${height}`} width={width} height={height} style={{ padding: '0 0.5em 0 0' }}>
       <path
         style={{ fill: "#ffffff" }}
-        d="M 5 1
-           L 1 5
-           V 12
-           L 14 25
-           L 27 12
-           V 5
-           L 23 1
-           H 18
-           L 14 5
-           L 10 1
-           H 5
-           Z"
+        d={pathCommands}
       />
     </svg>
   );
 };
 
-const ProgressBarSegment =  ({ fillPercent=1.0 }) => {
+const ProgressBarSegment =  ({ breakpoint, fillPercent=1.0 }) => {
 
-  let hMove = fillPercent * 114;
-  let pathCommands = `M 4,6
-  l 3,3
-  h ${hMove}
-  l 3,-3
-  l -3,-3
-  h -${hMove}z`;
+  let height = 14;
+  let width = (breakpoint === 'xs') ? 70 : 128;
 
-  if (fillPercent <= 0) pathCommands = "";
+  let outlineCommands = `M 2,7 L 8,13 H ${width - 8} L ${width - 2},7 L ${width - 8},1 H 8 Z`;
+
+  let hMove = fillPercent * (width - 20);
+  let fillCommands = `M 7,7 l 3,3 h ${hMove} l 3,-3 l -3,-3 h -${hMove} Z`;
+
+  if (fillPercent <= 0) fillCommands = '';
 
   return (
-    <svg version="1.1" id="progressBarSegment" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 128 12" >
+    <svg version="1.1" id="progressBarSegment" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox={`0 0 ${width} ${height}`} >
       <g>
         <path 
-          style={{ stroke: "#ffffff", fill: "none" }}
-          d="M 1,6
-             l 5,5
-             h 116
-             l 5,-5
-             l -5,-5
-             h -116z"
+          style={{ fill: 'none', stroke: '#ffffff', strokeWidth: '2px' }}
+          d={outlineCommands}
         />
         <path 
           style={{ fill: "#ffffff" }}
-          d={pathCommands}
+          d={fillCommands}
         />
       </g>
     </svg>
   )
 };
 
-const ProgressBar = ({ fillPercent }) => {
+const ProgressBar = ({ breakpoint, fillPercent }) => {
   return (
-    <Grid container spacing={1} style={{ maxWidth: "1000px" }}>
+    <Grid container spacing={1}>
       {[0, 1, 2, 3].map((item) => {
         let segmentFill = Math.min(0.25, fillPercent) * 4;
         fillPercent -= 0.25;
 
         return (
           <Grid item xs={3} key={`segment-${item}`}>
-            <ProgressBarSegment fillPercent={segmentFill} />
+            <ProgressBarSegment breakpoint={breakpoint} fillPercent={segmentFill} />
           </Grid>
         )
       })}
@@ -73,11 +65,13 @@ const ProgressBar = ({ fillPercent }) => {
   )
 };
 
-const HeartProgressBar = ({ sumDonations, fundraisingGoal }) => {
+const HeartProgressBar = ({ sumDonations, fundraisingGoal, className }) => {
+  const breakpoint = useContext(BreakpointContext);
+
   return (
-    <div style={{ display: 'flex' }}>
-      <Heart />
-      <ProgressBar fillPercent={ (sumDonations / fundraisingGoal) }/>
+    <div style={{ display: 'flex' }} className={className}>
+      <Heart breakpoint={breakpoint} />
+      <ProgressBar breakpoint={breakpoint} fillPercent={ (sumDonations / fundraisingGoal) }/>
     </div>
   )
 

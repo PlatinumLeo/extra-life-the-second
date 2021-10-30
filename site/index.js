@@ -3,17 +3,20 @@ import { render } from 'react-dom';
 
 import './index.css';
 import App from './App.v2';
+import AdaptivityProvider from './AdaptivityProvider';
 import ThemeProvider from './ThemeProvider';
 import TeamProvider from './TeamProvider';
 import DonationsProvider from './DonationsProvider';
 
 render(
       <ThemeProvider>
-        <TeamProvider>
-          <DonationsProvider>
-            <App />
-          </DonationsProvider>
-        </TeamProvider>
+        <AdaptivityProvider>
+          <TeamProvider>
+            <DonationsProvider>
+              <App />
+            </DonationsProvider>
+          </TeamProvider>
+        </AdaptivityProvider>
       </ThemeProvider>,
     document.getElementById('root') // eslint-disable-line no-undef
 );

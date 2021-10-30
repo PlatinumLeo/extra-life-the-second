@@ -9,8 +9,6 @@ import {
   ListItemText
 } from '@material-ui/core';
 
-import { useDefaultStyles } from '../../styles';
-
 const gameList = [
   {
     name: 'Cards Against Humanity',
@@ -120,10 +118,9 @@ const gameList = [
 ];
 
 const GamesPage = props => {
-  const classes = useDefaultStyles();
 
   return (
-    <Grid className={classes.main}>
+    <Grid>
       <Typography variant="h2">Games List</Typography>
       <List>
         {gameList.map((game, i) => (

@@ -9,7 +9,6 @@ import Router from './components/Router';
 import { DonationsContext } from './DonationsProvider';
 import { TeamContext } from './TeamProvider';
 
-
 const teamId = '57288';
 const twitchUsernames = [
   'pyroticblaziken'

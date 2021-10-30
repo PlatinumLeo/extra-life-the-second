@@ -10,6 +10,7 @@ import Team from '../../components/Team';
 
 import content0Image from '../../assets/images/BackgroundImages/samantha-sophia-fqyEoItOUGE-unsplash 1.png';
 import content1Image from '../../assets/images/BackgroundImages/erik-mclean-qgInQSplXBU-unsplash 1.png';
+import BreakpointDisplay from '../../components/BreakpointDisplay';
 
 const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
 
@@ -35,6 +36,7 @@ const LandingPage = props => {
 
   return (
     <Paper>
+      {/* <BreakpointDisplay /> */}
       <Hero dayOfPlay={dayOfPlay} />
       <Sponsor />
       <Mission />

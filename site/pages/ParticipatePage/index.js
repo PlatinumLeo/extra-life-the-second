@@ -6,13 +6,9 @@ import {
     Typography
 } from '@material-ui/core';
 
-import { useDefaultStyles } from '../../styles';
-
 const ParticipatePage = props => {
-  const classes = useDefaultStyles();
-
   return (
-    <Grid container spacing={3} className={classes.main}>
+    <Grid container spacing={3}>
       <Grid item xs={12}>
         <Typography variant="h3">How do I participate?</Typography>
         <Typography variant="h4">Day of Play</Typography>

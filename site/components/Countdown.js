@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 
-import Typography from '@material-ui/core/Typography';
+import DataDisplay from './DataDisplay';
 
-const Countdown = ({ dayOfPlay }) => {
+const Countdown = ({ className, dayOfPlay }) => {
   const [now, setNow] = useState(new Date().getTime());
 
   useEffect(() => {
@@ -14,22 +14,14 @@ const Countdown = ({ dayOfPlay }) => {
   }, []);
 
   let timeLeft = dayOfPlay - now;
+  let dataPoints = [
+    { title: Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toLocaleString(), subtitle: 'days' },
+    { title: Math.floor(timeLeft / (1000 * 60 * 60)).toLocaleString(), subtitle: 'hours' },
+    { title: Math.floor(timeLeft / (1000 * 60)).toLocaleString(), subtitle: 'minutes' }
+  ];
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '700px' }}>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60 * 24)).toLocaleString()}</Typography>
-        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Days</Typography>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60 * 60)).toLocaleString()}</Typography>
-        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Hours</Typography>
-      </div>
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-        <Typography color='textSecondary' variant="h5">{Math.floor(timeLeft / (1000 * 60)).toLocaleString()}</Typography>
-        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>Minutes</Typography>
-      </div>
-    </div>
+    <DataDisplay dataPoints={dataPoints} className={className} />
   );
 };
 

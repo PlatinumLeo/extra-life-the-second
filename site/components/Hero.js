@@ -1,34 +1,47 @@
 import React, { useContext } from 'react';
-import { Typography } from '@material-ui/core';
+import { makeStyles, Typography } from '@material-ui/core';
+import { useTheme } from '@material-ui/styles';
 
+import { BreakpointContext } from '../AdaptivityProvider';
 import { TeamContext } from '../TeamProvider';
 import HeartProgressBar from './HeartProgressBar';
 
 import backgroundImage from '../assets/images/BackgroundImages/mmx4_still.jpg';
 import Countdown from './Countdown';
 
-const Hero = ({ dayOfPlay }) => {
+const getHeroStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.primary.main,
+    padding: '80px 0 100px 0'
+  },
+  callout: { padding: '0 24px 32px 24px', textTransform: 'uppercase' },
+  nextStream: { letterSpacing: '0.08em', padding: '0 24px 20px 24px', textTransform: 'uppercase' },
+  countdown: { margin: '0 24px 64px 24px' },
+  progressBar: { padding: '0 24px 20px 24px' },
+  donationSumContainer: { float: 'left', left: '50%', position: 'relative' },
+  donationSumContent: { float: 'left', left: '-50%', position: 'relative' }
+}));
 
+const Hero = ({ dayOfPlay }) => {
+  const theme = useTheme();
+  const breakpoint = useContext(BreakpointContext);
+  const classes = getHeroStyles(theme);
   const { team } = useContext(TeamContext);
 
   return (
-    <div style={{ position: 'relative' }}>
-      <img src={backgroundImage} style={{ filter: 'blur(2px) '}} />
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.8, background: 'linear-gradient(76deg, #9EEEE1, #462DEA)' }} />
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 1 }}>
-          <Typography variant="h1" align="center" color='textSecondary' style={{ maxWidth: '850px', textTransform: 'uppercase' }}>We play games to help children’s hospitals in the united states and canada</Typography>
-          <Typography variant="h5" align="center" color='textSecondary' style={{ maxWidth: '850px', textTransform: 'uppercase' }}>Day of Play starts in</Typography>
-          <Countdown dayOfPlay={dayOfPlay} />
-          <HeartProgressBar sumDonations={team.sumDonations} fundraisingGoal={team.fundraisingGoal} />
-          <div style={{ display: 'flex', flexDirection: 'row' }}>
-            <Typography color='textSecondary' variant="h3">${(!!team.sumDonations ? team.sumDonations : 0).toLocaleString()}</Typography>
-            <Typography color='textSecondary'>Raised of ${(!!team.fundraisingGoal ? team.fundraisingGoal : 0).toLocaleString()} goal</Typography>
-          </div> 
-        </div>
+    <div className={classes.root}>
+      <Typography align='center' color='textSecondary' variant='h3' className={classes.callout}>We play games to help children’s hospitals in the United States and Canada</Typography>
+      <Typography align='center' color='textSecondary' variant='h6' className={classes.nextStream}>Next stream starts in</Typography>
+      <Countdown dayOfPlay={dayOfPlay} className={classes.countdown} />
+      <HeartProgressBar sumDonations={team.sumDonations} fundraisingGoal={team.fundraisingGoal} className={classes.progressBar} />
+      <div className={classes.donationSumContainer}>
+        <div className={classes.donationSumContent}>
+          <Typography color='textSecondary' variant="h3" display='inline'>${(!!team.sumDonations ? team.sumDonations : 0).toLocaleString()} </Typography>
+          <Typography color='textSecondary' display='inline'>Raised of ${(!!team.fundraisingGoal ? team.fundraisingGoal : 0).toLocaleString()} goal</Typography>
+        </div> 
       </div>
     </div>
-  );
+  )
 };
 
 export default Hero;

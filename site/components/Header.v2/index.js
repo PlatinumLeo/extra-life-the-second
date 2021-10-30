@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
@@ -18,12 +18,16 @@ import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.pn
 
 import useStyles from './styles';
 
-const Header = props => {
+import { SizeContext } from '../../AdaptivityProvider';
+
+const Header = (props) => {
   const theme = useTheme();
   const classes = useStyles(theme);
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const isMobile = theme.breakpoints.values.sm >= props.dimensions.width
+  const { width } = useContext(SizeContext);
+
+  const isMobile = theme.breakpoints.values.sm >= width;
 
   const imageSrc = isMobile ? ControllerImage : ExtraLifeLogo;
 
