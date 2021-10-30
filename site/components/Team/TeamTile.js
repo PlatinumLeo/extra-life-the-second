@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
   Box,
-  GridListTile,
-  GridListTileBar,
+  ImageListItem,
+  ImageListItemBar,
   Modal,
   Typography
 } from '@material-ui/core';
@@ -37,16 +37,16 @@ const TeamTile = ({ data }) => {
   } = data;
 
   return (
-    <GridListTile style={{ height: '328px', width: '328px', margin: '16px' }} onClick={handleOpen}>
+    <ImageListItem style={{ height: '328px', width: '328px', margin: '16px' }} onClick={handleOpen}>
       <div className="card">
         <div className="content">
           <div className="front">
             <img src={image} />
-            <GridListTileBar title={name} subtitle={discordTag} />
+            <ImageListItemBar title={name} subtitle={discordTag} />
           </div>
           <div className="back">
             <img src={gameImage} />
-            <GridListTileBar title={game} subtitle={name} />
+            <ImageListItemBar title={game} subtitle={name} />
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@ const TeamTile = ({ data }) => {
             <Typography>{description}</Typography>
           </Box>
       </Modal> */}
-    </GridListTile>
+    </ImageListItem>
   );
 };
 
