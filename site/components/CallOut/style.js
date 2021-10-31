@@ -74,6 +74,8 @@ const getStyles = makeStyles((theme) => ({
   image: {
     filter: 'grayscale(100%)',
     objectFit: 'cover',
+    width: '100%',
+    height: '100%',
     [theme.breakpoints.up('xl')]: {
       objectFit: 'fill'
     }
