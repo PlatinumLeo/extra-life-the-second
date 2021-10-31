@@ -8,6 +8,7 @@ const getStyles = makeStyles((theme) => ({
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     padding: '80px 0 100px 0',
+    overflowX: 'hidden',
     [theme.breakpoints.up('sm')]: {
       padding: '144px 0 240px 0'
     },
