@@ -1,4 +1,17 @@
-export const createNotchedClipPath = (clipRadius) => {
+export const createNotchedClipPath = (clipRadius, reverse=false) => {
+  if (reverse) {
+    return `polygon(
+      100% 0%,
+      100% calc(100% - ${clipRadius}px),
+      calc(100% - ${clipRadius}px) 100%,
+      0% 100%,
+      0% ${clipRadius}px,
+      ${clipRadius}px 0%
+    );`;
+  }
+
+
+
   return `polygon(
     0 0,
     0 calc(100% - ${clipRadius}px),
