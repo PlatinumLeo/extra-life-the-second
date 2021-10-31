@@ -1,23 +1,68 @@
 import React from 'react';
+import { useTheme } from '@material-ui/styles';
+import {
+  Grid,
+  Typography,
+  makeStyles
+} from '@material-ui/core';
 
-import Typography from '@material-ui/core/Typography';
+import { createNotchedClipPath, createNotchedBorder } from  '../utils';
 
-const DataDisplayItem = ({ title, subtitle }) => {
+const clipRadius = 10;
+const borderWidth = 2;
+
+const getDataDisplayStyles = makeStyles((theme) => ({
+  root: {
+    position: 'relative',
+    'clip-path': createNotchedClipPath(clipRadius),
+    background: 'rgba(0, 0, 0, 0)',
+    border: 'none',
+    color: theme.palette.common.white,
+    '&::after': {
+      content: '"DataDisplay"',
+      position: 'absolute',
+      'clip-path': createNotchedBorder(clipRadius, borderWidth),
+      background: `${theme.palette.common.white} none repeat scroll 0% 0%`,
+      inset: '0px'
+    }
+  },
+  child: { 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    borderRight: '2px solid #fff'
+  },
+  lastChild: {
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center'
+  }
+}));
+
+const DataDisplayItem = ({ title, subtitle, className }) => {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-    <Typography color='textSecondary' variant="h5">{title}</Typography>
-    <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
-  </div>
+    <Grid item xs={4}>
+      <div className={className}>
+        <Typography color='textSecondary' variant="h5">{title}</Typography>
+        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
+      </div>
+    </Grid>
   )
 };
 
 const DataDisplay = ({ className, dataPoints }) => {
+  const theme = useTheme();
+  const classes = getDataDisplayStyles(theme);
+
   return (
-    <div className={className} style={{ border: '2px solid #fff', display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
-      {dataPoints.map(({ title, subtitle }) => (
-        <DataDisplayItem key={`display-${title}-${subtitle}`} title={title} subtitle={subtitle} />
-      ))}
+    <div className={`${className} ${classes.root}`}>
+      <Grid container>
+        {dataPoints.map(({ title, subtitle }, i) => (
+          <DataDisplayItem key={`display-${title}-${subtitle}`} title={title} subtitle={subtitle} className={(i < dataPoints.length - 1) ? classes.child : classes.lastChild} />
+        ))}
+      </Grid>
     </div>
+    
   );
 };
 

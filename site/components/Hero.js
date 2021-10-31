@@ -12,6 +12,9 @@ import Countdown from './Countdown';
 const getHeroStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.primary.main,
+    backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     padding: '80px 0 100px 0'
   },
   callout: { padding: '0 24px 32px 24px', textTransform: 'uppercase' },
