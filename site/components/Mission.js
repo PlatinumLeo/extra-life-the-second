@@ -9,7 +9,14 @@ import { useTheme } from '@material-ui/styles';
 const getMissionStyles = makeStyles((theme) => ({
   root: { padding: '48px 0 24px 0' },
   rule: { border: `1px solid ${theme.palette.primary.main}`, width: '60px' },
-  text: { lineHeight: '170%', padding: '32px 24px' },
+  text: {
+    lineHeight: '170%',
+    padding: '32px 24px',
+    maxWidth: '700px',
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: 'calc(calc(100vw - 700px) / 2)'
+    }
+  },
   button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' }
 }));
 

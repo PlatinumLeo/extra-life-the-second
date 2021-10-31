@@ -12,6 +12,9 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       minHeight: '45vw',
       margin: '48px 0'
+    },
+    [theme.breakpoints.up('xl')]: {
+      minHeight: '608px'
     }
   },
   rule: {
@@ -21,12 +24,20 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       border: `2px solid ${theme.palette.primary.main}`,
       marginLeft: '48px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginLeft: '120px',
+      marginBottom: '32px',
+      width: '100px',
     }
   },
   title: {
     padding: '32px 24px 0px 24px', 
     [theme.breakpoints.up('sm')]: {
       paddingLeft: '48px'
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '124px 0 16px 120px'
     }
   },
   textContainer: {
@@ -43,6 +54,9 @@ const getStyles = makeStyles((theme) => ({
     padding: '32px 24px',
     [theme.breakpoints.up('sm')]: {
       padding: '0 80px 24px 48px'
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 120px 40px 120px'
     }
   },
   textContainerRight: {
@@ -59,7 +73,10 @@ const getStyles = makeStyles((theme) => ({
   button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' },
   image: {
     filter: 'grayscale(100%)',
-    objectFit: 'cover'
+    objectFit: 'cover',
+    [theme.breakpoints.up('xl')]: {
+      objectFit: 'fill'
+    }
   },
   imageContainer: {
     backgroundColor: 'red',
@@ -73,6 +90,12 @@ const getStyles = makeStyles((theme) => ({
       position: 'absolute',
       right: '0px',
       top: '-24px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '560px',
+      width: '560px',
+      left: 'calc(55vw - 60px)',
+      top: '48px'
     }
   },
   imageOverlay: {
@@ -105,6 +128,12 @@ const getStyles = makeStyles((theme) => ({
       left: '0px',
       top: '-24px',
       zIndex: '1'
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '560px',
+      width: '560px',
+      left: 'calc(20vw - 60px)',
+      top: '48px'
     }
   }
 }));

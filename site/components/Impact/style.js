@@ -8,12 +8,28 @@ const getStyles = makeStyles((theme) => ({
     backgroundBlendMode: 'saturation',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    padding: '48px 0 24px 0'
+    padding: '48px 0 24px 0',
+    [theme.breakpoints.up('xl')]: {
+      padding: '96px 0 124px 0'
+    }
   },
   rule: { border: `1px solid ${theme.palette.common.white}`, width: '60px' },
-  text: { lineHeight: '170%', padding: '32px 24px' },
+  text: {
+    lineHeight: '170%',
+    padding: '32px 24px',
+    maxWidth: '700px',
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: 'calc(calc(100vw - 700px) / 2)'
+    }
+  },
   button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' },
-  carousel: { padding: '0 24px 32px 24px' }
+  carousel: {
+    padding: '0 24px 32px 24px',
+    maxWidth: '1000px',
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: 'calc(calc(100vw - 1000px) / 2)'
+    }
+  }
 }));
 
 export default getStyles;
