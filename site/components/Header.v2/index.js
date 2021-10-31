@@ -1,15 +1,19 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
   Button,
   Divider,
-  Link,
+  Hidden,
+  IconButton,
   Menu,
   MenuItem,
   Toolbar,
   Typography
 } from '@material-ui/core';
+import {
+  Menu as MenuIcon
+} from '@material-ui/icons';
 import { useTheme } from '@material-ui/styles';
 
 import ControllerImage from '../../assets/images/Icons/controller_white.png';
@@ -18,18 +22,14 @@ import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.pn
 
 import useStyles from './styles';
 
-import { SizeContext } from '../../AdaptivityProvider';
-
-const Header = (props) => {
+const Header = props => {
   const theme = useTheme();
-  const classes = useStyles(theme);
+  const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
-  const { width } = useContext(SizeContext);
+  const isMobile = theme.breakpoints.values.sm >= props.dimensions.width
 
-  const isMobile = theme.breakpoints.values.sm >= width;
-
-  const imageSrc = isMobile ? ControllerImage : ExtraLifeLogo;
+  const imageSrc = ExtraLifeLogo;
 
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -102,40 +102,97 @@ const Header = (props) => {
     
     return (
       <Toolbar align="center" className={classes.center}>
-        <Button component={RouterLink} to="/" color='primary' variant='contained'>
-          Our Mission
+        <Button component={RouterLink} to="/" className={classes.centerButton}>
+          Home
         </Button>
-        <Button component={RouterLink} to="/" color='primary' variant='contained'>
+        <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.centerButton}>
+          Event Info
+        </Button>
+        <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} className={classes.centerButton}>
+          <MenuItem
+            component={RouterLink}
+            to="/schedule"
+            onClick={handleClose}
+            >Schedule</MenuItem>
+          <MenuItem
+            component={RouterLink}
+            to="/participate"
+            onClick={handleClose}
+            >Participation FAQ</MenuItem>
+          <MenuItem
+            component={RouterLink}
+            to="/games"
+            onClick={handleClose}
+            >Games List</MenuItem>
+        </Menu>
+        <Button component={RouterLink} to="/community" className={classes.centerButton}>
           Community
         </Button>
-        <Button component={RouterLink} to="/" color='primary' variant='contained'>
-          Meet the Team
+        <Button component={RouterLink} to="/aboutus" className={classes.centerButton}>
+          About Us
         </Button>
-        <Button className={classes.centerButton} href="https://discord.gg/NvshADM" target="_blank" color='primary' variant='contained'>
-          Discord
+        <Button
+          className={classes.centerButton}
+          href="https://discord.gg/NvshADM"
+          target="_blank">Discord</Button>
+        <Button component={RouterLink} to="/settings" className={classes.centerButton}>
+          Settings
         </Button>
       </Toolbar>
     );
   };
-
-  const renderRightButton = () => (
-    <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">
-      {!isMobile && 
-      <Typography className={classes.buttonText}>
-        Donate
-      </Typography>
-      }
-      <img src={ElDiceImage} className={classes.buttonImage}/>
-    </Button>
-  );
   
   return (
     <div className={classes.root}>
       <AppBar position="sticky" className={classes.toolbar}>
         <Toolbar className={classes.centerBar}>
-          {renderLeftButton()}
-          {renderCenterArea()}
-          {renderRightButton()}
+          <RouterLink to="/" className={classes.left}>
+            <img src={imageSrc} className={classes.image} />
+          </RouterLink>
+          <Toolbar className={classes.center}>
+          </Toolbar>
+          <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">
+              Donate
+          </Button>
+          <Hidden xlUp>
+            <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+              <MenuIcon className={classes.menuIcon} />
+            </IconButton>
+            <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
+              <MenuItem
+                component={RouterLink}
+                to="/"
+                onClick={handleClose}
+              >Home</MenuItem>
+              <MenuItem
+                component={RouterLink}
+                to="/schedule"
+                onClick={handleClose}
+                >Schedule</MenuItem>
+              <MenuItem
+                component={RouterLink}
+                to="/participate"
+                onClick={handleClose}
+                >Participation FAQ</MenuItem>
+              <MenuItem
+                component={RouterLink}
+                to="/games"
+                onClick={handleClose}
+                >Games List</MenuItem>
+              <Divider />
+              <MenuItem
+                component={RouterLink}
+                to="/community"
+                onClick={handleClose}
+                >Community</MenuItem>
+              <Divider />
+              <MenuItem
+                component={RouterLink}
+                to="/aboutus"
+                onClick={handleClose}
+                >About Us</MenuItem>
+            </Menu>
+          </Hidden>
         </Toolbar>
       </AppBar>
     </div>

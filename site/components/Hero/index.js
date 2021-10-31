@@ -1,13 +1,11 @@
 import React, { useContext } from 'react';
 import { makeStyles, Typography } from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
 
-import { BreakpointContext } from '../AdaptivityProvider';
-import { TeamContext } from '../TeamProvider';
-import HeartProgressBar from './HeartProgressBar';
+import Countdown from '../Countdown';
+import HeartProgressBar from '../HeartProgressBar';
+import { TeamContext } from '../../TeamProvider';
 
-import backgroundImage from '../assets/images/BackgroundImages/mmx4_still.jpg';
-import Countdown from './Countdown';
+import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg';
 
 const getHeroStyles = makeStyles((theme) => ({
   root: {
@@ -15,20 +13,37 @@ const getHeroStyles = makeStyles((theme) => ({
     backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',
-    padding: '80px 0 100px 0'
+    padding: '80px 0 100px 0',
+    [theme.breakpoints.up('sm')]: {
+      padding: '144px 0 240px 0'
+    }
   },
-  callout: { padding: '0 24px 32px 24px', textTransform: 'uppercase' },
+  callout: {
+    padding: '0 24px 32px 24px', 
+    textTransform: 'uppercase',
+    [theme.breakpoints.up('sm')]: {
+      padding: '0 96px 32px 96px',
+    }
+  },
   nextStream: { letterSpacing: '0.08em', padding: '0 24px 20px 24px', textTransform: 'uppercase' },
-  countdown: { margin: '0 24px 64px 24px' },
-  progressBar: { padding: '0 24px 20px 24px' },
+  countdown: {
+    margin: '0 24px 64px 24px',
+    [theme.breakpoints.up('sm')]: {
+      margin: '0px 48px 32px 48px'
+    }
+  },
+  progressBar: {
+    padding: '0 24px 20px 24px',
+    [theme.breakpoints.up('sm')]: {
+      padding: '0 96px 16px 96px',
+    }
+  },
   donationSumContainer: { float: 'left', left: '50%', position: 'relative' },
   donationSumContent: { float: 'left', left: '-50%', position: 'relative' }
 }));
 
 const Hero = ({ dayOfPlay }) => {
-  const theme = useTheme();
-  const breakpoint = useContext(BreakpointContext);
-  const classes = getHeroStyles(theme);
+  const classes = getHeroStyles();
   const { team } = useContext(TeamContext);
 
   return (

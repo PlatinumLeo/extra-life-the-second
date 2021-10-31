@@ -10,8 +10,6 @@ export const createNotchedClipPath = (clipRadius, reverse=false) => {
     );`;
   }
 
-
-
   return `polygon(
     0 0,
     0 calc(100% - ${clipRadius}px),
@@ -41,3 +39,11 @@ export const createNotchedBorder = (clipRadius, borderWidth) => {
     calc(100% - ${clipRadius}px) 0
   )`;
 };
+
+export const buildArrayReducer = (perChunk) => {
+  return function (all, one, i) {
+    const ch = Math.floor(i/perChunk); 
+    all[ch] = [].concat((all[ch]||[]),one); 
+    return all
+  };
+}

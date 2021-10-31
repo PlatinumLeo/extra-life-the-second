@@ -41,6 +41,12 @@ const useStyles = makeStyles((theme) => ({
   },
   centerButton: {
     color: 'white'
+  },
+  menuIcon: {
+    color: theme.palette.common.white
+  },
+  toolbar: {
+    height: '80px'
   }
 }));
 

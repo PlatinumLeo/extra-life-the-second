@@ -20,8 +20,7 @@ const LandingPage = props => {
     content: "When I was a kid, I had really bad asthma and when I was very little, I would have to go to a hospital for it. Eventually, I was able to go home with a nebulizer and Albuterol, but whenever I had an asthma attack, I would have to sit inside and not run around, so I spent a lot of time while I was sick playing games. That inspired me to find a way to give back to the medical community and incorporate video  games. While participating in something like Games Done Quick would be super cool, it didn't quite fit what I wanted to do, where I found Extra Life, which is a great way to get others involved.",
     buttonText: 'Elementum Auctor',
     buttonLink: '',
-    image: content0Image,
-    layout: 'textLeft'
+    image: content0Image
   };
 
   let callOutProps1 = {
@@ -30,7 +29,7 @@ const LandingPage = props => {
     buttonText: 'Consequat Massa',
     buttonLink: '',
     image: content1Image,
-    layout: 'textRight'
+    leftAligned: false
   };
 
   return (
@@ -38,8 +37,8 @@ const LandingPage = props => {
       <Hero dayOfPlay={dayOfPlay} />
       <Sponsor />
       <Mission />
-      {/* <CallOut {...callOutProps0}/> */}
-      {/* <CallOut {...callOutProps1}/> */}
+      <CallOut {...callOutProps0}/>
+      <CallOut {...callOutProps1}/>
       <Impact />
       <Team />
     </Box>
