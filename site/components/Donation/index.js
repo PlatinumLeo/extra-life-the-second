@@ -4,8 +4,8 @@ import './Donation.css'
 
 import {
   Grid,
-  GridList,
-  GridListTile,
+  ImageList,
+  ImageListItem,
   Typography
 } from '@material-ui/core';
 import Skeleton from '@material-ui/lab/Skeleton';

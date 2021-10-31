@@ -1,8 +1,7 @@
-import { createMuiTheme } from '@material-ui/core';
-import { grey } from '@material-ui/core/colors';
+import { createTheme } from '@material-ui/core/styles';
 
 export const defaultTheme = (type = 'light') => {
-  return createMuiTheme({
+  return createTheme({
     palette: {
       type,
       primary: {
@@ -18,13 +17,7 @@ export const defaultTheme = (type = 'light') => {
       background: {
         default: '#fff',
         lightGrey: '#fcfcfc',
-      },
-      // text: {
-      //   primary: {
-      //     main: grey[800],
-      //   },
-      //   secondary: grey[900]
-      // }
+      }
     },
     typography: {
       fontFamily: 'Monserrat, Arial, Russo One'

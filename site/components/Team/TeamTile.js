@@ -1,63 +1,35 @@
+// Original Card Flip: https://codepen.io/edeesims/pen/iGDzk
+
 import React, { useState } from 'react';
 import {
-  Box,
-  GridListTile,
-  GridListTileBar,
-  Modal,
-  Typography
+  ImageListItem,
+  ImageListItemBar
 } from '@material-ui/core';
 
-import './teamTile.css';
+import { getTeamTileStyles } from './styles';
 
-const modalStyle = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
-  width: 400,
-  background: '#fafafa',
-  border: '2px solid #000',
-  boxShadow: 24,
-  pt: 2,
-  px: 4,
-  pb: 3,
-};
-
-const TeamTile = ({ data }) => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
+const TeamTile = ({ data, className }) => {
+  const classes = getTeamTileStyles();
 
   let {
     name, discordTag, game, description, image, gameImage
   } = data;
 
   return (
-    <GridListTile style={{ height: '328px', width: '328px', margin: '16px' }} onClick={handleOpen}>
-      <div className="card">
-        <div className="content">
-          <div className="front">
+    <ImageListItem className={classes.tile}>
+      <div className={classes.card}>
+        <div className={classes.content}>
+          <div className={classes.front}>
             <img src={image} />
-            <GridListTileBar title={name} subtitle={discordTag} />
+            <ImageListItemBar title={name} subtitle={discordTag} />
           </div>
-          <div className="back">
+          <div className={classes.back}>
             <img src={gameImage} />
-            <GridListTileBar title={game} subtitle={name} />
+            <ImageListItemBar title={game} subtitle={name} />
           </div>
         </div>
       </div>
-      {/* <Modal
-        open={open}
-        onClose={handleClose}>
-          <Box style={modalStyle}>
-            <Typography>{description}</Typography>
-          </Box>
-      </Modal> */}
-    </GridListTile>
+    </ImageListItem>
   );
 };
 

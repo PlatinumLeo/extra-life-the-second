@@ -6,13 +6,10 @@ import {
     Typography
 } from '@material-ui/core';
 
-import { useDefaultStyles } from '../../styles';
-
 const AboutUsPage = props => {
-  const classes = useDefaultStyles();
 
   return (
-    <Grid container spacing={3} className={classes.main}>
+    <Grid container spacing={3}>
       <Grid item xs={12}>
         <Typography variant="h3">Extra Life - Slalom Atlanta Contacts</Typography>
         <Typography>Have a question or issue? Here's a directory of some of the people behind the event.</Typography>

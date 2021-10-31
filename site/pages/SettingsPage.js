@@ -11,14 +11,11 @@ import {
   Switch
 } from '@material-ui/core';
 
-import { useDefaultStyles } from '../styles';
-
 function capitalizeFirstLetter([first, ...rest], locale = navigator.language) {
   return first.toLocaleUpperCase(locale) + rest.join('');
 }
 
 const SettingsPage = props => {
-  const classes = useDefaultStyles();
   const { themeName, updateThemeName, themeType, toggleThemeType } = useContext(ThemeContext);
 
   let theme = localStorage.getItem('appTheme') || 'default';
@@ -28,7 +25,7 @@ const SettingsPage = props => {
   }
 
   return (
-    <div className={classes.main}>
+    <div>
       <FormControl component="fieldset">
         <FormLabel component="legend">Theme</FormLabel>
         <RadioGroup aria-label="theme" name="theme1" value={themeName} onChange={handleChange}>

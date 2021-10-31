@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Paper } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header.v2';
@@ -8,7 +8,6 @@ import Router from './components/Router';
 
 import { DonationsContext } from './DonationsProvider';
 import { TeamContext } from './TeamProvider';
-
 
 const teamId = '57288';
 const twitchUsernames = [
@@ -61,11 +60,11 @@ const App = props => {
 
   return (
     <BrowserRouter>
-      <Paper>
+      <Box>
         <Header dimensions={dimensions} />
         <Router />
         <Footer />
-      </Paper>
+      </Box>
     </BrowserRouter>
   );
 };

@@ -1,36 +1,12 @@
+import { createNotchedClipPath, createNotchedBorder } from  '../../../utils';
+
 const clipRadius = 8;
-const borderWidth = 3;
-
-const BASIC_PATH = `polygon(
-  0 0,
-  0 calc(100% - ${clipRadius}px),
-  ${clipRadius}px 100%,
-  100% 100%,
-  100% ${clipRadius}px,
-  calc(100% - ${clipRadius}px) 0
-)`;
-
-const POLYGON_PATH = `polygon(
-  0 0,
-  0 calc(100% - ${clipRadius}px),
-  ${clipRadius}px 100%,
-  ${clipRadius}px calc(100% - ${borderWidth}px),
-  ${borderWidth}px calc(100% - ${clipRadius}px),
-  ${borderWidth}px ${borderWidth}px,
-  calc(100% - ${clipRadius}px) ${borderWidth}px,
-  calc(100% - ${borderWidth}px) ${clipRadius}px,
-  calc(100% - ${borderWidth}px) calc(100% - ${borderWidth}px),
-  ${clipRadius}px calc(100% - ${borderWidth}px),
-  ${clipRadius}px 100%,
-  100% 100%,
-  100% ${clipRadius}px,
-  calc(100% - ${clipRadius}px) 0
-)`;
+const borderWidth = 2;
 
 export const overrides = {
   MuiButton: {
     root: {
-      'clip-path': BASIC_PATH,
+      'clip-path': createNotchedClipPath(clipRadius),
       'border-radius': '0px'
     },
     contained: {
@@ -39,27 +15,27 @@ export const overrides = {
     },
     outlined: {
       position: 'relative',
-      'clip-path': BASIC_PATH,
+      'clip-path': createNotchedClipPath(clipRadius),
       background: 'rgba(0, 0, 0, 0)',
       border: 'none',
       color: '#fff',
       '&::after': {
         content: '"Button"',
         position: 'absolute',
-        'clip-path': POLYGON_PATH,
+        'clip-path': createNotchedBorder(clipRadius, borderWidth),
         background: '#fff none repeat scroll 0% 0%',
         inset: '0px'
       }
     },
     outlinedSecondary: {
       position: 'relative',
-      'clip-path': BASIC_PATH,
+      'clip-path': createNotchedClipPath(clipRadius),
       background: 'rgba(0, 0, 0, 0)',
       border: 'none',
       '&::after': {
         content: '"Button"',
         position: 'absolute',
-        'clip-path': POLYGON_PATH,
+        'clip-path': createNotchedBorder(clipRadius, borderWidth),
         background: '#0150E9 none repeat scroll 0% 0%',
         inset: '0px'
       }
