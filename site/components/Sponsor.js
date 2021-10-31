@@ -10,8 +10,8 @@ import CMNHLogo from './svg/CMNHLogo';
 import TwitchLogo from './svg/TwitchLogo';
 
 const getSponsorStyles = makeStyles((theme) => ({
-  root: { padding: '24px 0 24px 0', borderBottom: `1px solid ${theme.palette.common.black}` },
-  wrapper: { float: 'left', left: '50%', position: 'relative' },
+  root: { padding: '48px 0 48px 0', borderBottom: `1px solid ${theme.palette.common.black}` },
+  wrapper: { float: 'left', left: '50%', position: 'relative', padding: '0 24px 12px 24px' },
   content: { float: 'left', left: '-50%', position: 'relative' }
 }));
 
