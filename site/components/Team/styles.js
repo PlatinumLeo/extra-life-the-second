@@ -77,7 +77,10 @@ export const getTeamTileStyles = makeStyles((theme) => ({
     width: '100%',
     backfaceVisibility: 'hidden',
     objectFit: 'cover',
-    clipPath: createNotchedClipPath(12)
+    clipPath: createNotchedClipPath(12),
+    '& img': {
+      filter: 'grayscale(100%)'
+    }
   },
   back: {
     position: 'absolute',
@@ -105,5 +108,14 @@ export const getTeamTileStyles = makeStyles((theme) => ({
         marginRight: 0
       }
     }
+  },
+  tileOverlay: {
+    opacity: 0.5,
+    backgroundColor: theme.palette.secondary.main,
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    top: 0,
+    left: 0
   }
 }));
