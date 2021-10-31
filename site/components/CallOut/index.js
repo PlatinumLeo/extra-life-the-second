@@ -7,7 +7,7 @@ import {
 
 import getStyles from './style';
 
-const CallOut = ({ title, content, image, buttonText, buttonLink, leftAligned=true }) => {
+const CallOut = ({ title, content, image, buttonText, buttonLink, leftAligned=true, filter=true }) => {
 
   const classes = getStyles();
 
@@ -17,13 +17,16 @@ const CallOut = ({ title, content, image, buttonText, buttonLink, leftAligned=tr
         <div className={classes.imageRule} />
       </Hidden>
       <div className={(leftAligned) ? classes.imageContainer : classes.imageContainerRight}>
-        <img src={image} className={classes.image} />
-        <div className={classes.imageOverlay} />
+        <img src={image} className={`${classes.image} ${(filter) ? classes.gray : ''}`} />
+        <div className={`${classes.imageOverlay} ${(!filter) ? classes.hidden : ''}`} />
       </div>
       <div className={(leftAligned) ? classes.textContainer : classes.textContainerRight}>
         <Typography variant="h3" className={classes.title} style={{ textTransform: 'uppercase' }}>{title}</Typography>
         <hr className={classes.rule} />
-        <Typography className={classes.text}>{content}</Typography>
+        {(Array.isArray(content)) ? 
+          content.map((c, i) => <Typography className={classes.text} key={`mini-content-${i}`}>{c}</Typography>) :
+          <Typography className={classes.text}>{content}</Typography>
+        }
       </div>
     </div>
   );

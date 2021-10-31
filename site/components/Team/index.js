@@ -8,7 +8,7 @@ import { useTheme } from '@material-ui/styles';
 import Carousel from 'react-material-ui-carousel';
 
 import TeamTile from './TeamTile';
-import teamData from './teamData';
+import teamData from '../../assets/data/teamData';
 import { buildArrayReducer } from '../../utils';
 import { getTeamStyles } from './styles';
 import { SizeContext } from '../../AdaptivityProvider';

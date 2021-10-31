@@ -8,6 +8,9 @@ const getStyles = makeStyles((theme) => ({
     position: 'relative',
     [theme.breakpoints.down('xs')]: {
       borderBottom: `2px solid ${theme.palette.primary.main}`,
+      '&:last-of-type': {
+        borderBottom: 'none'
+      }
     },
     [theme.breakpoints.up('sm')]: {
       minHeight: '45vw',
@@ -21,6 +24,7 @@ const getStyles = makeStyles((theme) => ({
     border: `1px solid ${theme.palette.primary.main}`,
     width: '60px',
     marginLeft: '24px',
+    marginBottom: '32px',
     [theme.breakpoints.up('sm')]: {
       border: `2px solid ${theme.palette.primary.main}`,
       marginLeft: '48px',
@@ -51,7 +55,10 @@ const getStyles = makeStyles((theme) => ({
   text: {
     // backgroundColor: 'yellow',
     lineHeight: '170%',
-    padding: '32px 24px',
+    padding: '0 24px 8px 24px',
+    '&:last-of-type': {
+      paddingBottom: '32px'
+    },
     [theme.breakpoints.up('sm')]: {
       padding: '0 80px 24px 48px'
     },
@@ -72,13 +79,15 @@ const getStyles = makeStyles((theme) => ({
   },
   button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' },
   image: {
-    filter: 'grayscale(100%)',
     objectFit: 'cover',
     width: '100%',
-    height: '100%',
-    [theme.breakpoints.up('xl')]: {
-      objectFit: 'fill'
-    }
+    height: '100%'
+  },
+  gray: {
+    filter: 'grayscale(100%)',
+  },
+  hidden: {
+    visibility: 'hidden'
   },
   imageContainer: {
     backgroundColor: 'red',

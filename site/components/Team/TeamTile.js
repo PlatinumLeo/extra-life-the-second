@@ -8,7 +8,7 @@ import {
 
 import { getTeamTileStyles } from './styles';
 
-const TeamTile = ({ data, className }) => {
+const TeamTile = ({ data }) => {
   const classes = getTeamTileStyles();
 
   let {
@@ -21,6 +21,7 @@ const TeamTile = ({ data, className }) => {
         <div className={classes.content}>
           <div className={classes.front}>
             <img src={image} />
+            <div className={classes.tileOverlay} />
             <ImageListItemBar title={name} subtitle={discordTag} />
           </div>
           <div className={classes.back}>
