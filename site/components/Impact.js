@@ -1,12 +1,36 @@
-import React, { useContext } from 'react';
-import { Button, Divider, Typography } from '@material-ui/core';
+// Twitch Data: https://twitchtracker.com/pyroticblaziken
 
+import React, { useContext } from 'react';
+import {
+  Button,
+  Typography,
+  makeStyles
+} from '@material-ui/core';
+import { useTheme } from '@material-ui/styles';
+import Carousel from 'react-material-ui-carousel';
+
+import DataDisplay from './DataDisplay';
 import { DonationsContext } from '../DonationsProvider';
 
 import backgroundImage from '../assets/images/BackgroundImages/impact.png';
 
 const priorDonations = 3237;
 const priorDonationCount = 52;
+
+const getImpactStyles = makeStyles((theme) => ({
+  root: {
+    backgroundColor: theme.palette.secondary.main,
+    backgroundImage: `linear-gradient(${theme.palette.secondary.main}88, ${theme.palette.secondary.main}88), url(${backgroundImage})`,
+    backgroundBlendMode: 'saturation',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    padding: '48px 0 24px 0'
+  },
+  rule: { border: `1px solid ${theme.palette.common.white}`, width: '60px' },
+  text: { lineHeight: '170%', padding: '32px 24px' },
+  button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' },
+  carousel: { padding: '0 24px 32px 24px' }
+}));
 
 const Impact = props => {
 
@@ -15,46 +39,52 @@ const Impact = props => {
   const reducer = (total, donation) => total + donation.amount;
   const donationSum = donations.reduce(reducer, 0);
 
+  const theme = useTheme();
+  const classes = getImpactStyles(theme);
+
+  const cardData0 = [
+    { title: '83.1', subtitle: 'Hours Streamed' },
+    { title: '41', subtitle: 'Live Streams' }
+  ];
+
+  const cardData1 = [
+    { title: donations.length + priorDonationCount, subtitle: 'Donations' },
+    { title: `${Math.floor((donationSum + priorDonations)/1000)}K+`, subtitle: 'Raised' }
+  ];
+
+  const cardData2 = [
+    { title: 'Children\'s Hospital of Atlanta', subtitle: 'Funded' }
+  ];
+
+  const iconStyle = {
+    style: {
+      color: theme.palette.common.white
+    }
+  };
+
+  const activeIconStyle = {
+    style: {
+      color: theme.palette.grey[500]
+    }
+  };
+
   return (
-    <div style={{ position: 'relative' }}>
-      <img src={backgroundImage} style={{ filter: 'grayscale(100%)', objectFit: 'cover' }} />
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0, opacity: 0.8, background: '#0150E9' }} />
-      <div style={{ width: '100%', height: '100%', position: 'absolute', top: 0, left: 0 }}>
-        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: 1 }}>
-          <Typography color='textSecondary' variant="h3" align="center" style={{ textTransform: 'uppercase' }}>Our Impact</Typography>
-          <hr style={{ width: '100px', border: `3px solid #ffffff` }} />
-          <Typography color='textSecondary' align="center" style={{ maxWidth: '700px' }}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
-          <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around', width: '1440px' }}>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Typography color='textSecondary' variant="h5">83.1</Typography>
-              <Typography color='textSecondary' variant="caption">Hours Streamed</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Typography color='textSecondary' variant="h5">41</Typography>
-              <Typography color='textSecondary' variant="caption">Live Streams</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Typography color='textSecondary' variant="h5">{donations.length + priorDonationCount}</Typography>
-              <Typography color='textSecondary' variant="caption">Donations</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Typography color='textSecondary' variant="h5">${Math.floor((donationSum + priorDonations)/1000)}K+</Typography>
-              <Typography color='textSecondary' variant="caption">Raised</Typography>
-            </div>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <Typography color='textSecondary' variant="h5">Children's Hospital of Atlanta</Typography>
-              <Typography color='textSecondary' variant="caption">Funded</Typography>
-            </div>
-          </div>
-          <Button
-            href="https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=456320"
-            target="_blank"
-            variant='contained'
-            style={{ height: '57px', width: '330px' }}>
-            Donate Now
-          </Button>
-        </div>
-      </div>
+    <div className={classes.root}>
+      <Typography variant="h3" color='textSecondary' align="center" style={{ textTransform: 'uppercase' }}>Our Impact</Typography>
+      <hr className={classes.rule} />
+      <Typography color='textSecondary' align="center" className={classes.text}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
+      <Carousel className={classes.carousel} animation='slide' autoPlay={false} indicatorIconButtonProps={iconStyle} activeIndicatorIconButtonProps={activeIconStyle}>
+        <DataDisplay dataPoints={cardData0} />
+        <DataDisplay dataPoints={cardData1} />
+        <DataDisplay dataPoints={cardData2} />
+      </Carousel>
+      <Button
+        href="https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=456320"
+        target="_blank"
+        variant='contained'
+        className={classes.button}>
+        Donate Now
+      </Button>
     </div>
   );
 };
