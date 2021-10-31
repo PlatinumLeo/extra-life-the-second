@@ -2,14 +2,16 @@ import { makeStyles } from '@material-ui/core';
 
 const getStyles = makeStyles((theme) => ({
   root: {
-    '& p[class^="Cell-dayOfWeek"]': {
-      color: theme.palette.text.primary
-    },
-    '& div[class^="Cell-dayOfMonth"]': {
-      color: theme.palette.text.primary
-    },
-    '& span[class^="Label-text"]': {
-      color: theme.palette.text.primary
+    '& table>tbody>tr>td>div': {
+      '&>p': {
+        color: theme.palette.text.primary
+      },
+      '&>div': {
+        color: theme.palette.text.primary
+      },
+      '&>span': {
+        color: theme.palette.text.primary
+      }
     }
   }
 }));
