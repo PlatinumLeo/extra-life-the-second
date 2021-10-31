@@ -1,13 +1,28 @@
 import React from 'react';
-import { Button, Typography } from '@material-ui/core';
+import {
+  Button,
+  Typography,
+  makeStyles
+} from '@material-ui/core';
+import { useTheme } from '@material-ui/styles';
 
-const Mission = props => {
+const getMissionStyles = makeStyles((theme) => ({
+  root: { padding: '48px 0 24px 0' },
+  rule: { border: `1px solid ${theme.palette.primary.main}`, width: '60px' },
+  text: { lineHeight: '170%', padding: '32px 24px' },
+  button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' }
+}));
+
+const Mission = (props) => {
+  const theme = useTheme();
+  const classes = getMissionStyles(theme);
+
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div className={classes.root}>
       <Typography variant="h3" align="center" style={{ textTransform: 'uppercase' }}>Our Mission</Typography>
-      <hr style={{ width: '100px', border: '3px solid' }} />
-      <Typography align="center" style={{ maxWidth: '700px' }}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
-      <Button variant='outlined' color='secondary' style={{ height: '57px', width: '330px' }}>Meet the Team</Button>
+      <hr className={classes.rule} />
+      <Typography align="center" className={classes.text}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
+      <Button variant='outlined' color='secondary' className={classes.button}>Meet the Team</Button>
     </div>
   );
 };
