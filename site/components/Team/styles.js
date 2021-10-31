@@ -95,7 +95,10 @@ export const getTeamTileStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       width: 'calc(calc(100vw - 168px) / 4)',
       height: 'calc(calc(100vw - 168px) / 4)',
-      margin: '0 24px 16px 0'
+      margin: '0 24px 16px 0',
+      '&:nth-of-type(4n)': {
+        marginRight: 0
+      }
     },
     [theme.breakpoints.up('xl')]: {
       width: '320px',

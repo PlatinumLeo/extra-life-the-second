@@ -3,10 +3,11 @@ import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg
 
 const getStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
+    // backgroundColor: 'red',
+    // backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
+    // backgroundSize: 'cover',
+    // backgroundPosition: 'center',
+    position: 'relative',
     padding: '80px 0 100px 0',
     overflowX: 'hidden',
     [theme.breakpoints.up('sm')]: {
@@ -14,7 +15,13 @@ const getStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xl')]: {
       padding: '96px 0 144px 0'
-    }
+    },
+    zIndex: 5
+  },
+  content: {
+    // backgroundColor: 'green'
+    zIndex: 4,
+    opacity: 1
   },
   callout: {
     padding: '0 24px 32px 24px', 
@@ -46,7 +53,37 @@ const getStyles = makeStyles((theme) => ({
     }
   },
   donationSumContainer: { float: 'left', left: '50%', position: 'relative' },
-  donationSumContent: { float: 'left', left: '-50%', position: 'relative' }
+  donationSumContent: { float: 'left', left: '-50%', position: 'relative' },
+  videoBackground: {
+    position: 'absolute',
+    overflow: 'hidden',
+    zIndex: -2,
+    height: '100%',
+    width: '100%',
+    backgroundColor: theme.palette.primary.main,
+    backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    top: 0, left: 0,
+    '& video': {
+      position: 'absolute',
+      width: '100%',
+      display: 'block',
+      margin: 'auto',
+      top: '0px'
+    }
+  },
+  videoOverlay: {
+    background: `linear-gradient(76deg, #9EEEE1aa, #462DEAaa)`,
+    opacity: 1,
+    position: 'absolute',
+    overflow: 'hidden',
+    zIndex: -1,
+    height: '100%',
+    width: '100%',
+    top: 0, left: 0,
+    backdropFilter: 'blur(4px)'
+  }
 }));
 
 export default getStyles;
