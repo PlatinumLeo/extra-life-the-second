@@ -81,7 +81,7 @@ const Header = props => {
                 target="_blank">Discord</Button>
             </Hidden>
           </Toolbar>
-          <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=412259#donate" target="_blank">
+          <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=456320#donate" target="_blank">
               Donate
           </Button>
           <Hidden xlUp>
