@@ -16,3 +16,7 @@ Have links to tutorials for those who want them
 Have video link to ScottFalco's Side of Salt about SRB2K
 
 Add to server with link and all of that jazz
+
+Participant Id: 456320
+Team Id: 57288
+Event Id: 550
