@@ -33,9 +33,9 @@ const Team = (props) => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h3" align="center" style={{ textTransform: 'uppercase' }}>Meet the Team</Typography>
+      <Typography variant="h3" align="center" color='primary' style={{ textTransform: 'uppercase' }}>Meet the Team</Typography>
       <hr className={classes.rule} />
-      <Typography align="center" className={classes.text}>
+      <Typography align="center" color='primary' className={classes.text}>
         Our Extra Life team is comprised of Slalom employees who all feel passionate about gaming and helping out those who need it most; children and their families who are in need of medical assistance.
       </Typography>
       <Hidden smUp>

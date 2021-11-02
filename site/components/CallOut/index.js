@@ -21,11 +21,11 @@ const CallOut = ({ title, content, image, buttonText, buttonLink, leftAligned=tr
         <div className={`${classes.imageOverlay} ${(!filter) ? classes.hidden : ''}`} />
       </div>
       <div className={(leftAligned) ? classes.textContainer : classes.textContainerRight}>
-        <Typography variant="h3" className={classes.title} style={{ textTransform: 'uppercase' }}>{title}</Typography>
+        <Typography color='primary' variant="h3" className={classes.title} style={{ textTransform: 'uppercase' }}>{title}</Typography>
         <hr className={classes.rule} />
         {(Array.isArray(content)) ? 
-          content.map((c, i) => <Typography className={classes.text} key={`mini-content-${i}`}>{c}</Typography>) :
-          <Typography className={classes.text}>{content}</Typography>
+          content.map((c, i) => <Typography color='primary' className={classes.text} key={`mini-content-${i}`}>{c}</Typography>) :
+          <Typography color='primary' className={classes.text}>{content}</Typography>
         }
       </div>
     </div>
