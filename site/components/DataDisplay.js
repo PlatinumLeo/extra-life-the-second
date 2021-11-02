@@ -43,8 +43,8 @@ const DataDisplayItem = ({ title, subtitle, className, gridSize }) => {
   return (
     <Grid item xs={gridSize}>
       <div className={className}>
-        <Typography color='textSecondary' variant="h5">{title}</Typography>
-        <Typography color='textSecondary' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
+        <Typography color='inherit' variant="h5">{title}</Typography>
+        <Typography color='inherit' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
       </div>
     </Grid>
   )

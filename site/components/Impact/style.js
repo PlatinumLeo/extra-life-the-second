@@ -8,6 +8,7 @@ const getStyles = makeStyles((theme) => ({
     backgroundBlendMode: 'saturation',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
+    color: theme.palette.secondary.contrastText,
     padding: '48px 0 24px 0',
     [theme.breakpoints.up('xl')]: {
       padding: '96px 0 124px 0'

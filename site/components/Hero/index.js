@@ -31,14 +31,14 @@ const Hero = ({ dayOfPlay }) => {
       </div>
       <div className={classes.videoOverlay} />
       <div className={classes.content}>
-        <Typography align='center' color='textSecondary' variant={(breakpoint === 'xl') ? 'h1' : 'h3' } className={classes.callout}>We play games to help children’s hospitals in the United States and Canada</Typography>
-        <Typography align='center' color='textSecondary' variant={(breakpoint === 'xl') ? 'h4' : 'h6' } className={classes.nextStream}>Next stream starts in</Typography>
+        <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h1' : 'h3' } className={classes.callout}>We play games to help children’s hospitals in the United States and Canada</Typography>
+        <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h4' : 'h6' } className={classes.nextStream}>Next stream starts in</Typography>
         <Countdown dayOfPlay={dayOfPlay} className={classes.countdown} />
         <HeartProgressBar sumDonations={team.sumDonations} fundraisingGoal={team.fundraisingGoal} className={classes.progressBar} />
         <div className={classes.donationSumContainer}>
           <div className={classes.donationSumContent}>
-            <Typography color='textSecondary' variant='h3' display='inline'>${(!!team.sumDonations ? team.sumDonations : 0).toLocaleString()} </Typography>
-            <Typography color='textSecondary' display='inline'>Raised of ${(!!team.fundraisingGoal ? team.fundraisingGoal : 0).toLocaleString()} goal</Typography>
+            <Typography color='inherit' variant='h3' display='inline'>${(!!team.sumDonations ? team.sumDonations : 0).toLocaleString()} </Typography>
+            <Typography color='inherit' display='inline'>Raised of ${(!!team.fundraisingGoal ? team.fundraisingGoal : 0).toLocaleString()} goal</Typography>
           </div> 
         </div>
       </div>      

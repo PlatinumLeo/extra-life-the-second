@@ -26,9 +26,9 @@ const Mission = (props) => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h3" align="center" style={{ textTransform: 'uppercase' }}>Our Mission</Typography>
+      <Typography variant="h3" align="center" color='primary' style={{ textTransform: 'uppercase' }}>Our Mission</Typography>
       <hr className={classes.rule} />
-      <Typography align="center" className={classes.text}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
+      <Typography align="center" color='primary' className={classes.text}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
       <Button variant='outlined' color='secondary' className={classes.button}>Meet the Team</Button>
     </div>
   );

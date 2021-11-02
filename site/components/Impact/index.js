@@ -53,9 +53,9 @@ const Impact = (props) => {
 
   return (
     <div className={classes.root}>
-      <Typography variant="h3" color='textSecondary' align="center" style={{ textTransform: 'uppercase' }}>Our Impact</Typography>
+      <Typography variant="h3" color='inherit' align="center" style={{ textTransform: 'uppercase' }}>Our Impact</Typography>
       <hr className={classes.rule} />
-      <Typography color='textSecondary' align="center" className={classes.text}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
+      <Typography color='inherit' align="center" className={classes.text}>The money we raise goes to the Children's Hospital of Atlanta. It will pay for equipment and medical treatment for families in need, helping to make sure children get the best care possible, and a family isn't made destitute taking care of their child.</Typography>
       <Carousel className={classes.carousel} animation='slide' autoPlay={false} indicatorIconButtonProps={iconStyle} activeIndicatorIconButtonProps={activeIconStyle}>
         {dataPoints.reduce(buildArrayReducer(perChunk), []).map((chunks, i) => (
           <DataDisplay key={`impact-stats-${i}`} dataPoints={chunks} />
