@@ -10,7 +10,7 @@ import Carousel from 'react-material-ui-carousel';
 import { useTheme } from '@material-ui/styles';
 
 import DataDisplay from '../DataDisplay';
-import { DonationsContext } from '../../DonationsProvider';
+import { DonationsContext } from '../../DonorDriveApiProvider';
 import { BreakpointContext } from '../../AdaptivityProvider';
 import getStyles from './style';
 import { buildArrayReducer } from '../../utils';
@@ -21,7 +21,7 @@ const priorDonationCount = 52;
 const Impact = (props) => {
   const theme = useTheme();
 
-  const { donations } = useContext(DonationsContext);
+  const donations = useContext(DonationsContext);
   const breakpoint = useContext(BreakpointContext);
 
   const reducer = (total, donation) => total + donation.amount;

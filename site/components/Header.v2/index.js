@@ -8,24 +8,19 @@ import {
   IconButton,
   Menu,
   MenuItem,
-  Toolbar,
-  Typography
+  Toolbar
 } from '@material-ui/core';
 import {
   Menu as MenuIcon
 } from '@material-ui/icons';
-import { useTheme } from '@material-ui/styles';
 
 import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.png';
 
 import useStyles from './styles';
 
 const Header = props => {
-  const theme = useTheme();
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
-
-  const isMobile = theme.breakpoints.values.sm >= props.dimensions.width
 
   const imageSrc = ExtraLifeLogo;
 

@@ -5,17 +5,14 @@ import './index.css';
 import App from './App.v2';
 import AdaptivityProvider from './AdaptivityProvider';
 import ThemeProvider from './ThemeProvider';
-import TeamProvider from './TeamProvider';
-import DonationsProvider from './DonationsProvider';
+import DonorDriveApiProvider from './DonorDriveApiProvider';
 
 render(
       <ThemeProvider>
         <AdaptivityProvider>
-          <TeamProvider>
-            <DonationsProvider>
-              <App />
-            </DonationsProvider>
-          </TeamProvider>
+          <DonorDriveApiProvider>
+            <App />
+          </DonorDriveApiProvider>
         </AdaptivityProvider>
       </ThemeProvider>,
     document.getElementById('root') // eslint-disable-line no-undef
