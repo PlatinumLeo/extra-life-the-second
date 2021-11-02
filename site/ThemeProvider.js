@@ -28,7 +28,6 @@ const ThemeProvider = ({ children }) => {
   };
 
   const theme = getThemeByName(themeName, themeType);
-  console.log(theme);
 
   return (
     <ThemeContext.Provider value={{ themeName, updateThemeName, themeType, toggleThemeType }}>
