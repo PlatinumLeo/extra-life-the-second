@@ -10,13 +10,15 @@ import ParticipatePage from '../../pages/ParticipatePage';
 import PreviewPage from '../../pages/PreviewPage';
 import SchedulePage from '../../pages/SchedulePage';
 import SettingsPage from '../../pages/SettingsPage';
+import GameDetailsPage from '../../pages/GameDetailsPage';
 
 const Router = props => {
     return (
         <Switch>
             <Route path='/aboutus' exact component={AboutUsPage} />
             <Route path='/community' exact component={CommunityPage} />
-            <Route path='/games' exact component={GamesPage} />
+            <Route path='/games/:id' component={GameDetailsPage} />
+            <Route path='/games' component={GamesPage} />
             <Route path='/participate' exact component={ParticipatePage} />
             <Route path='/preview' exact component={PreviewPage} />
             <Route path='/schedule' exact component={SchedulePage} />
