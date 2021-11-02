@@ -22,14 +22,6 @@ app.use(express.static(DIST_DIR));
 app.use(express.json());
 app.use('/api', api);
 
-// app.get('*', (req, res, next) => {
-//     compiler.outputFileSystem.readFile(HTML_FILE, (err, result) => {
-//         if (err) return next(err);
-//         res.set('content-type', 'text/html');
-//         res.send(result);
-//     });
-// });
-
 app.get('*', (req, res) => {
     res.sendFile(HTML_FILE);
 });

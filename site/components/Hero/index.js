@@ -6,7 +6,8 @@ import {
 
 import Countdown from '../Countdown';
 import HeartProgressBar from '../HeartProgressBar';
-import { TeamContext } from '../../TeamProvider';
+// import { TeamContext } from '../../TeamProvider';
+import { TeamContext } from '../../DonorDriveApiProvider';
 import { BreakpointContext } from '../../AdaptivityProvider';
 import getStyles from './styles';
 import backgroundWebM from '../../assets/videos/megaManX4.webm';
@@ -14,7 +15,8 @@ import backgroundMP4 from '../../assets/videos/megaManX4.mp4';
 
 const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
-  const { team } = useContext(TeamContext);
+  const team = useContext(TeamContext);
+  
   const breakpoint = useContext(BreakpointContext);
 
   return (
