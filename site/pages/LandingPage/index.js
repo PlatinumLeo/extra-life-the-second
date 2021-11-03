@@ -8,10 +8,10 @@ import CallOut from '../../components/CallOut';
 import Impact from '../../components/Impact';
 import Team from '../../components/Team';
 
+import dayOfPlay from '../../assets/data/dayOfPlay';
+
 import content0Image from '../../assets/images/BackgroundImages/samantha-sophia-fqyEoItOUGE-unsplash 1.png';
 import content1Image from '../../assets/images/BackgroundImages/erik-mclean-qgInQSplXBU-unsplash 1.png';
-
-const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
 
 const LandingPage = props => {
 
