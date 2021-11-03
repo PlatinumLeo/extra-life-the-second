@@ -13,7 +13,6 @@ const twitchUsernames = [
 const twitchChannelIds = [
   23679089
 ];
-const dayOfPlay = new Date("Nov 6, 2021 12:00:00").getTime();
 
 const App = props => {
   return (
