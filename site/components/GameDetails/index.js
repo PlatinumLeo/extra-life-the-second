@@ -8,19 +8,31 @@ import {
   Typography
 } from '@material-ui/core';
 
-import { ArrowBack } from '@material-ui/icons';
+import ArrowBack from '@material-ui/icons/ArrowBack';
+
+import defaultImage from '../../assets/images/Icons/controller_blue.png';
 
 import getStyles from './styles';
 import { BreakpointContext } from '../../AdaptivityProvider';
 
-import srb2kTitle from '../../assets/images/Games/srb2k.png';
+import gameData from '../../assets/data/gameData';
+
+
 
 const GameDetails = (props) => {
   const classes = getStyles();
   const { id } = useParams();
+  let { name, image, platforms, obtain, join, extra } = gameData.find(g => g.id === id);
   const breakpoint = useContext(BreakpointContext);
 
   const textAlign = (breakpoint === 'xs') ? 'center' : 'left';
+
+  const Obtain = ({ type, link }) => {
+    switch (type) {
+      case 'connect': return <Typography align={textAlign}>No need to purchase, just connect <Link href={obtain.link} target='_blank'>here</Link>.</Typography>
+      default: return <Typography align={textAlign}>{(obtain.type === 'download') ? 'Download' : 'Purchase'} it from <Link href={obtain.link} target='_blank'>here</Link>.</Typography>;
+    }
+  };
 
   return (
     <div className={classes.root}>
@@ -34,28 +46,28 @@ const GameDetails = (props) => {
           <div>
             <div className={classes.imageRule} />
             <div className={classes.imageContainer}>
-              <img src={srb2kTitle} className={classes.image} />
+              <img src={(image) ? image : defaultImage} className={classes.image} />
             </div>
           </div>
         </Grid>
         <Grid item xs={12} sm={8}>
           <div className={classes.textContainer}>
-            <Typography align={textAlign} variant='h3'>Sonic Robo Blast 2 Kart</Typography>
+            <Typography align={textAlign} variant='h3'>{name}</Typography>
             <Typography display='inline' variant='h6'>Platforms: </Typography>
-            <Typography align={textAlign} display='inline'>PC, Mac, Linux</Typography>
+            <Typography align={textAlign} display='inline'>{platforms.join(', ')}</Typography>
             <Typography align={textAlign} variant='h4'>How to Get It:</Typography>
-            <Typography align={textAlign}>Download it from <Link href='https://github.com/STJr/Kart-Public/releases' target='_blank'>here</Link>.</Typography>
+            <Obtain {...obtain} />
             <Typography align={textAlign} variant='h4'>How to Join Us:</Typography>
             <ul>
-              <li><Typography>Go to Multiplayer from the main menu</Typography></li>
-              <li><Typography>Go to the *Specify IPV4 Address:* section</Typography></li>
-              <li><Typography>Enter *howi.servegame.com*</Typography></li>
+              {join.map((item, i) => (
+                <li key={`join-item-${i}`}><Typography>{item}</Typography></li>
+              ))}
             </ul>
             <Typography align={textAlign} variant='h4'>Extra Notes:</Typography>
             <ul>
-              <li><Typography>By default, the arrow keys and Enter navigate the menu, and you will need to press enter on the title screen once to open the menu.</Typography></li>
-              <li><Typography>Be sure to connect any controllers you want to use before you start, I think you can change configs afterwards, but that might take some doing.</Typography></li>
-              <li><Typography>I would check out the Tips & Secrets section under options and maybe drive around in Time Trails on my first boot just to get a feel for it.</Typography></li>
+              {extra.map((item, i) => (
+                <li key={`extra-item-${i}`}><Typography>{item}</Typography></li>
+              ))}
             </ul>
           </div>
         </Grid>

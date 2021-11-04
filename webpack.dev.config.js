@@ -37,7 +37,7 @@ const config = {
                 use: ['babel-loader']
             },
             {
-                test: /\.(ico|svg|jpg|jpeg|png|webm|mp4|avif)$/,
+                test: /\.(ico|svg|jpg|jpeg|png|webm|mp4|avif|webp)$/,
                 loader: 'file-loader'
             },
             {
