@@ -40,7 +40,7 @@ const Header = props => {
             <img src={imageSrc} className={classes.image} />
           </RouterLink>
           <Toolbar className={classes.center}>
-            <Hidden lgDown>
+            <div className={classes.hiddenLargeDown}>
               <Button component={RouterLink} to="/" className={classes.centerButton}>
                 Home
               </Button>
@@ -74,12 +74,12 @@ const Header = props => {
                 className={classes.centerButton}
                 href="https://discord.gg/NvshADM"
                 target="_blank">Discord</Button>
-            </Hidden>
+            </div>
           </Toolbar>
           <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=456320#donate" target="_blank">
               Donate
           </Button>
-          <Hidden xlUp>
+          <div className={classes.hiddenXlUp}>
             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
               <MenuIcon className={classes.menuIcon} />
             </IconButton>
@@ -117,7 +117,7 @@ const Header = props => {
                 onClick={handleClose}
                 >About Us</MenuItem>
             </Menu>
-          </Hidden>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

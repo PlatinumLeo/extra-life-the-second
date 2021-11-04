@@ -47,6 +47,16 @@ const useStyles = makeStyles((theme) => ({
   },
   toolbar: {
     height: '80px'
+  },
+  hiddenLargeDown: {
+    [theme.breakpoints.up('xl')]: {
+      visibility: 'hidden'
+    }
+  },
+  hiddenXlUp: {
+    [theme.breakpoints.down('lg')]: {
+      visibility: 'hidden'
+    }
   }
 }));
 
