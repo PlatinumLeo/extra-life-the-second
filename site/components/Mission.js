@@ -13,7 +13,7 @@ const getMissionStyles = makeStyles((theme) => ({
     lineHeight: '170%',
     padding: '32px 24px',
     maxWidth: '700px',
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       paddingLeft: 'calc(calc(100vw - 700px) / 2)'
     }
   },

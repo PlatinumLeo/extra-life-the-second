@@ -16,7 +16,7 @@ const getStyles = makeStyles((theme) => ({
       minHeight: '45vw',
       margin: '48px 0'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       minHeight: '608px'
     }
   },
@@ -29,7 +29,7 @@ const getStyles = makeStyles((theme) => ({
       border: `2px solid ${theme.palette.primary.main}`,
       marginLeft: '48px',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       marginLeft: '120px',
       marginBottom: '32px',
       width: '100px',
@@ -40,7 +40,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       paddingLeft: '48px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '124px 0 16px 120px'
     }
   },
@@ -62,7 +62,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '0 80px 24px 48px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '0 120px 40px 120px'
     }
   },
@@ -102,7 +102,7 @@ const getStyles = makeStyles((theme) => ({
       right: '0px',
       top: '-24px',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       height: '560px',
       width: '560px',
       left: 'calc(55vw - 60px)',
@@ -140,7 +140,7 @@ const getStyles = makeStyles((theme) => ({
       top: '-24px',
       zIndex: '1'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       height: '560px',
       width: '560px',
       left: 'calc(20vw - 60px)',

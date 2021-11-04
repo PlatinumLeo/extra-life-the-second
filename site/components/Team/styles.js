@@ -11,7 +11,7 @@ export const getTeamStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '32px 160px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       paddingLeft: 'calc(calc(100vw - 700px) / 2)',
       paddingBottom: '64px'
     }
@@ -24,7 +24,7 @@ export const getTeamStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '0 48px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       paddingLeft: 'calc(calc(100vw - 1376px) / 2)',
       paddingBottom: '64px'
     }
@@ -57,7 +57,7 @@ export const getTeamTileStyles = makeStyles((theme) => ({
       height: 'calc(calc(100vw - 168px) / 4)',
       margin: 'calc(calc(100vw - 168px) / -8)',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       width: '320px',
       height: '320px',
       margin: '-160px'
@@ -103,7 +103,7 @@ export const getTeamTileStyles = makeStyles((theme) => ({
         marginRight: 0
       }
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       width: '320px',
       height: '320px',
       margin: '0 32px 16px 0',

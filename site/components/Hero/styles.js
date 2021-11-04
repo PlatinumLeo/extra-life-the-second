@@ -14,7 +14,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '144px 0 240px 0'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '96px 0 144px 0'
     },
     zIndex: 5
@@ -30,7 +30,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '0 96px 32px 96px',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '0 420px 32px 420px',
     }
   },
@@ -40,7 +40,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       margin: '0px 48px 32px 48px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       margin: '0px 512px 80px 512px'
     }
   },
@@ -49,7 +49,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '0 96px 16px 96px',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '0 560px 32px 560px',
     }
   },
