@@ -8,7 +8,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       padding: '0 0 16px 0',
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       padding: '0 0 16px 0',
     },
   },
@@ -17,7 +17,7 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       margin: '0px 48px'
     },
-    [theme.breakpoints.up('xl')]: {
+    [theme.breakpoints.up('lg')]: {
       margin: '0px 96px'
     }
   }

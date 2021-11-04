@@ -24,10 +24,10 @@ const ProgressBarSegment =  ({ breakpoint, fillPercent=1.0 }) => {
 
   let height = 14;
   let width = (breakpoint === 'xs') ? 70 : 128;
-
+  
   let outlineCommands = `M 2,7 L 8,13 H ${width - 8} L ${width - 2},7 L ${width - 8},1 H 8 Z`;
-
-  let hMove = fillPercent * (width - 20);
+  
+  let hMove = Math.floor(fillPercent * (width - 20)) || 0;
   let fillCommands = `M 7,7 l 3,3 h ${hMove} l 3,-3 l -3,-3 h -${hMove} Z`;
 
   if (fillPercent <= 0) fillCommands = '';

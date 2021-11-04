@@ -40,7 +40,7 @@ const Header = props => {
             <img src={imageSrc} className={classes.image} />
           </RouterLink>
           <Toolbar className={classes.center}>
-            <Hidden lgDown>
+            <Hidden mdDown>
               <Button component={RouterLink} to="/" className={classes.centerButton}>
                 Home
               </Button>
@@ -79,7 +79,7 @@ const Header = props => {
           <Button className={classes.right} variant="outlined" href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=456320#donate" target="_blank">
               Donate
           </Button>
-          <Hidden xlUp>
+          <Hidden lgUp>
             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
               <MenuIcon className={classes.menuIcon} />
             </IconButton>
