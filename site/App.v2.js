@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from 'react';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 import { BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header.v2';
 import Footer from './components/Footer';
-import Router from './components/Router';6
+import Router from './components/Router';
 
 const teamId = '57288';
 const twitchUsernames = [

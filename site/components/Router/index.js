@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
-import { Typography } from '@material-ui/core';
+import { Route, Routes } from 'react-router';
+import { Typography } from '@mui/material';
 
 import AboutUsPage from '../../pages/AboutUsPage';
 import CommunityPage from '../../pages/CommunityPage';
@@ -15,22 +15,22 @@ import SchedulePage from '../../pages/SchedulePage';
 import SettingsPage from '../../pages/SettingsPage';
 
 const Router = props => {
-    return (
-        <Switch>
-            <Route path='/aboutus' exact component={AboutUsPage} />
-            <Route path='/community' exact component={CommunityPage} />
-            <Route path='/donations' component={DonationsPage} />
-            <Route path='/donors' component={DonorsPage} />
-            <Route path='/games/:id' component={GameDetailsPage} />
-            <Route path='/games' component={GamesPage} />
-            <Route path='/participate' exact component={ParticipatePage} />
-            <Route path='/preview' exact component={PreviewPage} />
-            <Route path='/schedule' exact component={SchedulePage} />
-            <Route path='/settings' exact component={SettingsPage} />
-            <Route path='/' exact component={LandingPage} />
-            <Route path='*' render={() => (<Typography variant="h2">Page Not Found</Typography>)}/>
-        </Switch>
-    );
+  return (
+    <Routes>
+      <Route path='/aboutus' exact element={<AboutUsPage />} />
+      <Route path='/community' exact element={<CommunityPage />} />
+      <Route path='/donations' element={<DonationsPage />} />
+      <Route path='/donors' element={<DonorsPage />} />
+      <Route path='/games/:id' element={<GameDetailsPage />} />
+      <Route path='/games' element={<GamesPage />} />
+      <Route path='/participate' exact element={<ParticipatePage />} />
+      <Route path='/preview' exact element={<PreviewPage />} />
+      <Route path='/schedule' exact element={<SchedulePage />} />
+      <Route path='/settings' exact element={<SettingsPage />} />
+      <Route path='/' exact element={<LandingPage />} />
+      <Route path='*' element={<Typography variant="h2">Page Not Found</Typography>}/>
+    </Routes>
+  );
 }
 
 export default Router;

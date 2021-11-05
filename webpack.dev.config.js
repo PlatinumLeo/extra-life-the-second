@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 let plugins = [
     new CleanWebpackPlugin(),
@@ -25,7 +25,7 @@ const config = {
     },
     mode: 'development',
     target: 'web',
-    devtool: '#source-map',
+    devtool: 'inline-source-map', // ^(inline-|hidden-|eval-)?(nosources-)?(cheap-(module-)?)?source-map$
     module: {
         rules: [{
                 test: /\.css$/,

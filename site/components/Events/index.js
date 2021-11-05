@@ -5,7 +5,7 @@ import {
   ListItem,
   ListItemText,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 // let data = require('./data.json');
 import data from './ace';

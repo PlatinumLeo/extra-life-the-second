@@ -6,10 +6,9 @@ import {
   Icon,
   Link,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
-import ArrowBack from '@material-ui/icons/ArrowBack';
-
+import ArrowBack from '@mui/icons-material/ArrowBack';
 import defaultImage from '../../assets/images/Icons/controller_blue.png';
 
 import getStyles from './styles';

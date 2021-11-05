@@ -1,10 +1,10 @@
 import React from 'react';
-import { useTheme } from '@material-ui/styles';
+import { useTheme } from '@mui/styles';
 import {
   Grid,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
+  Typography
+} from '@mui/material';
+import { makeStyles } from '@mui/styles';
 
 import { createNotchedClipPath, createNotchedBorder } from  '../utils';
 

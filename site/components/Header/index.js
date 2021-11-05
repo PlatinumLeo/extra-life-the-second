@@ -9,8 +9,8 @@ import {
   MenuItem,
   Toolbar,
   Typography
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
+} from '@mui/material';
+import { useTheme } from '@mui/styles';
 
 import ControllerImage from '../../assets/images/Icons/controller_white.png';
 import ElDiceImage from '../../assets/images/Icons/EL_dice.png';

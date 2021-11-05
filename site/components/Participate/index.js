@@ -3,7 +3,7 @@ import React from 'react';
 import {
     Link,
     Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import getStyles from './styles';
 import dayOfPlay from '../../assets/data/dayOfPlay';

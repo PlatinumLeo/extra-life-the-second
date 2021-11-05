@@ -1,10 +1,9 @@
 import React from 'react';
 import {
   Button,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
+  Typography
+} from '@mui/material';
+import { makeStyles, useTheme } from '@mui/styles';
 
 const getMissionStyles = makeStyles((theme) => ({
   root: { padding: '48px 0 24px 0' },

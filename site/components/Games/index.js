@@ -9,7 +9,7 @@ import {
   ListItem,
   ListItemAvatar,
   ListItemText
-} from '@material-ui/core';
+} from '@mui/material';
 
 import getStyles from './styles';
 

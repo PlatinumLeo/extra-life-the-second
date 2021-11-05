@@ -5,9 +5,9 @@ import {
   Button,
   Hidden,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 import Carousel from 'react-material-ui-carousel';
-import { useTheme } from '@material-ui/styles';
+import { useTheme } from '@mui/styles';
 
 import DataDisplay from '../DataDisplay';
 import { DonationsContext } from '../../DonorDriveApiProvider';

@@ -2,7 +2,7 @@ import React from 'react';
 
 import {
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 const Explaination = props => {
   return (

@@ -9,10 +9,10 @@ import {
   Menu,
   MenuItem,
   Toolbar
-} from '@material-ui/core';
+} from '@mui/material';
 import {
   Menu as MenuIcon
-} from '@material-ui/icons';
+} from '@mui/icons-material';
 
 import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.png';
 

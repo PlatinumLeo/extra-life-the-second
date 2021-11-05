@@ -3,7 +3,7 @@ import {
   Button,
   Hidden,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import getStyles from './style';
 

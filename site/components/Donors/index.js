@@ -7,7 +7,7 @@ import {
   ListItemAvatar,
   ListItemText,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { DonorsContext } from '../../DonorDriveApiProvider';
 
