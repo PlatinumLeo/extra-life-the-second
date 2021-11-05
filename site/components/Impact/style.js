@@ -1,4 +1,4 @@
-import { makeStyles } from '@material-ui/core';
+import { makeStyles } from '@mui/styles';
 import backgroundImage from '../../assets/images/BackgroundImages/impact.png';
 
 const getStyles = makeStyles((theme) => ({

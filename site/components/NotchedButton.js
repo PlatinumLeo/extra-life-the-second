@@ -3,10 +3,9 @@
 import React from 'react';
 import {
   ButtonBase,
-  Typography,
-  useTheme
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/core';
+  Typography
+} from '@mui/material';
+import { makeStyles, useTheme } from '@mui/styles';
 
 const a = 8, b = 3;
 

@@ -3,8 +3,8 @@ import {
   ImageList,
   Hidden,
   Typography
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
+} from '@mui/material';
+import { useTheme } from '@mui/styles';
 import Carousel from 'react-material-ui-carousel';
 
 import TeamTile from './TeamTile';

@@ -1,4 +1,4 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 import { typography } from '../alpha/typography';
 import { overrides } from '../alpha/overrides';
 import { palette } from './palette';

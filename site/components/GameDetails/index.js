@@ -6,9 +6,9 @@ import {
   Icon,
   Link,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
-import { ArrowBack } from '@material-ui/icons';
+import { ArrowBack } from '@mui/icons-material';
 
 import getStyles from './styles';
 import { BreakpointContext } from '../../AdaptivityProvider';

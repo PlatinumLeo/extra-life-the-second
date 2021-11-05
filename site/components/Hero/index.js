@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import {
   Hidden,
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import Countdown from '../Countdown';
 import HeartProgressBar from '../HeartProgressBar';

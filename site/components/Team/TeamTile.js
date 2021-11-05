@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import {
   ImageListItem,
   ImageListItemBar
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { getTeamTileStyles } from './styles';
 

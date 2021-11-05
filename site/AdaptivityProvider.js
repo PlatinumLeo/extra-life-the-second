@@ -1,7 +1,7 @@
 // Based on: https://thoughtspile.github.io/2021/10/04/react-context-dangers/
 
 import React, { createContext, useLayoutEffect, useMemo, useState } from 'react';
-import { useTheme } from '@material-ui/styles';
+import { useTheme } from '@mui/styles';
 
 export const SizeContext = createContext({});
 export const BreakpointContext = createContext({});

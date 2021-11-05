@@ -9,7 +9,7 @@ import {
   Radio,
   RadioGroup,
   Switch
-} from '@material-ui/core';
+} from '@mui/material';
 
 import { AutoRefreshContext } from '../../DonorDriveApiProvider';
 import { ThemeContext } from '../../ThemeProvider';

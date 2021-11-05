@@ -8,7 +8,7 @@ import {
     ListItemAvatar,
     ListItemText,
     Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 const mapStateToProps = state => ({
     donations: state.donations
