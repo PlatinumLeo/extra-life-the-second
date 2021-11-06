@@ -1,8 +1,0 @@
-export const FETCH_DONATIONS_REQUEST = 'FETCH_DONATIONS_REQUEST';
-export const FETCH_DONATIONS_SUCCESS = 'FETCH_DONATIONS_SUCCESS';
-export const FETCH_DONATIONS_FAILURE = 'FETCH_DONATIONS_FAILURE';
-export const GET_DONATIONS = 'GET_DONATIONS';
-
-export function getDonations(id) {
-    return { type: GET_DONATIONS, id };
-};

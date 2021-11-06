@@ -31,7 +31,7 @@ export default [{
     type: 'purchase',
     link: 'https://www.nintendo.com/games/detail/super-smash-bros-ultimate-switch/',
     join: [
-      'Make sure you you are updated to the latest version',
+    'Make sure you you are updated to the latest version',
     'Go to the Smash Menu',
     'Go to Battle Arena',
     'Choose Enter Id',
