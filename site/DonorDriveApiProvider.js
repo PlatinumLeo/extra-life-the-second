@@ -23,6 +23,7 @@ const DonorDriveApiProvider = ({ children }) => {
   const fetchTeam = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}`);
     const json = await response.json();
+    console.log(json);
     setTeam(json);
   };
 
