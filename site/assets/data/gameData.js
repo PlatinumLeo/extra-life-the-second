@@ -1,8 +1,4 @@
 import srb2kImg from '../images/Games/srb2k.png';
-import ssbuImg from '../images/Games/ssbu.avif';
-import jbgImg from '../images/Games/jbg.webp';
-import nmImg from '../images/Games/nm.jpg';
-import oc2Img from '../images/Games/oc2.webp';
 
 export default [{
   id: 'srb2k',
@@ -22,31 +18,34 @@ export default [{
     'Enter Passcode: 69420'
   ],
   extra: [
-    'By default, the arrow keys and Enter navigate the menu, and you will need to press enter on the title screen once to open the menu.',
-    'Be sure to connect any controllers you want to use before you start, I think you can change configs afterwards, but that might take some doing.',
-    'I would check out the Tips & Secrets section under options and maybe drive around in Time Trails on my first boot just to get a feel for it.',
+    'By default, the arrow keys and Enter navigate the menu, and you will need to press enter on the title screen once to open the menu.</Typography></li>',
+    'Be sure to connect any controllers you want to use before you start, I think you can change configs afterwards, but that might take some doing.</Typography></li>',
+    'I would check out the Tips & Secrets section under options and maybe drive around in Time Trails on my first boot just to get a feel for it.</Typography></li>',
   ]
 }, {
   id: 'ssbu',
   name: 'Super Smash Bros. Ultimate',
-  image: ssbuImg,
+  image: null,
   platforms: ['Switch'],
   obtain: {
     type: 'purchase',
     link: 'https://www.nintendo.com/games/detail/super-smash-bros-ultimate-switch/',
-  },
-  join: [
-    'Go to Online',
-    'Enter the Room Code',
-    'Enter the password'
-  ],
-  extra: [
+    join: [
+      'Make sure you you are updated to the latest version',
+    'Go to the Smash Menu',
+    'Go to Battle Arena',
+    'Choose Enter Id',
+    'Enter Arena Id: 5T2LD',
+    'Enter Passcode: 69420'
+    ],
+    extra: [
 
-  ]
+    ]
+  }
 }, {
   id: 'jbg',
   name: 'Jackbox Games',
-  image: jbgImg,
+  image: null,
   platforms: ['PC'],
   obtain: {
     type: 'connect',
@@ -65,7 +64,7 @@ export default [{
 }, {
   id: 'nm',
   name: 'Nippon Marathon',
-  image: nmImg,
+  image: null,
   platforms: ['PS4', 'PS5'],
   obtain: {
     type: 'purchase',
@@ -80,7 +79,7 @@ export default [{
 }, {
   id: 'oc2',
   name: 'Overcooked 2',
-  image: oc2Img,
+  image: null,
   platforms: ['PC', 'PS4', 'PS5', 'Xbox One', 'Switch', 'Xbox Series X and Series S', 'Linux'],
   obtain: {
     type: 'purchase',
