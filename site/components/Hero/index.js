@@ -19,7 +19,6 @@ const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
   const streams = useContext(StreamContext);
-  
   const breakpoint = useContext(BreakpointContext);
 
   const nextStream = () => (
@@ -65,7 +64,6 @@ const Hero = ({ dayOfPlay }) => {
     </div>
   );
 
-  // TODO: Embed Twitch Stream Here...
   const streamingHero = () => (
     <div className={classes.root}>
       <Stream className={classes.twitch} />
