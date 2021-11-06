@@ -3,7 +3,7 @@ import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg
 
 const getStyles = makeStyles((theme) => ({
   root: {
-    // backgroundColor: 'red',
+    backgroundColor: 'red',
     // backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
     // backgroundSize: 'cover',
     // backgroundPosition: 'center',
