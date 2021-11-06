@@ -19,7 +19,6 @@ const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
   const streams = useContext(StreamContext);
-  console.log(streams);
   
   const breakpoint = useContext(BreakpointContext);
 
@@ -69,13 +68,11 @@ const Hero = ({ dayOfPlay }) => {
   // TODO: Embed Twitch Stream Here...
   const streamingHero = () => (
     <div className={classes.root}>
-      <Stream />
+      <Stream className={classes.twitch} />
     </div>
   );
   
-  // return (streamIsLive ? streamingHero() : defaultHero());
-  
-  return (defaultHero());
+  return (streams.length ? streamingHero() : defaultHero());
 };
 
 export default Hero;

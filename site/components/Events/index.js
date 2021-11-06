@@ -11,7 +11,6 @@ import {
 import data from './ace';
 
 const Events = ({ }) => {
-  // console.log(data);
 
   return (
     <>

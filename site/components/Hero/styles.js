@@ -3,10 +3,10 @@ import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg
 
 const getStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: 'red',
-    // backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
-    // backgroundSize: 'cover',
-    // backgroundPosition: 'center',
+    // backgroundColor: 'red',
+    backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     color: theme.palette.primary.contrastText,
     position: 'relative',
     padding: '80px 0 100px 0',
@@ -18,6 +18,12 @@ const getStyles = makeStyles((theme) => ({
       padding: '96px 0 144px 0'
     },
     zIndex: 5
+  },
+  twitch: {
+    margin: '0',
+    [theme.breakpoints.up('xl')]: {
+      marginLeft: 'calc(calc(100vw - 1620px) / 2)'
+    }
   },
   content: {
     // backgroundColor: 'green'

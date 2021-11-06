@@ -4,20 +4,35 @@ import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 
 import { BreakpointContext, SizeContext } from '../../AdaptivityProvider';
 
-const Stream = (props) => {
+const Stream = ({ className }) => {
   const theme = useTheme();
   const breakpoint = useContext(BreakpointContext);
   const { width } = useContext(SizeContext);
 
+  let twitchProps = {
+    align: 'center',
+    autoplay: false,
+    channel: 'pyroticblaziken',
+    chat: 'mobile',
+    layout: 'video',
+    width: width,
+    targetClass: className
+  };
+
+  switch (breakpoint) {
+    case 'xl':
+      twitchProps.width = 1620;
+      twitchProps.height = 720;
+      twitchProps.chat = 'default';
+      twitchProps.layout = 'video-with-chat'
+      break;
+    default:
+      twitchProps.height = Math.floor(width * 2 / 3);
+      break;
+  }
+
   return (
-    <ReactTwitchEmbedVideo
-      align="center"
-      autoplay={false}
-      channel="pyroticblaziken"
-      chat={(theme.breakpoints.down('sm')) ? 'mobile' : 'default' }
-      // layout={(theme.breakpoints.down('sm')) ? 'video' : 'video-with-chat' }
-      width={width}
-    />
+    <ReactTwitchEmbedVideo {...twitchProps} />
   );
 };
 
