@@ -1,10 +1,11 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 
 const TEAM_ID = '57288';
+const DEFAULT_REFRESH_RATE = 5 * 1000;
 
 const defaultAutoRefresh = {
   enabled: false,
-  interval: 5000,
+  interval: DEFAULT_REFRESH_RATE,
   toggleAutoRefresh: () => {},
   updateInterval: (milliseconds) => {}
 };
@@ -15,13 +16,14 @@ export const AutoRefreshContext = createContext(defaultAutoRefresh);
 
 const DonorDriveApiProvider = ({ children }) => {
   const [autoRefreshEnabled, setAutoRefreshEnabled] = useState(true);
-  const [interval, setInterval] = useState(5000);
+  const [interval, setInterval] = useState(DEFAULT_REFRESH_RATE);
   const [team, setTeam] = useState({});
   const [donations, setDonations] = useState([]);
 
   const fetchTeam = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}`);
     const json = await response.json();
+    console.log(json);
     setTeam(json);
   };
 
@@ -31,14 +33,15 @@ const DonorDriveApiProvider = ({ children }) => {
     setDonations(json);
   };
 
-  useEffect(() => {
-    fetchTeam();
-    fetchDonations();
-  }, []);
+  // useEffect(() => {
+  //   fetchTeam();
+  //   fetchDonations();
+  // }, []);
 
   useEffect(() => {
       const fetchInterval = setInterval(() => {
-        if (autoRefreshEnabled) { fetchDonations(); }
+        fetchTeam();
+        fetchDonations();
       }, interval);
   
       return () => clearInterval(fetchInterval);
