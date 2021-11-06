@@ -18,7 +18,6 @@ router.get('/streams', (req, res) => {
   
   axios.get(`${TWITCH_API_URL}streams?channel=${channel}`, TWITCH_CONFIG)
     .then(response => {
-      console.log(response.data);
       res.send(response.data);
     }).catch(err => res.status(500).send(err));
 });
@@ -28,7 +27,6 @@ router.get('/users', (req, res) => {
 
   axios.get(`${TWITCH_API_URL}users?login=${login}`, TWITCH_CONFIG)
     .then(response => {
-      console.log(response.data);
       res.send(response.data);
     }).catch(err => res.status(500).send(err));
 });
