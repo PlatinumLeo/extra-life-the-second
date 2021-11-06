@@ -14,9 +14,12 @@ export default [{
     link: 'https://github.com/STJr/Kart-Public/releases'
   },
   join: [
-    'Go to Multiplayer from the main menu',
-    'Go to the *Specify IPV4 Address:* section',
-    'Enter *howi.servegame.com*'
+    'Make sure you you are updated to the latest version',
+    'Go to the Smash Menu',
+    'Go to Battle Arena',
+    'Choose Enter Id',
+    'Enter Arena Id: 5T2LD',
+    'Enter Passcode: 69420'
   ],
   extra: [
     'By default, the arrow keys and Enter navigate the menu, and you will need to press enter on the title screen once to open the menu.',
