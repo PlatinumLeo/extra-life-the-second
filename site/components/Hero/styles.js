@@ -41,6 +41,15 @@ const getStyles = makeStyles((theme) => ({
     }
   },
   nextStream: { letterSpacing: '0.08em', padding: '0 24px 20px 24px', textTransform: 'uppercase' },
+  thankYouParagraph: {
+    padding: '0 24px 20px 24px',
+    [theme.breakpoints.up('sm')]: {
+      padding: '0 96px 16px 96px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      padding: '0 560px 32px 560px',
+    }
+  }, 
   countdown: {
     margin: '0 24px 64px 24px',
     [theme.breakpoints.up('sm')]: {
