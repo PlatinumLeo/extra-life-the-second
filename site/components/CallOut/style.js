@@ -6,6 +6,7 @@ const getStyles = makeStyles((theme) => ({
     // backgroundColor: 'green',
     margin: '24px 0 24px 0',
     position: 'relative',
+    overflow: 'hidden',
     [theme.breakpoints.down('xs')]: {
       borderBottom: `2px solid ${theme.palette.primary.main}`,
       '&:last-of-type': {
@@ -143,7 +144,8 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       height: '560px',
       width: '560px',
-      left: 'calc(20vw - 60px)',
+      left: 'unset',
+      right: 'calc(55vw - 60px)',
       top: '48px'
     }
   }
