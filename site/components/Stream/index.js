@@ -25,14 +25,14 @@ const Stream = ({ className }) => {
 
   switch (breakpoint) {
     case 'xl':
-      twitchProps.width = 1620;
-      twitchProps.height = 720;
+      twitchProps.width = 1364;
+      twitchProps.height = 576;
       twitchProps.chat = 'default';
       twitchProps.layout = 'video-with-chat'
       break;
     case 'lg':
-      twitchProps.width = 1024;
-      twitchProps.height = 576;
+      twitchProps.width = 960;
+      twitchProps.height = 540;
       twitchProps.chat = 'default';
       break;
     default:

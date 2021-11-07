@@ -7,7 +7,7 @@ const getStyles = makeStyles((theme) => ({
       marginLeft: 'calc(calc(100vw - 1024px) / 2)'
     },
     [theme.breakpoints.up('xl')]: {
-      marginLeft: 'calc(calc(100vw - 1620px) / 2)'
+      marginLeft: 'calc(calc(100% - 1364px) / 2)'
     }
   }
 }));
