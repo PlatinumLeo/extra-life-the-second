@@ -78,10 +78,10 @@ const Hero = ({ dayOfPlay }) => {
 
   const streamingHero = () => (
     <div className={classes.root}>
-      <Stream className={classes.twitch} />
+      <Stream />
     </div>
   );
-  
+
   return (streams.length ? streamingHero() : defaultHero());
 };
 

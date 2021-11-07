@@ -19,12 +19,6 @@ const getStyles = makeStyles((theme) => ({
     },
     zIndex: 5
   },
-  twitch: {
-    margin: '0',
-    [theme.breakpoints.up('xl')]: {
-      marginLeft: 'calc(calc(100vw - 1620px) / 2)'
-    }
-  },
   content: {
     // backgroundColor: 'green'
     zIndex: 4,
