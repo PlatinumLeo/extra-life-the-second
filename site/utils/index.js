@@ -1,3 +1,5 @@
+import dayOfPlay from '../assets/data/dayOfPlay';
+
 export const createNotchedClipPath = (clipRadius, reverse=false) => {
   if (reverse) {
     return `polygon(
@@ -46,4 +48,12 @@ export const buildArrayReducer = (perChunk) => {
     all[ch] = [].concat((all[ch]||[]),one); 
     return all
   };
-}
+};
+
+export const withinDayOfPlay = () => {
+  return false;
+};
+
+export const pastDayOfPlay = () => {
+  return true; 
+};

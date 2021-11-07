@@ -1,7 +1,7 @@
 import React, { createContext, useEffect, useMemo, useState } from 'react';
 
 const TEAM_ID = '57288';
-const DEFAULT_REFRESH_RATE = 5 * 1000;
+const DEFAULT_REFRESH_RATE = 15 * 1000;
 
 const defaultAutoRefresh = {
   enabled: false,
@@ -12,6 +12,7 @@ const defaultAutoRefresh = {
 
 export const TeamContext = createContext({});
 export const DonationsContext = createContext([]);
+export const DonorsContext = createContext([]);
 export const AutoRefreshContext = createContext(defaultAutoRefresh);
 
 const DonorDriveApiProvider = ({ children }) => {
@@ -19,6 +20,7 @@ const DonorDriveApiProvider = ({ children }) => {
   const [interval, setInterval] = useState(DEFAULT_REFRESH_RATE);
   const [team, setTeam] = useState({});
   const [donations, setDonations] = useState([]);
+  const [donors, setDonors] = useState([]);
 
   const fetchTeam = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}`);
@@ -33,15 +35,17 @@ const DonorDriveApiProvider = ({ children }) => {
     setDonations(json);
   };
 
-  // useEffect(() => {
-  //   fetchTeam();
-  //   fetchDonations();
-  // }, []);
+  const fetchDonors = async() => {
+    const response = await fetch(`/api/teams/${TEAM_ID}/donors`);
+    const json = await response.json();
+    setDonors(json);
+  };
 
   useEffect(() => {
       const fetchInterval = setInterval(() => {
         fetchTeam();
         fetchDonations();
+        fetchDonors();
       }, interval);
   
       return () => clearInterval(fetchInterval);
@@ -53,13 +57,16 @@ const DonorDriveApiProvider = ({ children }) => {
 
   const donationsContext = useMemo(() => (donations), [donations]);
   const teamContext = useMemo(() => (team), [team]);
+  const donorsContext = useMemo(() => (donors), [donors]);
 
   return (
     <TeamContext.Provider value={teamContext}>
       <AutoRefreshContext.Provider value={{ enabled: autoRefreshEnabled, interval, toggleAutoRefresh }}>
-        <DonationsContext.Provider value={donationsContext}>
-          {children}
-        </DonationsContext.Provider>
+        <DonorsContext.Provider value={donorsContext}>
+          <DonationsContext.Provider value={donationsContext}>
+            {children}
+          </DonationsContext.Provider>
+        </DonorsContext.Provider>
       </AutoRefreshContext.Provider>
     </TeamContext.Provider>
   );

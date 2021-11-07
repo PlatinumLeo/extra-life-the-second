@@ -32,11 +32,11 @@ export default [{
     link: 'https://www.nintendo.com/games/detail/super-smash-bros-ultimate-switch/',
     join: [
       'Make sure you you are updated to the latest version',
-    'Go to the Smash Menu',
-    'Go to Battle Arena',
-    'Choose Enter Id',
-    'Enter Arena Id: 5T2LD',
-    'Enter Passcode: 69420'
+      'Go to the Smash Menu',
+      'Go to Battle Arena',
+      'Choose Enter Id',
+      'Enter Arena Id: 5T2LD',
+      'Enter Passcode: 69420'
     ],
     extra: [
 
