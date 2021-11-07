@@ -20,6 +20,12 @@ const getStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       margin: '0px 96px'
     }
+  },
+  twitch: {
+    margin: '0',
+    [theme.breakpoints.up('xl')]: {
+      marginLeft: 'calc(calc(100vw - 1620px) / 2)'
+    }
   }
 }));
 
