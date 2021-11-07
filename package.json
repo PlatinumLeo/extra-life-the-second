@@ -6,7 +6,9 @@
   "scripts": {
     "buildDev": "webpack --mode development --config webpack.dev.config.js && webpack --mode development --config webpack.server.config.js",
     "buildProd": "webpack --mode production --config webpack.prod.config.js && webpack --mode production --config webpack.server.config.js",
-    "start": "node ./dist/server.js"
+    "start": "node ./dist/server.js",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "repository": {
     "type": "git",
