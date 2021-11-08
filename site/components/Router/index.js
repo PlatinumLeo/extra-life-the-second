@@ -8,6 +8,7 @@ import DonationsPage from '../../pages/DonationsPage';
 import DonorsPage from '../../pages/DonorsPage';
 import GameDetailsPage from '../../pages/GameDetailsPage';
 import GamesPage from '../../pages/GamesPage';
+import HighScorePage from '../../pages/HighScorePage';
 import LandingPage from '../../pages/LandingPage';
 import ParticipatePage from '../../pages/ParticipatePage';
 import PreviewPage from '../../pages/PreviewPage';
@@ -23,6 +24,7 @@ const Router = props => {
       <Route path='/donors' element={<DonorsPage />} />
       <Route path='/games/:id' element={<GameDetailsPage />} />
       <Route path='/games' element={<GamesPage />} />
+      <Route path='/highscore' exact element={<HighScorePage />} />
       <Route path='/participate' exact element={<ParticipatePage />} />
       <Route path='/preview' exact element={<PreviewPage />} />
       <Route path='/schedule' exact element={<SchedulePage />} />

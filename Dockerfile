@@ -1,4 +1,4 @@
-FROM node:erbium as base
+FROM node:gallium as base
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ WORKDIR /app
 COPY ./ /app
 RUN npm run buildProd
 
-FROM node:erbium-alpine as release
+FROM node:gallium-alpine as release
 WORKDIR /app
 COPY --from=dependencies /app/package.json ./
 RUN npm install --only=production
