@@ -5,7 +5,7 @@ import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import api from './api';
-import config from '../webpack.dev.config';
+import config from '../webpack.site.config';
 
 const PORT = process.env.PORT || 8090; // eslint-disable-line no-undef
 const DIST_DIR = __dirname; // eslint-disable-line no-undef
