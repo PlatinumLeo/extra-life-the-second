@@ -2,6 +2,8 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 let devPlugins = [
   new CleanWebpackPlugin(),
@@ -12,6 +14,19 @@ let devPlugins = [
   }),
   new webpack.HotModuleReplacementPlugin(),
   new webpack.NoEmitOnErrorsPlugin()
+];
+
+let prodPlugins = [
+  new CleanWebpackPlugin(),
+  new HtmlWebpackPlugin({
+    title: 'Extra Life Slalom Atlanta',
+    template: './site/index.html',
+    excludeChunks: ['server']
+  }),
+  new MiniCssExtractPlugin({
+    filename: 'style.[name].css',
+    chunkFilename: '[id].css'
+  })
 ];
 
 module.exports = (env, argv) => {
@@ -54,7 +69,13 @@ module.exports = (env, argv) => {
         ]
       }]
     },
-    plugins: devPlugins,
+    optimization: {
+      minimizer: [
+        `...`,
+        new CssMinimizerPlugin(),
+      ]
+    },
+    plugins: (argv.mode === 'production') ? prodPlugins : devPlugins,
     resolve: {
       extensions: ['*', '.js', 'jsx']
     }
