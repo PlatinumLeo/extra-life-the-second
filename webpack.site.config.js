@@ -31,7 +31,7 @@ let prodPlugins = [
 
 module.exports = (env, argv) => {
   return ({
-    mode: argv.mode,
+    mode: (argv.mode === 'production') ? 'production' : 'development',
     entry: {
       main: (argv.mode === 'production') ? './site/index.js' : ['webpack-hot-middleware/client?path=/__webpack_hmr&timeout=20000', './site/index.js']
     },
