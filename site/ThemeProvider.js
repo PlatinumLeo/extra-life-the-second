@@ -14,7 +14,7 @@ export const ThemeContext = createContext({
 
 const ThemeProvider = ({ children }) => {
   const currentThemeName = localStorage.getItem('appTheme') || 'alpha';
-  const currentThemeMode = localStorage.getItem('appType') || 'light';
+  const currentThemeMode = localStorage.getItem('appMode') || 'light';
 
   const [themeName, setThemeName] = useState(currentThemeName);
   const [themeMode, setThemeType] = useState(currentThemeMode);
