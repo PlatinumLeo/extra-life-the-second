@@ -8,29 +8,29 @@ import { getThemeByName } from './theme';
 export const ThemeContext = createContext({
   themeName: 'alpha',
   updateThemeName: (themeName) => {},
-  themeType: 'light',
+  themeMode: 'light',
   toggleThemeType: () => {}
 });
 
 const ThemeProvider = ({ children }) => {
   const currentThemeName = localStorage.getItem('appTheme') || 'alpha';
-  const currentThemeType = localStorage.getItem('appType') || 'light';
+  const currentThemeMode = localStorage.getItem('appType') || 'light';
 
   const [themeName, setThemeName] = useState(currentThemeName);
-  const [themeType, setThemeType] = useState(currentThemeType);
+  const [themeMode, setThemeType] = useState(currentThemeMode);
   const toggleThemeType = () => {
-    setThemeType(themeType === 'light' ? 'dark' : 'light');
-    localStorage.setItem('appType', themeType === 'light' ? 'dark' : 'light');
+    setThemeType(themeMode === 'light' ? 'dark' : 'light');
+    localStorage.setItem('appType', themeMode === 'light' ? 'dark' : 'light');
   };
   const updateThemeName = (themeName) => {
     setThemeName(themeName);
     localStorage.setItem('appTheme', themeName);
   };
 
-  const theme = getThemeByName(themeName, themeType);
+  const theme = getThemeByName(themeName, themeMode);
 
   return (
-    <ThemeContext.Provider value={{ themeName, updateThemeName, themeType, toggleThemeType }}>
+    <ThemeContext.Provider value={{ themeName, updateThemeName, themeMode, toggleThemeType }}>
       <MuiThemeProvider theme={theme}>{children}</MuiThemeProvider>
     </ThemeContext.Provider>
   );
