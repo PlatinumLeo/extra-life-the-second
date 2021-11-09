@@ -5,6 +5,9 @@ export const palette = {
   secondary: {
     main: '#0150E9'
   },
+  tertiary: {
+    main: '#ffffff'
+  },
   text: {
     primary: '#001646'
   }

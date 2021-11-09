@@ -2,7 +2,7 @@
 // Source: https://dev.to/nas5w/toggling-light-dark-theme-in-react-with-usecontext-39hn
 
 import React, { createContext, useState } from 'react';
-import { ThemeProvider as MuiThemeProvider } from '@mui/material';
+import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
 import { getThemeByName } from './theme';
 
 export const ThemeContext = createContext({
