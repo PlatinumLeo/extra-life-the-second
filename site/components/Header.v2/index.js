@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   AppBar,
+  Box,
   Button,
   Divider,
   Hidden,
@@ -31,16 +32,16 @@ const Header = props => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  
+
   return (
-    <div className={classes.root}>
-      <AppBar position="sticky" className={classes.toolbar}>
-        <Toolbar className={classes.centerBar}>
-          <RouterLink to="/" className={classes.left}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position='sticky' sx={{ height: '80px' }}>
+        <Toolbar sx={{ flexGrow: { mobile: 1, laptop: 'unset' }, alignSelf: 'center', maxWidth: '1188px' }}>
+          <RouterLink to="/" sx={{ float: 'left' }}>
             <img src={imageSrc} className={classes.image} />
           </RouterLink>
-          <Toolbar className={classes.center}>
-            <Hidden mdDown>
+          <Toolbar sx={{ flexGrow: 1 }}>
+            <Box sx={{ display: { mobile: 'none', desktop: 'block' } }}>
               <Button component={RouterLink} to="/" className={classes.centerButton}>
                 Home
               </Button>
@@ -74,12 +75,12 @@ const Header = props => {
                 className={classes.centerButton}
                 href="https://discord.gg/NvshADM"
                 target="_blank">Discord</Button>
-            </Hidden>
+            </Box>
           </Toolbar>
           <Button variant='outlined' href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=456320#donate" target="_blank">
               Donate
           </Button>
-          <Hidden lgUp>
+          <Box sx={{ display: { mobile: 'block', desktop: 'none' } }}>
             <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
               <MenuIcon className={classes.menuIcon} />
             </IconButton>
@@ -117,10 +118,10 @@ const Header = props => {
                 onClick={handleClose}
                 >About Us</MenuItem>
             </Menu>
-          </Hidden>
+          </Box>
         </Toolbar>
       </AppBar>
-    </div>
+    </Box>
   );
 };
 
