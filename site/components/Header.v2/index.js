@@ -1,3 +1,5 @@
+/** @jsx jsx */
+
 import React, { useState } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
@@ -5,7 +7,6 @@ import {
   Box,
   Button,
   Divider,
-  Hidden,
   IconButton,
   Menu,
   MenuItem,
@@ -14,13 +15,11 @@ import {
 import {
   Menu as MenuIcon
 } from '@mui/icons-material';
+import { jsx } from '@emotion/react';
 
 import ExtraLifeLogo from '../../assets/images/Logos/Generic/Extra Life_white.png';
 
-import useStyles from './styles';
-
 const Header = props => {
-  const classes = useStyles();
   const [anchorEl, setAnchorEl] = useState(null);
 
   const imageSrc = ExtraLifeLogo;
@@ -34,21 +33,21 @@ const Header = props => {
   };
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1, color: 'primary.contrastText' }}>
       <AppBar position='sticky' sx={{ height: '80px' }}>
         <Toolbar sx={{ flexGrow: { mobile: 1, laptop: 'unset' }, alignSelf: 'center', maxWidth: '1188px' }}>
           <RouterLink to="/" sx={{ float: 'left' }}>
-            <img src={imageSrc} className={classes.image} />
+            <img src={imageSrc} css={{ height: '45px' }} />
           </RouterLink>
           <Toolbar sx={{ flexGrow: 1 }}>
             <Box sx={{ display: { mobile: 'none', desktop: 'block' } }}>
-              <Button component={RouterLink} to="/" className={classes.centerButton}>
+              <Button component={RouterLink} to="/" color='inherit'>
                 Home
               </Button>
-              <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} className={classes.centerButton}>
+              <Button aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} color='inherit'>
                 Event Info
               </Button>
-              <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} className={classes.centerButton}>
+              <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} color='inherit'>
                 <MenuItem
                   component={RouterLink}
                   to="/schedule"
@@ -65,14 +64,14 @@ const Header = props => {
                   onClick={handleClose}
                   >Games List</MenuItem>
               </Menu>
-              <Button component={RouterLink} to="/community" className={classes.centerButton}>
+              <Button component={RouterLink} to="/community" color='inherit'>
                 Community
               </Button>
-              <Button component={RouterLink} to="/aboutus" className={classes.centerButton}>
+              <Button component={RouterLink} to="/aboutus" color='inherit'>
                 About Us
               </Button>
               <Button
-                className={classes.centerButton}
+                color='inherit'
                 href="https://discord.gg/NvshADM"
                 target="_blank">Discord</Button>
             </Box>
@@ -81,8 +80,8 @@ const Header = props => {
               Donate
           </Button>
           <Box sx={{ display: { mobile: 'block', desktop: 'none' } }}>
-            <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
-              <MenuIcon className={classes.menuIcon} />
+            <IconButton aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick} sx={{ color: 'primary.contrastText' }}>
+              <MenuIcon color='inherit' />
             </IconButton>
             <Menu id="simple-menu" anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
               <MenuItem
