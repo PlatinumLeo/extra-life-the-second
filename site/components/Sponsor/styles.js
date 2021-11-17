@@ -4,15 +4,15 @@ const getStyles = makeStyles((theme) => ({
   root: {
     // backgroundColor: 'red',
     borderBottom: `1px solid ${theme.palette.common.black}`,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('mobile')]: {
       padding: '48px 0 48px 0',
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       padding: '16px 0'
     }
   },
   wrapper: {
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('mobile')]: {
       padding: '0 24px 12px 24px'
     }
   },

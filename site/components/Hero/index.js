@@ -24,14 +24,14 @@ const Hero = ({ dayOfPlay }) => {
 
   const nextStream = () => (
     <div>
-      <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h4' : 'h6' } className={classes.nextStream}>Next stream starts in</Typography>
+      <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } className={classes.nextStream}>Next stream starts in</Typography>
       <Countdown dayOfPlay={dayOfPlay} className={classes.countdown} />
     </div>
   );
 
   const thankYou = () => (
     <div>
-      <Typography align='center' variant={(breakpoint === 'xl') ? 'h4' : 'h6' } className={classes.nextStream}>Thank you all so much!</Typography>
+      <Typography align='center' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } className={classes.nextStream}>Thank you all so much!</Typography>
       <div className={classes.thankYouParagraph}>
         <Typography align='center' display='inline'>We had a wonderful time streaming 25 hours and had a blast with everyone showing up! </Typography>
         <Typography align='center' display='inline'>While the stream has completed, we are still raising money for the Children's Miracle Network. </Typography>
@@ -42,10 +42,10 @@ const Hero = ({ dayOfPlay }) => {
 
   const streamLink = ({ channel, game }) => (
     <React.Fragment>
-      <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h1' : 'h3' } className={classes.nextStream}>
+      <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } className={classes.nextStream}>
         <Link href={channel.url} target='_blank'>We are live!</Link>
       </Typography>
-      <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h4' : 'h6' } className={classes.nextStream}>
+      <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } className={classes.nextStream}>
         We are playing {game}.
       </Typography>
     </React.Fragment>
@@ -63,7 +63,7 @@ const Hero = ({ dayOfPlay }) => {
       </div>
       <div className={classes.videoOverlay} />
       <div className={classes.content}>
-        <Typography align='center' color='inherit' variant={(breakpoint === 'xl') ? 'h1' : 'h3' } className={classes.callout}>We play games to help children’s hospitals in the United States and Canada</Typography>
+        <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } className={classes.callout}>We play games to help children’s hospitals in the United States and Canada</Typography>
         {pastDayOfPlay ? thankYou() : nextStream()}
         <HeartProgressBar sumDonations={sumDonations} fundraisingGoal={fundraisingGoal} className={classes.progressBar} />
         <div className={classes.donationSumContainer}>

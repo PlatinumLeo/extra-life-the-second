@@ -10,7 +10,7 @@ const getStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     color: theme.palette.secondary.contrastText,
     padding: '48px 0 24px 0',
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       padding: '96px 0 124px 0'
     }
   },
@@ -19,7 +19,7 @@ const getStyles = makeStyles((theme) => ({
     lineHeight: '170%',
     padding: '32px 24px',
     maxWidth: '700px',
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       paddingLeft: 'calc(calc(100vw - 700px) / 2)'
     }
   },
@@ -27,7 +27,7 @@ const getStyles = makeStyles((theme) => ({
   carousel: {
     padding: '0 24px 32px 24px',
     maxWidth: '1000px',
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       paddingLeft: 'calc(calc(100vw - 1000px) / 2)'
     }
   }

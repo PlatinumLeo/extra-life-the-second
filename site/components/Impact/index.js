@@ -49,7 +49,7 @@ const Impact = (props) => {
     }
   };
 
-  const perChunk = (breakpoint === 'xs') ? 2 : 3;
+  const perChunk = (breakpoint === 'mobile') ? 2 : 3;
 
   return (
     <div className={classes.root}>

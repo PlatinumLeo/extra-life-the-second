@@ -7,17 +7,17 @@ const getStyles = makeStyles((theme) => ({
     margin: '24px 0 24px 0',
     position: 'relative',
     overflow: 'hidden',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down('mobile')]: {
       borderBottom: `2px solid ${theme.palette.primary.main}`,
       '&:last-of-type': {
         borderBottom: 'none'
       }
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       minHeight: '45vw',
       margin: '48px 0'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       minHeight: '608px'
     }
   },
@@ -26,11 +26,11 @@ const getStyles = makeStyles((theme) => ({
     width: '60px',
     marginLeft: '24px',
     marginBottom: '32px',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       border: `2px solid ${theme.palette.primary.main}`,
       marginLeft: '48px',
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       marginLeft: '120px',
       marginBottom: '32px',
       width: '100px',
@@ -38,16 +38,16 @@ const getStyles = makeStyles((theme) => ({
   },
   title: {
     padding: '32px 24px 0px 24px', 
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       paddingLeft: '48px'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       padding: '124px 0 16px 120px'
     }
   },
   textContainer: {
     // backgroundColor: 'red',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       width: '55%',
       border: `2px solid ${theme.palette.primary.main}`,
       borderLeft: 'none'
@@ -60,16 +60,16 @@ const getStyles = makeStyles((theme) => ({
     '&:last-of-type': {
       paddingBottom: '32px'
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       padding: '0 80px 24px 48px'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       padding: '0 120px 40px 120px'
     }
   },
   textContainerRight: {
     // backgroundColor: 'red',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       width: '55%',
       border: `2px solid ${theme.palette.primary.main}`,
       borderRight: 'none',
@@ -96,14 +96,14 @@ const getStyles = makeStyles((theme) => ({
     marginLeft: '24px',
     marginRight: '24px',
     clipPath: createNotchedClipPath(12),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       height: '45vw',
       width: '45vw',
       position: 'absolute',
       right: '0px',
       top: '-24px',
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       height: '560px',
       width: '560px',
       left: 'calc(55vw - 60px)',
@@ -133,7 +133,7 @@ const getStyles = makeStyles((theme) => ({
     marginLeft: '24px',
     marginRight: '24px',
     clipPath: createNotchedClipPath(12),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       height: '45vw',
       width: '45vw',
       position: 'absolute',
@@ -141,7 +141,7 @@ const getStyles = makeStyles((theme) => ({
       top: '-24px',
       zIndex: '1'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       height: '560px',
       width: '560px',
       left: 'unset',

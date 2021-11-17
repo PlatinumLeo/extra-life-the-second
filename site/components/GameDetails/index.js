@@ -24,7 +24,7 @@ const GameDetails = (props) => {
   let { name, image, platforms, obtain, join, extra } = gameData.find(g => g.id === id);
   const breakpoint = useContext(BreakpointContext);
 
-  const textAlign = (breakpoint === 'xs') ? 'center' : 'left';
+  const textAlign = (breakpoint === 'mobile') ? 'center' : 'left';
 
   const Obtain = ({ type, link }) => {
     switch (type) {

@@ -8,10 +8,10 @@ export const getTeamStyles = makeStyles((theme) => ({
     lineHeight: '170%',
     padding: '32px 24px',
     maxWidth: '700px',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       padding: '32px 160px'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       paddingLeft: 'calc(calc(100vw - 700px) / 2)',
       paddingBottom: '64px'
     }
@@ -21,10 +21,10 @@ export const getTeamStyles = makeStyles((theme) => ({
     // backgroundColor: 'red',
     padding: '0 24px',
     maxWidth: '1376px',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       padding: '0 48px'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       paddingLeft: 'calc(calc(100vw - 1376px) / 2)',
       paddingBottom: '64px'
     }
@@ -52,12 +52,12 @@ export const getTeamTileStyles = makeStyles((theme) => ({
       width: '100%',
       objectFit: 'cover'
     },
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       width: 'calc(calc(100vw - 168px) / 4)',
       height: 'calc(calc(100vw - 168px) / 4)',
       margin: 'calc(calc(100vw - 168px) / -8)',
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       width: '320px',
       height: '320px',
       margin: '-160px'
@@ -95,7 +95,7 @@ export const getTeamTileStyles = makeStyles((theme) => ({
     width: 'calc(calc(100vw - 64px) / 2)',
     height: 'calc(calc(100vw - 64px) / 2)',
     margin: '0 16px 0 0',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       width: 'calc(calc(100vw - 168px) / 4)',
       height: 'calc(calc(100vw - 168px) / 4)',
       margin: '0 24px 16px 0',
@@ -103,7 +103,7 @@ export const getTeamTileStyles = makeStyles((theme) => ({
         marginRight: 0
       }
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       width: '320px',
       height: '320px',
       margin: '0 32px 16px 0',

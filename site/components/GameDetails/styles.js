@@ -25,7 +25,7 @@ const getStyles = makeStyles((theme) => ({
     marginLeft: '24px',
     marginRight: '24px',
     clipPath: createNotchedClipPath(12),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       height: 'calc(33vw - 48px)',
       width: 'calc(33vw - 48px)',
     }
@@ -37,7 +37,7 @@ const getStyles = makeStyles((theme) => ({
     top: 'calc(min(100vw, 100vh) - 96px)',
     left: 0,
     width: '100%',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       visibility: 'hidden'
     }
   }

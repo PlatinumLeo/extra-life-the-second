@@ -5,19 +5,19 @@ const getStyles = makeStyles((theme) => ({
     position: 'relative',
     padding: '80px 0 100px 0',
     overflowX: 'hidden',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       padding: '144px 0 240px 0'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       padding: '96px 0 144px 0'
     },
   },
   textContainer: {
     margin: '0 24px',
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up('tablet')]: {
       margin: '0px 48px'
     },
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('laptop')]: {
       margin: '0px 96px'
     }
   }
