@@ -28,7 +28,7 @@ const PROGRESS_BAR_SX = {
 
 const ROOT_SX = {
   // backgroundColor: 'red',
-  backgroundImage: `linear-gradient(76deg, #9EEEE188, #462DEA88), url(${backgroundImage})`,
+  backgroundImage: `linear-gradient(76deg, #9EEEE1aa, #462DEAaa), url(${backgroundImage})`,
   backgroundSize: 'cover',
   backgroundPosition: 'center',
   color: (theme) => theme.palette.primary.contrastText,
@@ -57,6 +57,22 @@ const NEXT_STREAM_SX = {
   textTransform: 'uppercase'
 };
 
+const THANK_YOU_SX = {
+  padding: {
+    mobile: '0 24px 20px 24px',
+    tablet: '0 96px 16px 96px',
+    desktop: '0 560px 32px 560px',
+  }
+};
+
+const COUNTDOWN_SX = {
+  margin: {
+    mobile: '0 24px 64px 24px',
+    tablet: '0px 48px 32px 48px',
+    desktop: '0px 512px 80px 512px',
+  }
+};
+
 const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
@@ -66,30 +82,19 @@ const Hero = ({ dayOfPlay }) => {
   const nextStream = () => (
     <Box>
       <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } sx={NEXT_STREAM_SX}>Next stream starts in</Typography>
-      <Countdown dayOfPlay={dayOfPlay} className={classes.countdown} />
+      <Countdown dayOfPlay={dayOfPlay} sx={COUNTDOWN_SX} />
     </Box>
   );
 
   const thankYou = () => (
     <Box>
       <Typography align='center' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } sx={NEXT_STREAM_SX}>Thank you all so much!</Typography>
-      <Box className={classes.thankYouParagraph}>
+      <Box sx={THANK_YOU_SX}>
         <Typography align='center' display='inline'>We had a wonderful time streaming 25 hours and had a blast with everyone showing up! </Typography>
         <Typography align='center' display='inline'>While the stream has completed, we are still raising money for the Children's Miracle Network. </Typography>
         <Typography align='center' display='inline'>We hope to see everyone next year and even more people show up to have fun and help make the world a better place!</Typography>
       </Box>
     </Box>
-  );
-
-  const streamLink = ({ channel, game }) => (
-    <React.Fragment>
-      <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } sx={NEXT_STREAM_SX}>
-        <Link href={channel.url} target='_blank'>We are live!</Link>
-      </Typography>
-      <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } sx={NEXT_STREAM_SX}>
-        We are playing {game}.
-      </Typography>
-    </React.Fragment>
   );
 
   const defaultHero = () => (
