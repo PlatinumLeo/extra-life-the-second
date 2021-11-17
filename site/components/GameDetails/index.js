@@ -36,12 +36,12 @@ const GameDetails = (props) => {
   return (
     <div className={classes.root}>
       <Grid container>
-        <Grid item xs={12} className={classes.navContainer}>
+        <Grid item mobile={12} className={classes.navContainer}>
           <Button startIcon={<ArrowBack />} component={RouterLink} to='/games'>
             Back to Game List
           </Button>
         </Grid>
-        <Grid item xs={12} sm={4}>
+        <Grid item mobile={12} tablet={4}>
           <div>
             <div className={classes.imageRule} />
             <div className={classes.imageContainer}>
@@ -49,7 +49,7 @@ const GameDetails = (props) => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={12} sm={8}>
+        <Grid item mobile={12} tablet={8}>
           <div className={classes.textContainer}>
             <Typography align={textAlign} variant='h3'>{name}</Typography>
             <Typography display='inline' variant='h6'>Platforms: </Typography>

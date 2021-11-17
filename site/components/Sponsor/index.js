@@ -14,9 +14,9 @@ const Sponsor = props => {
 
   return (
     <Grid container className={classes.root}>
-      <Grid item xs={12} sm={4} className={classes.wrapper}><CHOALogo className={classes.choa} /></Grid>
-      <Grid item xs={12} sm={4} className={classes.wrapper}><CMNHLogo className={classes.cmnh} /></Grid>
-      <Grid item xs={12} sm={4} className={classes.wrapper}><TwitchLogo className={classes.twitch} /></Grid>
+      <Grid item mobile={12} tablet={4} className={classes.wrapper}><CHOALogo className={classes.choa} /></Grid>
+      <Grid item mobile={12} tablet={4} className={classes.wrapper}><CMNHLogo className={classes.cmnh} /></Grid>
+      <Grid item mobile={12} tablet={4} className={classes.wrapper}><TwitchLogo className={classes.twitch} /></Grid>
     </Grid>
   )
 };

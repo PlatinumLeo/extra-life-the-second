@@ -1,7 +1,11 @@
 import React, { useContext } from 'react';
-import { Grid } from '@mui/material';
+import { Box, Grid } from '@mui/material';
 
 import { BreakpointContext } from '../AdaptivityProvider';
+
+const HEART_PROGRESS_BAR_SX = {
+  display: 'flex'
+};
 
 const Heart = ({ breakpoint }) => {
   const height = (breakpoint === 'mobile') ? 20 : 24;
@@ -56,7 +60,7 @@ const ProgressBar = ({ breakpoint, fillPercent }) => {
         fillPercent -= 0.25;
 
         return (
-          <Grid item xs={3} key={`segment-${item}`}>
+          <Grid item mobile={3} key={`segment-${item}`}>
             <ProgressBarSegment breakpoint={breakpoint} fillPercent={segmentFill} />
           </Grid>
         )
@@ -65,14 +69,22 @@ const ProgressBar = ({ breakpoint, fillPercent }) => {
   )
 };
 
-const HeartProgressBar = ({ sumDonations, fundraisingGoal, className }) => {
+const HeartProgressBar = ({ sumDonations, fundraisingGoal, ...props }) => {
+  const fullProps = {
+    ...props,
+    sx: {
+      ...props.sx,
+      ...HEART_PROGRESS_BAR_SX
+    }
+  };
+
   const breakpoint = useContext(BreakpointContext);
 
   return (
-    <div style={{ display: 'flex' }} className={className}>
+    <Box {...fullProps}>
       <Heart breakpoint={breakpoint} />
       <ProgressBar breakpoint={breakpoint} fillPercent={ (sumDonations / fundraisingGoal) }/>
-    </div>
+    </Box>
   )
 
 };

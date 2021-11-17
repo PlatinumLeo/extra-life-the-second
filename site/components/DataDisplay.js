@@ -41,7 +41,7 @@ const getDataDisplayStyles = makeStyles((theme) => ({
 
 const DataDisplayItem = ({ title, subtitle, className, gridSize }) => {
   return (
-    <Grid item xs={gridSize}>
+    <Grid item mobile={gridSize}>
       <div className={className}>
         <Typography color='inherit' variant="h5">{title}</Typography>
         <Typography color='inherit' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
