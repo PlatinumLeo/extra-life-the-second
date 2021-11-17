@@ -19,7 +19,7 @@ const App = props => {
     <BrowserRouter>
       <Box>
         <Header />
-        {/* <Router /> */}
+        <Router />
         <Footer />
       </Box>
     </BrowserRouter>

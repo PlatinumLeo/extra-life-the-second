@@ -19,7 +19,6 @@ import { jsx } from '@emotion/react';
 
 import ExtraLifeLogo from '../assets/images/Logos/Generic/Extra Life_white.png';
 
-
 const APP_BAR_SX = {
   display: 'inline-flex',
   flexDirection: 'row',

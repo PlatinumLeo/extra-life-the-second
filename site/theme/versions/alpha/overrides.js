@@ -7,8 +7,8 @@ export const overrides = {
   MuiButton: {
     styleOverrides: {
       root: {
-        'clip-path': createNotchedClipPath(clipRadius),
-        'border-radius': '0px'
+        clipPath: createNotchedClipPath(clipRadius),
+        borderRadius: '0px'
       },
       contained: {
         color: '#0150E9',
@@ -16,28 +16,28 @@ export const overrides = {
       },
       outlined: {
         position: 'relative',
-        'clip-path': createNotchedClipPath(clipRadius),
+        clipPath: createNotchedClipPath(clipRadius),
         background: 'rgba(0, 0, 0, 0)',
         border: 'none',
         color: '#fff',
         '&::after': {
           content: '"Button"',
           position: 'absolute',
-          'clip-path': createNotchedBorder(clipRadius, borderWidth),
+          clipPath: createNotchedBorder(clipRadius, borderWidth),
           background: '#fff none repeat scroll 0% 0%',
           inset: '0px'
         }
       },
       outlinedSecondary: {
         position: 'relative',
-        'clip-path': createNotchedClipPath(clipRadius),
+        clipPath: createNotchedClipPath(clipRadius),
         background: 'rgba(0, 0, 0, 0)',
         border: 'none',
         color: '#0150E9',
         '&::after': {
           content: '"Button"',
           position: 'absolute',
-          'clip-path': createNotchedBorder(clipRadius, borderWidth),
+          clipPath: createNotchedBorder(clipRadius, borderWidth),
           background: '#0150E9 none repeat scroll 0% 0%',
           inset: '0px'
         }
