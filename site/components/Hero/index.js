@@ -73,6 +73,9 @@ const COUNTDOWN_SX = {
   }
 };
 
+const DONATION_SUM_CONTAINER_SX = { float: 'left', left: '50%', position: 'relative' };
+const DONATION_SUM_CONTENT_SX = { float: 'left', left: '-50%', position: 'relative' };
+
 const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
@@ -112,8 +115,8 @@ const Hero = ({ dayOfPlay }) => {
         <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } sx={CALLOUT_SX}>We play games to help children’s hospitals in the United States and Canada</Typography>
         {pastDayOfPlay ? thankYou() : nextStream()}
         <HeartProgressBar sumDonations={sumDonations} fundraisingGoal={fundraisingGoal} sx={PROGRESS_BAR_SX} />
-        <Box className={classes.donationSumContainer}>
-          <Box className={classes.donationSumContent}>
+        <Box sx={DONATION_SUM_CONTAINER_SX}>
+          <Box sx={DONATION_SUM_CONTENT_SX}>
             <Typography color='inherit' variant='h3' display='inline'>${(!!sumDonations ? sumDonations : 0).toLocaleString()} </Typography>
             <Typography color='inherit' display='inline'>Raised of ${(!!fundraisingGoal ? fundraisingGoal : 0).toLocaleString()} goal</Typography>
           </Box> 

@@ -2,17 +2,6 @@ import { makeStyles } from '@mui/styles';
 import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg';
 
 const getStyles = makeStyles((theme) => ({
-  countdown: {
-    margin: '0 24px 64px 24px',
-    [theme.breakpoints.up('tablet')]: {
-      margin: '0px 48px 32px 48px'
-    },
-    [theme.breakpoints.up('laptop')]: {
-      margin: '0px 512px 80px 512px'
-    }
-  },
-  donationSumContainer: { float: 'left', left: '50%', position: 'relative' },
-  donationSumContent: { float: 'left', left: '-50%', position: 'relative' },
   videoBackground: {
     position: 'absolute',
     overflow: 'hidden',
