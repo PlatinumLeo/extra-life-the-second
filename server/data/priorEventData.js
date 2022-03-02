@@ -1,11 +1,14 @@
+import lyons2021Donations from './2021_lyons_donations';
+
 const extraLifeEventData = [{
   year: 2021,
   goal: 1000.00,
   raised: 2535.00,
   donations: 44,
   teamMembers: [
-    { name: "Alexander Lyons", email: "alexander.n.lyons@gmail.com", goal: 1000.00, raised: 2535.00, donations: 44 }
-  ]
+    { name: "Alexander Lyons", email: "alexander.n.lyons@gmail.com", goal: 1000.00, raised: 2535.00, donations: lyons2021Donations }
+  ],
+  teamId: 57288
 }, {
   year: 2020,
   goal: 1300.00,

@@ -79,7 +79,7 @@ const DONATION_SUM_CONTENT_SX = { float: 'left', left: '-50%', position: 'relati
 const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
-  const streams = useContext(StreamContext);
+  // const streams = useContext(StreamContext);
   const breakpoint = useContext(BreakpointContext);
 
   const nextStream = () => (
@@ -131,7 +131,8 @@ const Hero = ({ dayOfPlay }) => {
     </Box>
   );
 
-  return (streams.length ? streamingHero() : defaultHero());
+  // return (streams.length ? streamingHero() : defaultHero());
+  return defaultHero();
 };
 
 export default Hero;
