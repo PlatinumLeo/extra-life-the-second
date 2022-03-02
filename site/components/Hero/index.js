@@ -19,7 +19,7 @@ import { pastDayOfPlay } from '../../utils';
 const Hero = ({ dayOfPlay }) => {
   const classes = getStyles();
   const { fundraisingGoal, sumDonations } = useContext(TeamContext);
-  const streams = useContext(StreamContext);
+  // const streams = useContext(StreamContext);
   const breakpoint = useContext(BreakpointContext);
 
   const nextStream = () => (
@@ -82,7 +82,8 @@ const Hero = ({ dayOfPlay }) => {
     </div>
   );
 
-  return (streams.length ? streamingHero() : defaultHero());
+  // return (streams.length ? streamingHero() : defaultHero());
+  return defaultHero();
 };
 
 export default Hero;
