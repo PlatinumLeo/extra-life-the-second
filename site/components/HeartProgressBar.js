@@ -34,7 +34,7 @@ const ProgressBarSegment =  ({ breakpoint, fillPercent=1.0 }) => {
   let hMove = Math.floor(fillPercent * (width - 20)) || 0;
   let fillCommands = `M 7,7 l 3,3 h ${hMove} l 3,-3 l -3,-3 h -${hMove} Z`;
 
-  if (fillPercent <= 0) fillCommands = '';
+  if (hMove <= 0) fillCommands = '';
 
   return (
     <svg version="1.1" id="progressBarSegment" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox={`0 0 ${width} ${height}`} >
