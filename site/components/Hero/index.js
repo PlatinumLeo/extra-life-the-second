@@ -8,14 +8,14 @@ import {
 
 import Countdown from '../Countdown';
 import HeartProgressBar from '../HeartProgressBar';
-import { TeamContext } from '../../DonorDriveApiProvider';
-import { BreakpointContext } from '../../AdaptivityProvider';
+import { TeamContext } from '../../providers/DonorDriveApiProvider';
+import { BreakpointContext } from '../../providers/AdaptivityProvider';
 import getStyles from './styles';
 import backgroundImage from '../../assets/images/BackgroundImages/mmx4_still.jpg';
 import backgroundWebM from '../../assets/videos/megaManX4.webm';
 import backgroundMP4 from '../../assets/videos/megaManX4.mp4';
 import Stream from '../Stream';
-import { StreamContext } from '../../StreamProvider';
+import { StreamContext } from '../../providers/StreamProvider';
 import { pastDayOfPlay } from '../../utils';
 
 const PROGRESS_BAR_SX = {

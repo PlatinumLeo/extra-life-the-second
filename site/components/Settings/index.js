@@ -11,8 +11,8 @@ import {
   Switch
 } from '@mui/material';
 
-import { AutoRefreshContext } from '../../DonorDriveApiProvider';
-import { ThemeContext } from '../../ThemeProvider';
+import { AutoRefreshContext } from '../../providers/DonorDriveApiProvider';
+import { ThemeContext } from '../../providers/ThemeProvider';
 import { themeNames } from '../../theme';
 import getStyles from './styles';
 

@@ -12,7 +12,7 @@ import ArrowBack from '@mui/icons-material/ArrowBack';
 import defaultImage from '../../assets/images/Icons/controller_blue.png';
 
 import getStyles from './styles';
-import { BreakpointContext } from '../../AdaptivityProvider';
+import { BreakpointContext } from '../../providers/AdaptivityProvider';
 
 import gameData from '../../assets/data/gameData';
 

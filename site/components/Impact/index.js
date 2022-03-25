@@ -10,8 +10,8 @@ import Carousel from 'react-material-ui-carousel';
 import { useTheme } from '@mui/styles';
 
 import DataDisplay from '../DataDisplay';
-import { DonationsContext } from '../../DonorDriveApiProvider';
-import { BreakpointContext } from '../../AdaptivityProvider';
+import { DonationsContext } from '../../providers/DonorDriveApiProvider';
+import { BreakpointContext } from '../../providers/AdaptivityProvider';
 import getStyles from './style';
 import { buildArrayReducer } from '../../utils';
 

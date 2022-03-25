@@ -11,7 +11,7 @@ import TeamTile from './TeamTile';
 import teamData from '../../assets/data/teamData';
 import { buildArrayReducer } from '../../utils';
 import { getTeamStyles } from './styles';
-import { SizeContext } from '../../AdaptivityProvider';
+import { SizeContext } from '../../providers/AdaptivityProvider';
 
 const Team = (props) => {
   const theme = useTheme();

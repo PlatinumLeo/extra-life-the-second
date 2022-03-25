@@ -9,7 +9,7 @@ import {
   Typography
 } from '@mui/material';
 
-import { DonationsContext } from '../../DonorDriveApiProvider';
+import { DonationsContext } from '../../providers/DonorDriveApiProvider';
 
 import getStyles from './styles';
 

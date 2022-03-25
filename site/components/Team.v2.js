@@ -13,7 +13,7 @@ import Carousel from 'react-material-ui-carousel';
 
 import teamData from '../assets/data/teamData';
 import { buildArrayReducer } from '../utils';
-import { SizeContext } from '../AdaptivityProvider';
+import { SizeContext } from '../providers/AdaptivityProvider';
 
 
 const tileSX = {

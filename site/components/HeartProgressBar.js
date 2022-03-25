@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Box, Grid } from '@mui/material';
 
-import { BreakpointContext } from '../AdaptivityProvider';
+import { BreakpointContext } from '../providers/AdaptivityProvider';
 
 const HEART_PROGRESS_BAR_SX = {
   display: 'flex'

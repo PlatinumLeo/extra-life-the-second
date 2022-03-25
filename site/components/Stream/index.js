@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useTheme } from '@mui/material/styles';
 import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 
-import { BreakpointContext, SizeContext } from '../../AdaptivityProvider';
+import { BreakpointContext, SizeContext } from '../../providers/AdaptivityProvider';
 import getStyles from './styles';
 
 const Stream = ({ className }) => {

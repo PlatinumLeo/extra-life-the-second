@@ -3,10 +3,10 @@ import { render } from 'react-dom';
 
 import './index.css';
 import App from './App.v2';
-import AdaptivityProvider from './AdaptivityProvider';
-import ThemeProvider from './ThemeProvider';
-import DonorDriveApiProvider from './DonorDriveApiProvider';
-import StreamProvider from './StreamProvider';
+import AdaptivityProvider from './providers/AdaptivityProvider';
+import ThemeProvider from './providers/ThemeProvider';
+import DonorDriveApiProvider from './providers/DonorDriveApiProvider';
+import StreamProvider from './providers/StreamProvider';
 
 render(
       <ThemeProvider>

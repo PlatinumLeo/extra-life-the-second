@@ -3,7 +3,7 @@
 
 import React, { createContext, useState } from 'react';
 import { ThemeProvider as MuiThemeProvider } from '@mui/material/styles';
-import { getThemeByName } from './theme';
+import { getThemeByName } from '../theme';
 
 export const ThemeContext = createContext({
   themeName: 'alpha',
