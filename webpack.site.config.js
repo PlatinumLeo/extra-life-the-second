@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 let devPlugins = [
-  new CleanWebpackPlugin(),
   new HtmlWebpackPlugin({
     title: 'Extra Life Slalom Atlanta',
     template: './site/index.html',
@@ -16,7 +15,7 @@ let devPlugins = [
 ];
 
 let prodPlugins = [
-  new CleanWebpackPlugin(),
+  new webpack.ids.HashedModuleIdsPlugin(),
   new HtmlWebpackPlugin({
     title: 'Extra Life Slalom Atlanta',
     template: './site/index.html',
