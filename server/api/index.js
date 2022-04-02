@@ -1,5 +1,6 @@
 import express from 'express';
 
+import manage from './manage';
 import teams from './teams';
 import twitch from './twitch';
 
@@ -25,6 +26,7 @@ let middleware = (req, res, next) => {
     }
 };
 
+router.use('/manage', manage);
 router.use('/teams', [middleware, teams]);
 router.use('/twitch', twitch);
 
