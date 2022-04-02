@@ -3,12 +3,8 @@
 This website is to help us host Extra Life events.
 
 ## To Do:
-- [x] Create Basics of Website
-- [ ] Display Donation Total and Button
-- [ ] Display Countdown to Extra Life Event
-- [ ] Display Schedule for Extra Life Event
-- [ ] Allow People to sign up to host events
-- [ ] Allow people to sign up to participate in events
-- [ ] Show donation incentive breakdowns
-
-More things to come as well.
+- [ ] Hero Area should be shorter or taller, so that the sponsor area isn't partially on screen
+- [ ] Hero Card: Show goal from last year in bar
+- [ ] Impact Card: Issue with scroll area stuffs
+- [ ] Meet the Team: Fix flip Cards
+- [ ] Footer: Properly Implement the Footer
