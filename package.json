@@ -11,7 +11,7 @@
     "build:prod": "npm run build:prod:server & npm run build:prod:client",
     "start:dev:server": "export NODE_ENV=development && node ./dist/server.js",
     "start:prod:server": "export NODE_ENV=production && node ./dist/server.*.js",
-    "start:iso:dev": "npm run build:dev:client & npm run build:dev:server && npm run start:server:dev",
+    "start:iso:dev": "npm run build:dev:client & npm run build:dev:server && npm run start:dev:server",
     "start": "node ./dist/server.js"
   },
   "repository": {
