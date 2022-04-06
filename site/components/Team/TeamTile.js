@@ -1,10 +1,11 @@
-// Original Card Flip: https://codepen.io/edeesims/pen/iGDzk
-
 import React, { useState } from 'react';
 import {
   ImageListItem,
   ImageListItemBar
 } from '@mui/material';
+
+import FlipCard from '../FlipCard';
+import NotchedImage from '../NotchedImage';
 
 import { getTeamTileStyles } from './styles';
 

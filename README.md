@@ -8,3 +8,5 @@ This website is to help us host Extra Life events.
 - [ ] Impact Card: Issue with scroll area stuffs
 - [ ] Meet the Team: Fix flip Cards
 - [ ] Footer: Properly Implement the Footer
+- [ ] Mobile: Video shouldn't play
+- [ ] Moblie: Spacing for Sponsors
