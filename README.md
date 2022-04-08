@@ -10,3 +10,7 @@ This website is to help us host Extra Life events.
 - [ ] Footer: Properly Implement the Footer
 - [ ] Mobile: Video shouldn't play
 - [ ] Moblie: Spacing for Sponsors
+
+## Known Issues
+
+- [BUG: Carousel Shrinks when height is set dynamically](https://github.com/Learus/react-material-ui-carousel/issues/173)
