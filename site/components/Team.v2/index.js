@@ -13,10 +13,12 @@ import teamData from '../../assets/data/teamData';
 import { buildArrayReducer } from '../../utils';
 import { SizeContext } from '../../providers/AdaptivityProvider';
 import TeamImageListItem from './TeamImageListItem';
+
 import {
-  CENTER_BUTTON_SX,
-  CENTER_COPY_SX,
-  CENTER_RULE_SX
+  CONTENT_CENTERED_BUTTON_SX,
+  CONTENT_CENTERED_RULE_SX,
+  CONTENT_CENTERED_COPY_SX,
+  CONTENT_CENTERED_TITLE_SX
 } from '../../utils/system';
 
 const CAROUSEL_SX = {
@@ -37,7 +39,7 @@ const CAROUSEL_IMAGE_LIST_SX = {
   overflow: 'hidden'
 };
 
-const TEMP_BUTTON_SX = Object.assign({}, CENTER_BUTTON_SX, { display: { tablet: 'none' } });
+const TEMP_BUTTON_SX = Object.assign({}, CONTENT_CENTERED_BUTTON_SX, { display: { tablet: 'none' } });
 
 const IMAGE_LIST_SX = {
   width: {
@@ -77,9 +79,9 @@ const tempScroll = () => { window.scrollTo(0, 0); }
 const Team = ({...props}) => {
   return (
     <Box sx={{ padding: '48px 0 24px 0' }}>
-      <Typography variant='h3' align='center' color='primary' sx={{ textTransform: 'uppercase' }}>Meet the Team</Typography>
-      <Box component='hr' sx={CENTER_RULE_SX} />
-      <Typography align='center' color='primary' sx={CENTER_COPY_SX}>
+      <Typography variant='h3' align='center' color='primary' sx={CONTENT_CENTERED_TITLE_SX}>Meet the Team</Typography>
+      <Box component='hr' sx={CONTENT_CENTERED_RULE_SX} />
+      <Typography align='center' color='primary' sx={CONTENT_CENTERED_COPY_SX}>
         Our Extra Life team is comprised of Slalom employees who all feel passionate about gaming and helping out those who need it most; children and their families who are in need of medical assistance.
       </Typography>
       <Button component={RouterLink} to='/aboutus' onClick={tempScroll} variant='outlined' color='secondary' sx={TEMP_BUTTON_SX}>Meet the Team</Button>

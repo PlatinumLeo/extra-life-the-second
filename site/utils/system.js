@@ -1,4 +1,4 @@
-export const CENTER_COPY_SX = {
+export const CONTENT_CENTERED_COPY_SX = {
   lineHeight: '170%',
   maxWidth: '700px',
   paddingX: {
@@ -8,13 +8,17 @@ export const CENTER_COPY_SX = {
   paddingY: '24px'
 };
 
-export const CENTER_RULE_SX = {
+export const CONTENT_CENTERED_RULE_SX = {
   border: (theme) => `1px solid ${theme.palette.primary.main}`,
   width: '60px'
 };
 
-export const CENTER_BUTTON_SX = {
+export const CONTENT_CENTERED_BUTTON_SX = {
   left: 'calc(50% - 100px)',
   height: '48px',
   width: '200px'
+};
+
+export const CONTENT_CENTERED_TITLE_SX = {
+  textTransform: 'uppercase'
 };
