@@ -1,8 +1,8 @@
 # MUI v5 Conversion
 
-## Components
+## Components (12/29)
 
-- [ ] CallOut
+- [X] CallOut
 - [ ] Community
 - [ ] Donations
 - [ ] Donors
@@ -28,8 +28,8 @@
 - [X] Footer
 - [X] Header
 - [X] HeartProgressBar
-- [ ] Mission
-- [ ] NotchedButton
+- [X] Mission
+- ~[X] NotchedButton~ Using theme override techniques
 - [X] NotchedImage
 
 ## Pages
