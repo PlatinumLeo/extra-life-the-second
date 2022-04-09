@@ -53,7 +53,7 @@ const IMAGE_LIST_SX = {
   },
   display: {
     mobile: 'none',
-    // tablet: 'grid'
+    tablet: 'grid'
   }
 };
 
