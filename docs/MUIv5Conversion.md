@@ -12,7 +12,7 @@
 - [X] Games
 - [X] Hero
 - [X] Impact
-- [ ] Participate
+- [X] Participate
 - [ ] Router
 - [ ] Schedule
 - [ ] Settings
