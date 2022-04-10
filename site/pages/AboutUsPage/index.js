@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Box
-} from '@material-ui/core';
+} from '@mui/material';
 
 import CallOut from '../../components/CallOut';
 
@@ -14,7 +14,7 @@ const memberToCallOut = (member) => ({
   filter: false
 });
 
-const AboutUsPage = (props) => {
+const AboutUsPage = ({...props}) => {
 
   return (
     <Box>

@@ -1,9 +1,9 @@
-import { createTheme } from '@material-ui/core/styles';
+import { createTheme } from '@mui/material/styles';
 
-export const defaultTheme = (type = 'light') => {
+export const defaultTheme = (mode = 'light') => {
   return createTheme({
     palette: {
-      type,
+      mode,
       primary: {
         light: '#307ba4',
         main: '#18527a',

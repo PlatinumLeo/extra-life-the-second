@@ -1,10 +1,18 @@
 import axios from 'axios';
 import express from 'express';
+import { getPriorDonations, getPriorDonors, getPriorTeam } from '../utils/priorEvents';
 
 const router = express.Router();
 
 router.get('/:teamId/donors', (req, res) => {
   let { teamId } = req.params;
+
+  let priorDonors = getPriorDonors(teamId);
+
+  if (priorDonors) {
+    res.send(priorDonors);
+    return;
+  }
 
   axios.get(`https://www.extra-life.org/api/teams/${teamId}/donors`)
     .then(response => {
@@ -16,6 +24,12 @@ router.get('/:teamId/donors', (req, res) => {
 router.get('/:teamId/donations', (req, res) => {
   let { teamId } = req.params;
 
+  let priorDonations = getPriorDonations(teamId);
+  if (priorDonations) {
+    res.send(priorDonations);
+    return;
+  }
+
   axios.get(`https://www.extra-life.org/api/teams/${teamId}/donations`)
     .then(response => {
       let teamDonations = response.data;
@@ -25,6 +39,12 @@ router.get('/:teamId/donations', (req, res) => {
 
 router.get('/:teamId', (req, res) => {
   let { teamId } = req.params;
+
+  let priorTeam = getPriorTeam(teamId);
+  if (priorTeam) {
+    res.send(priorTeam);
+    return;
+  }
 
   axios.get(`https://www.extra-life.org/api/teams/${teamId}`)
     .then(response => {

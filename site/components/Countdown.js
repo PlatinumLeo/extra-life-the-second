@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import DataDisplay from './DataDisplay';
 
-const Countdown = ({ className, dayOfPlay }) => {
+const Countdown = ({ dayOfPlay, ...props }) => {
   const [now, setNow] = useState(new Date().getTime());
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const Countdown = ({ className, dayOfPlay }) => {
   ];
 
   return (
-    <DataDisplay dataPoints={dataPoints} className={className} />
+    <DataDisplay {...props} dataPoints={dataPoints} />
   );
 };
 

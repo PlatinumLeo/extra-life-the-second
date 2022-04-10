@@ -1,0 +1,1 @@
+export const DONATION_URL = 'https://www.extra-life.org/index.cfm?fuseaction=donordrive.participant&participantID=483053#donate';

@@ -1,36 +1,29 @@
 import React from 'react';
 import {
+  Box,
   Button,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
+  Typography
+} from '@mui/material';
 
-const getMissionStyles = makeStyles((theme) => ({
-  root: { padding: '48px 0 24px 0' },
-  rule: { border: `1px solid ${theme.palette.primary.main}`, width: '60px' },
-  text: {
-    lineHeight: '170%',
-    padding: '32px 24px',
-    maxWidth: '700px',
-    [theme.breakpoints.up('lg')]: {
-      paddingLeft: 'calc(calc(100vw - 700px) / 2)'
-    }
-  },
-  button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' }
-}));
+import {
+  CONTENT_CENTERED_BUTTON_SX,
+  CONTENT_CENTERED_RULE_SX,
+  CONTENT_CENTERED_COPY_SX,
+  CONTENT_CENTERED_TITLE_SX
+} from '../utils/system';
 
-const Mission = (props) => {
-  const theme = useTheme();
-  const classes = getMissionStyles(theme);
+const ROOT_SX = {
+  padding: '48px 0 24px 0'
+};
 
+const Mission = ({...props}) => {
   return (
-    <div className={classes.root}>
-      <Typography variant="h3" align="center" color='primary' style={{ textTransform: 'uppercase' }}>Our Mission</Typography>
-      <hr className={classes.rule} />
-      <Typography align="center" color='primary' className={classes.text}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
-      <Button variant='outlined' color='secondary' className={classes.button}>Meet the Team</Button>
-    </div>
+    <Box sx={ROOT_SX}>
+      <Typography variant="h3" align="center" color='primary' style={CONTENT_CENTERED_TITLE_SX}>Our Mission</Typography>
+      <Box component='hr' sx={CONTENT_CENTERED_RULE_SX} />
+      <Typography align="center" color='primary' sx={CONTENT_CENTERED_COPY_SX}>Extra Life is a game-a-thon, where people get together to play games for charity. Extra Life partners with local hospitals across the United States and Canada. Donations are used for the most immediate needs facing local kids; everything from patient programs, new equipment, and charitable care.</Typography>
+      <Button variant='outlined' color='secondary' sx={CONTENT_CENTERED_BUTTON_SX}>Meet the Team</Button>
+    </Box>
   );
 };
 

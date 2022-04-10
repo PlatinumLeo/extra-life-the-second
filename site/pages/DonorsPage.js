@@ -1,9 +1,14 @@
 import React from 'react';
+import { Container } from '@mui/material';
 
 import Donors from '../components/Donors';
 
 const DonorsPage = (props) => {
-  return (<Donors />);
+  return (
+    <Container fixed>
+      <Donors />
+    </Container>
+  );
 };
 
 export default DonorsPage;

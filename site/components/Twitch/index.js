@@ -1,16 +1,10 @@
 import React from 'react';
-// import { connect } from 'react-redux';
 
 import {
   Typography
-} from '@material-ui/core';
+} from '@mui/material';
 
 import TwitchItem from './TwitchItem';
-
-// const mapStateToProps = state => ({
-//   streams: state.twitch.streams,
-//   users: state.twitch.users
-// });
 
 const Twitch = ({ streams, users }) => {
   let componentToRender;

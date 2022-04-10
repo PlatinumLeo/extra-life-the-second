@@ -1,12 +1,12 @@
 import React from 'react';
-import { Box } from '@material-ui/core';
+import { Box } from '@mui/material';
 
 import Hero from '../../components/Hero'
 import Sponsor from '../../components/Sponsor';
 import Mission from '../../components/Mission';
 import CallOut from '../../components/CallOut';
 import Impact from '../../components/Impact';
-import Team from '../../components/Team';
+import Team from '../../components/Team.v2';
 
 import dayOfPlay from '../../assets/data/dayOfPlay';
 

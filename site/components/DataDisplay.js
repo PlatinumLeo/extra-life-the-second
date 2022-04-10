@@ -1,68 +1,70 @@
 import React from 'react';
-import { useTheme } from '@material-ui/styles';
 import {
+  Box,
   Grid,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
+  Typography
+} from '@mui/material';
 
 import { createNotchedClipPath, createNotchedBorder } from  '../utils';
 
 const clipRadius = 10;
 const borderWidth = 2;
 
-const getDataDisplayStyles = makeStyles((theme) => ({
-  root: {
-    position: 'relative',
-    'clip-path': createNotchedClipPath(clipRadius),
-    background: 'rgba(0, 0, 0, 0)',
-    border: 'none',
-    color: theme.palette.common.white,
-    '&::after': {
-      content: '"DataDisplay"',
-      position: 'absolute',
-      'clip-path': createNotchedBorder(clipRadius, borderWidth),
-      background: `${theme.palette.common.white} none repeat scroll 0% 0%`,
-      inset: '0px'
-    }
-  },
-  child: { 
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center',
-    borderRight: '2px solid #fff'
-  },
-  lastChild: {
-    display: 'flex', 
-    flexDirection: 'column', 
-    alignItems: 'center'
+const DATA_DISPLAY_SX = {
+  position: 'relative',
+  clipPath: createNotchedClipPath(clipRadius),
+  ':after': {
+    content: '"DataDisplay"',
+    position: 'absolute',
+    clipPath: createNotchedBorder(clipRadius, borderWidth),
+    background: (theme) => `${theme.palette.common.white} none repeat scroll 0% 0%`,
+    inset: '0px'
   }
-}));
+};
 
-const DataDisplayItem = ({ title, subtitle, className, gridSize }) => {
+const CHILD_SX = {
+  display: 'flex', 
+  flexDirection: 'column', 
+  alignItems: 'center',
+  borderRight: (theme) => `2px solid ${theme.palette.common.white}`
+};
+
+const LAST_CHILD_SX = {
+  display: 'flex', 
+  flexDirection: 'column', 
+  alignItems: 'center'
+};
+
+const DataDisplayItem = ({ title, subtitle, gridSize, lastChild }) => {
   return (
-    <Grid item xs={gridSize}>
-      <div className={className}>
+    <Grid item mobile={gridSize}>
+      <Box sx={ lastChild ? LAST_CHILD_SX : CHILD_SX }>
         <Typography color='inherit' variant="h5">{title}</Typography>
         <Typography color='inherit' variant="caption" style={{ textTransform: 'uppercase' }}>{subtitle}</Typography>
-      </div>
+      </Box>
     </Grid>
   )
 };
 
-const DataDisplay = ({ className, dataPoints }) => {
-  const theme = useTheme();
-  const classes = getDataDisplayStyles(theme);
+const DataDisplay = ({ dataPoints, ...props }) => {
   let gridSize = Math.floor(12 / dataPoints.length);
 
+  const fullProps = {
+    ...props,
+    sx: {
+      ...props.sx,
+      ...DATA_DISPLAY_SX
+    }
+  };
+
   return (
-    <div className={`${className} ${classes.root}`}>
+    <Box {...fullProps}>
       <Grid container>
         {dataPoints.map(({ title, subtitle }, i) => (
-          <DataDisplayItem key={`display-${title}-${subtitle}`} title={title} subtitle={subtitle} gridSize={gridSize} className={(i < dataPoints.length - 1) ? classes.child : classes.lastChild} />
+          <DataDisplayItem key={`display-${title}-${subtitle}`} title={title} subtitle={subtitle} gridSize={gridSize} lastChild={(i === dataPoints.length - 1)} />
         ))}
       </Grid>
-    </div>
+    </Box>
     
   );
 };

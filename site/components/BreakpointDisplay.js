@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import { Typography } from '@material-ui/core';
+import { Typography } from '@mui/material';
 
-import { BreakpointContext, SizeContext } from '../AdaptivityProvider';
+import { BreakpointContext, SizeContext } from '../providers/AdaptivityProvider';
 
 const BreakpointDisplay = (props) => {
   const breakpoint = useContext(BreakpointContext);

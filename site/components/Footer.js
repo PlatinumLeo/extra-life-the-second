@@ -1,35 +1,27 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import {
+  Box,
   Button,
-  Typography,
-  makeStyles
-} from '@material-ui/core';
-import { useTheme } from '@material-ui/styles';
+  Typography
+} from '@mui/material';
 
-const getFooterStyles = makeStyles((theme) => ({
-  root: {
-    borderTop: `2px solid ${theme.palette.primary.main}`,
-    padding: '24px 24px 96px 24px'
-  },
-  rule: { border: `1px solid ${theme.palette.primary.main}`, width: '60px' },
-  text: { paddingRight: '1em' },
-  button: { left: 'calc(50% - 100px)', height: '48px', width: '200px' }
-}));
+const ROOT_SX = {
+  borderTop: (theme) => `2px solid ${theme.palette.primary.main}`,
+  padding: '24px 24px 96px 24px'
+};
 
 const Footer = props => {
-  const theme = useTheme();
-  const classes = getFooterStyles(theme);
-  
   return (
-    <div className={classes.root}>
+    <Box sx={ROOT_SX}>
       <div>
-        <Typography variant="caption" className={classes.text}>Event Info</Typography>
-        <Typography variant="caption" className={classes.text}>Community</Typography>
-        <Typography variant="caption" className={classes.text}>About Us</Typography>
-        <Typography variant="caption" className={classes.text}>Discord</Typography>
+        <Button component={RouterLink} to='/'>Event Info</Button>
+        <Button component={RouterLink} to='/community'>Community</Button>
+        <Button component={RouterLink} to='/aboutus'>About Us</Button>
+        <Button href="https://discord.gg/NvshADM" target="_blank">Discord</Button>
       </div>
       <Typography variant="caption">©2021 Slalom, LLC. All rights reserved</Typography>
-    </div>
+    </Box>
   );
 };
 
