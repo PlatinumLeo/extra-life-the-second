@@ -10,7 +10,7 @@
 - ~[X] Explaination~ Unused Component
 - [X] GameDetails
 - [X] Games
-- [ ] Hero
+- [X] Hero
 - [ ] Impact
 - [ ] Participate
 - [ ] Router
