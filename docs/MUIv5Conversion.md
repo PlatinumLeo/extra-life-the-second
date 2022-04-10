@@ -11,7 +11,7 @@
 - [X] GameDetails
 - [X] Games
 - [X] Hero
-- [ ] Impact
+- [X] Impact
 - [ ] Participate
 - [ ] Router
 - [ ] Schedule
