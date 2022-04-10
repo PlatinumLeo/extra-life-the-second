@@ -1,6 +1,6 @@
 # MUI v5 Conversion
 
-## Components (28/29)
+## Components (29/29)
 
 - [X] CallOut
 - [X] Community
@@ -20,7 +20,7 @@
 - [X] Stream
 - ~[X] svg~ Using SVG Conversion Library
 - [X] Team.v2
-- [ ] Twitch
+- [X] Twitch
 - [X] BreakpointDisplay (?)
 - [X] Countdown
 - [X] DataDisplay
