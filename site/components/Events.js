@@ -7,8 +7,7 @@ import {
   Typography
 } from '@mui/material';
 
-// let data = require('./data.json');
-import data from './ace';
+import eventData from '../assets/data/eventData';
 
 const Events = ({ }) => {
 
