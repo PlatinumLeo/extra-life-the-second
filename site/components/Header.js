@@ -19,6 +19,8 @@ import { jsx } from '@emotion/react';
 
 import ExtraLifeLogo from '../assets/images/Logos/Generic/Extra Life_white.png';
 
+import { DONATION_URL } from '../utils/const';
+
 const APP_BAR_SX = {
   display: 'inline-flex',
   flexDirection: 'row',
@@ -83,7 +85,7 @@ const Header = props => {
                 target="_blank">Discord</Button>
             </Box>
           </Toolbar>
-          <Button variant='outlined' href="https://www.extra-life.org/index.cfm?fuseaction=donorDrive.participant&participantID=456320#donate" target="_blank">
+          <Button variant='outlined' href={DONATION_URL} target="_blank">
             Donate
           </Button>
           <Box sx={{ display: { mobile: 'block', desktop: 'none' } }}>
