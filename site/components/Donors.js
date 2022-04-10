@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 
 import {
   Avatar,
+  Box,
   List,
   ListItem,
   ListItemAvatar,
@@ -9,12 +10,9 @@ import {
   Typography
 } from '@mui/material';
 
-import { DonorsContext } from '../../providers/DonorDriveApiProvider';
-
-import getStyles from './styles';
+import { DonorsContext } from '../providers/DonorDriveApiProvider';
 
 const DonationListItem = ({ avatarImageURL, displayName, sumDonations }) => {
-  const classes = getStyles();
   const dollarFormat = Intl.NumberFormat('es-US', {
     style: 'currency',
     currency: 'USD'
@@ -32,21 +30,24 @@ const DonationListItem = ({ avatarImageURL, displayName, sumDonations }) => {
   );
 };
 
+const ROOT_SX = {
+  padding: '32px 24px 32px 24px'
+};
+
 const Donors = () => {
-  const classes = getStyles();
   const donors = useContext(DonorsContext);
 
   donors.sort((a, b) => b.sumDonations - a.sumDonations);
 
   return (
-    <div className={classes.root}>
+    <Box sx={ROOT_SX}>
       <Typography variant="h3">Donors</Typography>
       <List>
         {donors.map(donation => (
           <DonationListItem {...donation} key={`donor-list-item-${donation.donorID}`} />
         ))}
       </List>
-    </div>
+    </Box>
   )
 };
 
