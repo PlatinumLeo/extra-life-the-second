@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Router from './components/Router';
+import Router from './Router';
 
 const teamId = '57288';
 const twitchUsernames = [
