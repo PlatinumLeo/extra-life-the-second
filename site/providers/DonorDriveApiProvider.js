@@ -25,20 +25,34 @@ const DonorDriveApiProvider = ({ children }) => {
   const fetchTeam = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}`);
     const json = await response.json();
-    console.log(json);
-    setTeam(json);
+    if (json.name && json.name == 'Error') {
+      console.log(json);
+      setTeam({});
+    } else {
+      setTeam(json);
+    }
   };
 
   const fetchDonations = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}/donations`);
     const json = await response.json();
-    setDonations(json);
+    if (json.name && json.name == 'Error') {
+      console.log(json);
+      setDonations([]);
+    } else {
+      setDonations(json);
+    }
   };
 
   const fetchDonors = async() => {
     const response = await fetch(`/api/teams/${TEAM_ID}/donors`);
     const json = await response.json();
-    setDonors(json);
+    if (json.name && json.name == 'Error') {
+      console.log(json);
+      setDonors([]);
+    } else {
+      setDonors(json);
+    }
   };
 
   useEffect(() => {
