@@ -13,8 +13,8 @@
 - [X] Hero
 - [X] Impact
 - [X] Participate
-- [ ] Router
-- [ ] Schedule
+- [X] Router
+- [X] Schedule
 - [ ] Settings
 - [ ] Sponsor
 - [X] Stream

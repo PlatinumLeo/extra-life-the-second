@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Paper } from '@mui/material';
+import { Box } from '@mui/material';
 import { ViewState } from '@devexpress/dx-react-scheduler';
 import {
   Scheduler,
@@ -8,17 +8,28 @@ import {
   CurrentTimeIndicator
 } from '@devexpress/dx-react-scheduler-material-ui';
 
-import getStyles from './style';
-import { schedule2021 as schedule } from './scheduleData';
+import { schedule2021 as schedule } from '../assets/data/scheduleData';
 
 const firstDay = '2021-11-06';
 const secondDay = '2021-11-07';
 
-const Schedule = () => {
-  const classes = getStyles();
+const ROOT_SX = {
+  '& table>tbody>tr>td>div': {
+    '&>p': {
+      color: (theme) => theme.palette.text.primary
+    },
+    '&>div': {
+      color: (theme) => theme.palette.text.primary
+    },
+    '&>span': {
+      color: (theme) => theme.palette.text.primary
+    }
+  }
+};
 
+const Schedule = () => {
     return (
-      <Box className={classes.root}>
+      <Box sx={ROOT_SX}>
         <Scheduler data={schedule}>
           <ViewState currentDate={firstDay} />
           <DayView 
