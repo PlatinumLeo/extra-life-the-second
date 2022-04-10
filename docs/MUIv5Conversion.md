@@ -4,7 +4,7 @@
 
 - [X] CallOut
 - [X] Community
-- [ ] Donations
+- [X] Donations
 - [ ] Donors
 - [ ] Events
 - [ ] Explaination
@@ -35,12 +35,12 @@
 ## Pages
 
 - [ ] AboutUsPage
-- [ ] CommunityPage
+- [X] CommunityPage
 - [ ] GamesPage
 - [ ] LandingPage
 - [ ] ParticipatePage
 - [ ] SchedulePage
-- [ ] DonationsPage
+- [X] DonationsPage
 - [ ] DonorsPage
 - [ ] GameDetailsPage
 - [ ] HighScorePage
