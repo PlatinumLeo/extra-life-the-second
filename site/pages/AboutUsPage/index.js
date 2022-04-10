@@ -14,7 +14,7 @@ const memberToCallOut = (member) => ({
   filter: false
 });
 
-const AboutUsPage = (props) => {
+const AboutUsPage = ({...props}) => {
 
   return (
     <Box>

@@ -2,22 +2,16 @@ import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import {
   Avatar,
-  Grid,
-  Link,
-  Typography,
+  Box,
   List,
   ListItem,
   ListItemAvatar,
   ListItemText
 } from '@mui/material';
 
-import getStyles from './styles';
-
-import gameData from '../../assets/data/gameData';
+import gameData from '../assets/data/gameData';
 
 const GameListItem = ({ id, name, image, platforms, obtain, join, extra }) => {
-  const classes = getStyles();
-
   return (
     <ListItem button component={RouterLink} to={`/games/${id}`}>
       <ListItemAvatar>
@@ -30,17 +24,21 @@ const GameListItem = ({ id, name, image, platforms, obtain, join, extra }) => {
   );
 };
 
-const Games = (props) => {
-  const classes = getStyles();
+const ROOT_SX = {
+  '& p': {
+    color: (theme) => theme.palette.primary.main
+  }
+};
 
+const Games = (props) => {
   return (
-    <div className={classes.root}>
+    <Box sx={ROOT_SX}>
       <List>
         {gameData.map(game => (
           <GameListItem {...game} key={`game-list-item-${game.id}`}/>
         ))}
       </List>
-    </div>
+    </Box>
   );
 };
 

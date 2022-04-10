@@ -9,7 +9,7 @@
 - [X] Events
 - ~[X] Explaination~ Unused Component
 - [X] GameDetails
-- [ ] Games
+- [X] Games
 - [ ] Hero
 - [ ] Impact
 - [ ] Participate
