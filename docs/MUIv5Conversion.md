@@ -7,8 +7,8 @@
 - [X] Donations
 - [X] Donors
 - [X] Events
-- ~[X] Explaination~
-- [ ] GameDetails
+- ~[X] Explaination~ Unused Component
+- [X] GameDetails
 - [ ] Games
 - [ ] Hero
 - [ ] Impact
