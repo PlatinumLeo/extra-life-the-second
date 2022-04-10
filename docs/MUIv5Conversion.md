@@ -6,8 +6,8 @@
 - [X] Community
 - [X] Donations
 - [X] Donors
-- [ ] Events
-- [ ] Explaination
+- [X] Events
+- ~[X] Explaination~
 - [ ] GameDetails
 - [ ] Games
 - [ ] Hero
