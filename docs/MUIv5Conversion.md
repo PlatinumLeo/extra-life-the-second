@@ -1,6 +1,6 @@
 # MUI v5 Conversion
 
-## Components (12/29)
+## Components (28/29)
 
 - [X] CallOut
 - [X] Community
@@ -16,9 +16,9 @@
 - [X] Router
 - [X] Schedule
 - [X] Settings
-- [ ] Sponsor
+- [X] Sponsor
 - [X] Stream
-- [ ] svg
+- ~[X] svg~ Using SVG Conversion Library
 - [X] Team.v2
 - [ ] Twitch
 - [X] BreakpointDisplay (?)

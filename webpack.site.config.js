@@ -74,35 +74,35 @@ module.exports = (env, argv) => {
       rules: [{
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      },
-      {
+      }, {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
-      },
-      {
-        test: /\.(ico|svg|jpg|jpeg|png|webm|mp4|avif|webp)$/,
+      }, {
+        test: /\.(ico|jpg|jpeg|png|webm|mp4|avif|webp)$/,
         loader: 'file-loader'
-      },
-      {
+      }, {
         test: /\.md$/,
         use: [
           {
             loader: 'asset/source'
           }
         ]
-      },
-      {
+      }, {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[name].[ext]',
-              outputPath: 'fonts/'
-            }
+        use: [{
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
           }
-        ]
+        }]
+      }, {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: [{
+          loader: '@svgr/webpack'
+        }]
       }]
     },
     optimization: (argv.mode === 'production') ? prodOptimizations : devOptimizations,

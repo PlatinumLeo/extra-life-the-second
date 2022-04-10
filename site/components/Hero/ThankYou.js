@@ -18,7 +18,7 @@ const THANK_YOU_SX = {
   }
 };
 
-const ThankYou = ({ ...props }) => (
+const ThankYou = ({ breakpoint, ...props }) => (
   <Box>
     <Typography align='center' variant={(breakpoint === 'desktop') ? 'h4' : 'h6' } sx={NEXT_STREAM_SX}>Thank you all so much!</Typography>
     <Box sx={THANK_YOU_SX}>

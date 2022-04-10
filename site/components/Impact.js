@@ -9,6 +9,7 @@ import {
 import Carousel from 'react-material-ui-carousel';
 
 import DataDisplay from './DataDisplay';
+import backgroundImage from '../assets/images/BackgroundImages/impact.png'
 import { DonationsContext } from '../providers/DonorDriveApiProvider';
 import { BreakpointContext } from '../providers/AdaptivityProvider';
 import { buildArrayReducer } from '../utils';
