@@ -1,22 +1,16 @@
 import React from 'react';
 
 import {
+  Container,
   Grid,
-  Link,
   Typography,
-  List,
-  ListItem,
-  ListItemText
 } from '@mui/material';
 
-import getStyles from './styles';
-import Stream from '../Stream';
+import Stream from './Stream';
 
-const Community = (props) => {
-  const classes = getStyles();
-
+const Community = ({...props}) => {
   return (
-    <div className={classes.root}>
+    <Container fixed>
       <Grid container>
         <Grid item mobile={12}>
           <Stream />
@@ -34,7 +28,7 @@ const Community = (props) => {
           </Typography>
         </Grid>
       </Grid>
-    </div>
+    </Container>
   );
 };
 

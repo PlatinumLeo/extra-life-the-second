@@ -1,17 +1,20 @@
 import React, { useContext } from 'react';
-import { useTheme } from '@mui/material/styles';
+import { Box } from '@mui/material';
 import ReactTwitchEmbedVideo from "react-twitch-embed-video";
 
-import { BreakpointContext, SizeContext } from '../../providers/AdaptivityProvider';
-import getStyles from './styles';
+import { BreakpointContext, SizeContext } from '../providers/AdaptivityProvider';
+
+const ROOT_SX = {
+  margin: '0',
+  marginLeft: {
+    laptop: 'calc(calc(100vw - 1024px) / 2)',
+    desktop: 'calc(calc(100% - 1364px) / 2)'
+  }
+};
 
 const Stream = ({ className }) => {
-  const classes = getStyles();
-  const theme = useTheme();
   const breakpoint = useContext(BreakpointContext);
   const { width } = useContext(SizeContext);
-
-  console.log(breakpoint);
 
   let twitchProps = {
     align: 'center',
@@ -24,13 +27,13 @@ const Stream = ({ className }) => {
   };
 
   switch (breakpoint) {
-    case 'xl':
+    case 'desktop':
       twitchProps.width = 1364;
       twitchProps.height = 576;
       twitchProps.chat = 'default';
       twitchProps.layout = 'video-with-chat'
       break;
-    case 'lg':
+    case 'laptop':
       twitchProps.width = 960;
       twitchProps.height = 540;
       twitchProps.chat = 'default';
@@ -41,9 +44,9 @@ const Stream = ({ className }) => {
   }
 
   return (
-    <div className={classes.root}>
+    <Box sx={ROOT_SX}>
       <ReactTwitchEmbedVideo {...twitchProps} />
-    </div>
+    </Box>
   );
 };
 

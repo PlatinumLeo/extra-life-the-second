@@ -3,7 +3,7 @@
 ## Components (12/29)
 
 - [X] CallOut
-- [ ] Community
+- [X] Community
 - [ ] Donations
 - [ ] Donors
 - [ ] Events
@@ -17,7 +17,7 @@
 - [ ] Schedule
 - [ ] Settings
 - [ ] Sponsor
-- [ ] Stream
+- [X] Stream
 - [ ] svg
 - [X] Team.v2
 - [ ] Twitch
