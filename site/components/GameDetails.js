@@ -9,7 +9,7 @@ import {
 } from '@mui/material';
 
 import ArrowBack from '@mui/icons-material/ArrowBack';
-import defaultImage from '../../assets/images/Icons/controller_blue.png';
+import defaultImage from '../assets/images/Icons/controller_blue.png';
 
 import NotchedImage from './NotchedImage';
 import { createNotchedClipPath } from '../utils';
