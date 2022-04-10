@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import {
+  Container,
   FormControl,
   FormControlLabel,
   FormHelperText,
@@ -11,28 +12,24 @@ import {
   Switch
 } from '@mui/material';
 
-import { AutoRefreshContext } from '../../providers/DonorDriveApiProvider';
-import { ThemeContext } from '../../providers/ThemeProvider';
-import { themeNames } from '../../theme';
-import getStyles from './styles';
+import { AutoRefreshContext } from '../providers/DonorDriveApiProvider';
+import { ThemeContext } from '../providers/ThemeProvider';
+import { themeNames } from '../theme';
 
 function capitalizeFirstLetter([first, ...rest], locale = navigator.language) {
   return first.toLocaleUpperCase(locale) + rest.join('');
 }
 
-const Settings = props => {
-  const classes = getStyles();
+const Settings = ({...props}) => {
   const { themeName, updateThemeName, themeType, toggleThemeType } = useContext(ThemeContext);
   const { enabled, interval, toggleAutoRefresh } = useContext(AutoRefreshContext);
-
-  let theme = localStorage.getItem('appTheme') || 'default';
 
   function handleChange(event) {
     updateThemeName(event.target.value);
   }
 
   return (
-    <div className={classes.root}>
+    <Container fixed>
       <FormControl component='fieldset'>
         <FormLabel component='legend'>Theme</FormLabel>
         <RadioGroup aria-label='theme' name='theme1' value={themeName} onChange={handleChange}>
@@ -53,7 +50,7 @@ const Settings = props => {
           <FormHelperText>Interval Milliseconds</FormHelperText>
         </FormControl>
       </FormControl>
-    </div>
+    </Container>
   )
 };
 

@@ -24,7 +24,7 @@ const priorDonations = 3237;
 const priorDonationCount = 52;
 
 const ROOT_SX = {
-  backgroundColor: theme.palette.secondary.main,
+  backgroundColor: (theme) => theme.palette.secondary.main,
   backgroundImage: (theme) => `linear-gradient(${theme.palette.secondary.main}88, ${theme.palette.secondary.main}88), url(${backgroundImage})`,
   backgroundBlendMode: 'saturation',
   backgroundSize: 'cover',

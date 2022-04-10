@@ -15,7 +15,7 @@
 - [X] Participate
 - [X] Router
 - [X] Schedule
-- [ ] Settings
+- [X] Settings
 - [ ] Sponsor
 - [X] Stream
 - [ ] svg
