@@ -104,7 +104,7 @@ const Hero = ({ dayOfPlay }) => {
       </Box>
       <Box sx={VIDEO_OVERLAY_SX} />
       <Box sx={{ opacity: 1, zIndex: 4 }}>
-        <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } sx={CALLOUT_SX}>We play games to help children’s hospitals in the United States and Canada</Typography>
+        <Typography align='center' color='inherit' variant={(breakpoint === 'desktop') ? 'h1' : 'h3' } sx={CALLOUT_SX}>We play games to help children's hospitals in the United States and Canada</Typography>
         {pastDayOfPlay ? <ThankYou props={{ breakpoint }} /> : <NextStream props={{ breakpoint, dayOfPlay }} />}
         <HeartProgressBar sumDonations={sumDonations} fundraisingGoal={fundraisingGoal} sx={PROGRESS_BAR_SX} />
         <Box sx={DONATION_SUM_CONTAINER_SX}>
