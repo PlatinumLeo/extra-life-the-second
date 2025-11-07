@@ -6,6 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Router from './Router';
 
+const participantId = '562971';
 const teamId = '61079';
 const twitchUsernames = [
   'pyroticblaziken'
