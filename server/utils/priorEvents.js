@@ -9,15 +9,20 @@ priorEventData.forEach(team => {
 export function getPriorDonors(teamId) {
   let donors = [];
   console.log('Calling getPriorDonors...');
-  donations = getPriorDonations(teamId);
-  donations.forEach(d => {
-    let index = donors.indexOf(p => p.email == d.email);
-    if (index > -1) {
-      donors[index].amount += d.amount;
-    } else {
-      donors.push({ email: d.email, amount: d.amount });
-    }
-  });
+  try {
+    donations = getPriorDonations(teamId);
+    donations.forEach(d => {
+      let index = donors.indexOf(p => p.email == d.email);
+      if (index > -1) {
+        donors[index].amount += d.amount;
+      } else {
+        donors.push({ email: d.email, amount: d.amount });
+      }
+    });
+  } catch (e) {
+    console.error(`Error in getPriorDonors: ${e.message}`);
+  }
+  
   console.log(`Prior Donors: ${donors.length}`);
 
   return donors;

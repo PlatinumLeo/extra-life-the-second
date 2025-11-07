@@ -55,5 +55,5 @@ export const withinDayOfPlay = () => {
 };
 
 export const pastDayOfPlay = () => {
-  return true; 
+  return false; 
 };

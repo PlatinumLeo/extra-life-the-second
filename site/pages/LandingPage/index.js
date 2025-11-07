@@ -25,7 +25,7 @@ const LandingPage = props => {
 
   let callOutProps1 = {
     title: 'How can I join?',
-    content: "On November 6th, we are hosting a Day of Play, where we will stream games for 24 hours. Join us in Discord and in whatever games we set out to play! \nIf you would like to help spread the word and help us raise money and awareness, please reach out to Alex Lyons or Shah Zafrani.",
+    content: "On November 8th, we are hosting a Day of Play, where we will stream games for 24 hours. Join us in Discord and in whatever games we set out to play! \nIf you would like to help spread the word and help us raise money and awareness, please reach out to Alex Lyons or Shah Zafrani.",
     buttonText: 'Consequat Massa',
     buttonLink: '',
     image: content1Image,
